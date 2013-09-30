@@ -60,12 +60,12 @@ function draw_graph(graph){
 
 d3.select("body").select("svg").remove();
 
+var width = 1000,
+    height = 800;
+
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
-
-var width = 1000,
-    height = 800;
 
 var count_scale = d3.scale.linear()
   .domain([0, d3.max(graph.nodes, function (d) { return d.count; })])
