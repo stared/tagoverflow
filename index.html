@@ -44,7 +44,7 @@ var width = 1000,
     height = 800;
 
 var force = d3.layout.force()
-    .charge( function(d) { return -35 * Math.sqrt(d.count)} )
+    .charge( function(d) { return -50 * Math.sqrt(d.count)} )
     .linkDistance(50)
     .gravity(0.15)
     .size([width - 250, height]);
@@ -61,13 +61,14 @@ d3.json("jsons/biology.json", function(error, graph) {
   force
       .nodes(graph.nodes)
       .links(graph.links)
+      // .linkStrength(function (d) {return 1 / (d.eo_ratio); })
       .start();
 
   var link = main.selectAll(".link")
       .data(graph.links)
     .enter().append("line")
       .attr("class", "link")
-      .style("stroke-width", function(d) { return 2; });
+      .style("stroke-width", function(d) { return 1 * (d.oe_ratio); });
 
   var node = main.selectAll(".node_circle")
       .data(graph.nodes)
