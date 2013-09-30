@@ -66,9 +66,9 @@ function tagConnections(siteName, popularTags)
                     target: popularTagPos[relatedTag.name],
                     source_name: popularTags[i].name,
                     target_name: relatedTag.name,
-                    oeRatio: (relatedTag.count * noQuestion) / (popularTags[i].count * popularTagCount[relatedTag.name])
+                    oe_ratio: (relatedTag.count * noQuestion) / (popularTags[i].count * popularTagCount[relatedTag.name])
                    };
-         if ((link.count > 1) && (link.oeRatio > 1))
+         if ((link.count > 1) && (link.oe_ratio > 1))
          {
            links.push(link);
          }

@@ -36,24 +36,46 @@ text.legend {
 
 </style>
 <body>
+  <p>TagOverflow v0.1</p>
+  <p>Select site:
+    <select id="site_name">
+      <option value="biology">Biology</option>
+      <option value="academia">Academia</option>
+      <option value="mathoverflow">MathOverflow</option>
+      <option value="physics">Physics</option>
+      <option value="stackoverflow">StackOverflow</option>
+    </select>
+  </p>
 <script src="d3.v3.min.js"></script>
 <script src="se_tags.js"></script>
 <script>
 
-var width = 1000,
-    height = 800;
+d3.json("jsons/biology.json", function(error, graph) { draw_graph(graph); });
 
-var force = d3.layout.force()
-    .charge( function(d) { return -50 * Math.sqrt(d.count)} )
-    .linkDistance(50)
-    .gravity(0.15)
-    .size([width - 250, height]);
+d3.select("select#site_name").on("change", function(){
+  draw_graph(getNodesLinks(this.value));
+});
+
+function draw_graph(graph){
+
+d3.select("body").select("svg").remove();
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-d3.json("jsons/biology.json", function(error, graph) {
+var width = 1000,
+    height = 800;
+
+var count_scale = d3.scale.linear()
+  .domain([0, d3.max(graph.nodes, function (d) { return d.count; })])
+  .range([0, 2500]);
+
+var force = d3.layout.force()
+    .charge( function(d) { return -50 * Math.sqrt(count_scale(d.count))} )
+    .linkDistance(50)
+    .gravity(0.15)
+    .size([width - 250, height]);
 
   var main = svg.append("g")
    .attr("class", "graph");
@@ -74,7 +96,7 @@ d3.json("jsons/biology.json", function(error, graph) {
       .data(graph.nodes)
     .enter().append("circle")
       .attr("class", "node_circle")
-      .attr("r", function(d) { return 0.5 * Math.sqrt(d.count); })
+      .attr("r", function(d) { return 0.5 * Math.sqrt(count_scale(d.count)); })
       .style("fill", function(d){ return "red" } )
       .on("mouseover", function(d) { mouseover_node(d); })
       .on("mouseout", function(d) { mouseout_node(d) });
@@ -83,7 +105,7 @@ d3.json("jsons/biology.json", function(error, graph) {
       .data(graph.nodes)
     .enter().append("text")
       .attr("class", "node_label")
-      .attr("dx", function(d) { return 2 + 0.5 * Math.sqrt(d.count); })
+      .attr("dx", function(d) { return 2 + 0.5 * Math.sqrt(count_scale(d.count)); })
       .attr("dy", ".4em")
       .attr("font-family", "Verdana")
       .attr("font-size", 10)
@@ -145,6 +167,6 @@ d3.json("jsons/biology.json", function(error, graph) {
 
   };
 
-});
+};
 
 </script>
