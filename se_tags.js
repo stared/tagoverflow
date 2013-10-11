@@ -18,7 +18,13 @@ function fetchSites()
               + "?key="
               + apiKey
               + "&pagesize=100").items;
-  return sites.filter(function(x) {return x.site_type === "main_site";});
+  return sites.filter(function(x) {return x.site_type === "main_site";})
+              .sort(function(x,y){
+                if (x.name > y.name)
+                  return 1;
+                else
+                  return -1; 
+              });
 }
 
 function fetchSiteStats(siteName)
