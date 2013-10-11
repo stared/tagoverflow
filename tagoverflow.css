@@ -1,0 +1,49 @@
+.node_circle {
+  stroke: #777;
+  stroke-width: 1.0px;
+}
+
+.node_label {
+  pointer-events: none;
+}
+
+.link {
+  stroke: #777;
+  stroke-opacity: .2;
+}
+
+.node_count {
+  stroke: #777;
+  stroke-width: 1.0px;
+  fill: #999;
+}
+
+text.legend {
+  font-family: Verdana;
+  font-size: 13px;
+  fill: #000;
+}
+
+div.site_info {
+	position: fixed;
+	top: 50px;
+	right: 20px;
+    padding: 12px;
+    width: 200px;
+    background: #000;
+	color: #ddd;
+	border: solid 1px #aaa;
+	border-radius: 4px;
+	pointer-events: none;
+	z-index:10;
+    /*overflow-y: auto;*/
+}
+
+div.tag_info {
+	position: fixed;
+	top: 250px;
+	right: 20px;
+    padding: 12px;
+    width: 200px;
+    /*overflow-y: auto;*/
+}

@@ -5,38 +5,8 @@
   <meta name="keywords" content="d3js,graph,tags,stackexchange">
   <meta name="author" content="Marta Cz-C, Piotr Migdał">
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="tagoverflow.css">
 </head>
-<style>
-
-.node_circle {
-  stroke: #777;
-  stroke-width: 1.0px;
-}
-
-.node_label {
-  pointer-events: none;
-}
-
-.link {
-  stroke: #777;
-  stroke-opacity: .2;
-}
-
-.node_count {
-  stroke: #777;
-  stroke-width: 1.0px;
-  fill: #999;
-}
-
-text.legend {
-  font-family: Verdana;
-  font-size: 13px;
-  fill: #000;
-}
-
-
-
-</style>
 <body>
   <p>TagOverflow v0.1</p>
   <p>Select site:
@@ -58,6 +28,8 @@ text.legend {
       <option value="100">100</option>
     </select>
   </p>
+<div class="site_info">(Here will be some info on the site.)</div>
+<div class="tag_info">(And here: on the tag.)</div>
 <script src="d3.v3.min.js"></script>
 <script src="se_tags.js"></script>
 <script>
