@@ -48,11 +48,11 @@ text.legend {
   </p>
     <p>Select number of tags:
     <select id="pageSize">
-      <option value="10">5</option>
-      <option value="15">10</option>
-      <option value="20">20</option>
-      <option value="30">30</option>
+      <!-- <option value="10">10</option> -->
+      <option value="25">25</option>
       <option value="50">50</option>
+      <option value="75">75</option>
+      <option value="100">100</option>
     </select>
   </p>
 <script src="d3.v3.min.js"></script>
@@ -62,15 +62,23 @@ text.legend {
 d3.json("jsons/biology.json", function(error, graph) { draw_graph(graph); });
 
 d3.select("select#site_name").on("change", function(){
-  draw_graph(getNodesLinks(this.value, 32));
+  var  pageSize = parseInt(d3.select("select#pageSize")[0][0].value);
+  draw_graph(getNodesLinks(this.value, pageSize));
 });
+
+d3.select("select#pageSize").on("change", function(){
+  var  pageSize = this.value;
+  var  siteName = d3.select("select#site_name")[0][0].value;
+  draw_graph(getNodesLinks(siteName, pageSize));
+});
+
 
 function draw_graph(graph){
 
 d3.select("body").select("svg").remove();
 
 var width = 1000,
-    height = 800;
+    height = 600;
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
