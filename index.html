@@ -60,9 +60,9 @@ text.legend {
 <script>
 
 d3.json("jsons/biology.json", function(error, graph) { draw_graph(graph); });
+
 d3.select("select#site_name").on("change", function(){
-  draw_graph(getNodesLinks(this.value, 5));
-  draw_graph(getNodesLinks('academia', 5));
+  draw_graph(getNodesLinks(this.value, 32));
 });
 
 function draw_graph(graph){
