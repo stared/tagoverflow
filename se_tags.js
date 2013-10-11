@@ -1,5 +1,5 @@
 var apiName = "http://api.stackexchange.com/2.1/";
-//var pageSize = 32;
+var apiKey = "of3hmyFapahonChi8EED6g((";
 
 function httpGetJSON(theUrl)
 {
@@ -15,7 +15,9 @@ function fetchSiteStats(siteName)
 {
   return httpGetJSON(apiName
               + "info?site="
-              + siteName).items;
+              + siteName
+              + "&key="
+              + apiKey).items;
 }
     
 function fetchPopularTags(siteName, pageSize)
@@ -24,7 +26,9 @@ function fetchPopularTags(siteName, pageSize)
               + "tags?pagesize="
               + pageSize
               + "&order=desc&sort=popular&site="
-              + siteName).items;
+              + siteName
+              + "&key="
+              + apiKey).items;
 }
 
 // not all connections may appear (higher number of related tags?)
@@ -36,7 +40,9 @@ function fetchRelatedTags(siteName, tagName, pageSize)
               + "/related?pagesize="
               + pageSize
               + "&site="
-              + siteName).items;
+              + siteName
+              + "&key="
+              + apiKey).items;
 }
 
 function tagConnections(siteName, popularTags, pageSize)
