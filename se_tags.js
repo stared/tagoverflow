@@ -85,7 +85,7 @@ function getNodesLinks(siteName, pageSize)
 
   // var pageSize = 20;
   var nodes = fetchPopularTags(siteName, pageSize);
-  var links = tagConnections(siteName, nodes); // change source & target name to number?
+  var links = tagConnections(siteName, nodes, pageSize); // change source & target name to number?
   return {nodes: nodes, links:links};
   
 }
