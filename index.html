@@ -34,16 +34,19 @@ text.legend {
   fill: #000;
 }
 
+
+
 </style>
 <body>
   <p>TagOverflow v0.1</p>
   <p>Select site:
     <select id="site_name">
-      <option value="biology">Biology</option>
+     <!-- <option value="biology">Biology</option>
       <option value="academia">Academia</option>
       <option value="mathoverflow">MathOverflow</option>
       <option value="physics">Physics</option>
-      <option value="stackoverflow">StackOverflow</option>
+      <option value="stackoverflow">StackOverflow</option>-->
+      
     </select>
   </p>
     <p>Select number of tags:
@@ -58,6 +61,15 @@ text.legend {
 <script src="d3.v3.min.js"></script>
 <script src="se_tags.js"></script>
 <script>
+
+var sites = fetchSites();
+
+d3.select("select#site_name").selectAll("option")
+    .data(sites)
+    .enter()
+      .append("option")
+        .attr("value", function(d){ return d.api_site_parameter; })
+        .text(function(d){ return d.name; })
 
 d3.json("jsons/biology.json", function(error, graph) { draw_graph(graph); });
 

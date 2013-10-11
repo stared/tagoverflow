@@ -11,6 +11,16 @@ function httpGetJSON(theUrl)
   return JSON.parse(xmlHttp.responseText);
 }
 
+function fetchSites()
+{
+  var sites = httpGetJSON(apiName
+              + "sites"
+              + "?key="
+              + apiKey
+              + "&pagesize=100").items;
+  return sites.filter(function(x) {return x.site_type === "main_site";});
+}
+
 function fetchSiteStats(siteName)
 {
   return httpGetJSON(apiName
