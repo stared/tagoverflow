@@ -1,5 +1,5 @@
 var apiName = "http://api.stackexchange.com/2.1/";
-var pageSize = 32;
+//var pageSize = 32;
 
 function httpGetJSON(theUrl)
 {
@@ -18,7 +18,7 @@ function fetchSiteStats(siteName)
               + siteName).items;
 }
     
-function fetchPopularTags(siteName)
+function fetchPopularTags(siteName, pageSize)
 {
   return httpGetJSON(apiName
               + "tags?pagesize="
@@ -28,7 +28,7 @@ function fetchPopularTags(siteName)
 }
 
 // not all connections may appear (higher number of related tags?)
-function fetchRelatedTags(siteName, tagName)
+function fetchRelatedTags(siteName, tagName, pageSize)
 {
   return httpGetJSON(apiName 
               + "tags/"
@@ -39,7 +39,7 @@ function fetchRelatedTags(siteName, tagName)
               + siteName).items;
 }
 
-function tagConnections(siteName, popularTags)
+function tagConnections(siteName, popularTags, pageSize)
 {
   var siteInfo = fetchSiteStats(siteName);
   var noQuestion = siteInfo[0].total_questions;
@@ -55,7 +55,7 @@ function tagConnections(siteName, popularTags)
    
   for (var i = 0; i < popularTags.length; i++)
   {
-    var relatedTags = fetchRelatedTags(siteName, popularTags[i].name);
+    var relatedTags = fetchRelatedTags(siteName, popularTags[i].name, pageSize);
     for (var j = 0; j < relatedTags.length; j++)
     {
       var relatedTag = relatedTags[j];
@@ -80,11 +80,11 @@ function tagConnections(siteName, popularTags)
 
 }
 
-function getNodesLinks(siteName)
+function getNodesLinks(siteName, pageSize)
 {
 
   // var pageSize = 20;
-  var nodes = fetchPopularTags(siteName);
+  var nodes = fetchPopularTags(siteName, pageSize);
   var links = tagConnections(siteName, nodes); // change source & target name to number?
   return {nodes: nodes, links:links};
   
