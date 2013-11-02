@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="tagoverflow.css">
 </head>
 <body>
-  <p>TagOverflow v0.1</p>
+  <p>TagOverflow v0.2 (not-yet-publishable)</p>
   <p>Select site:
     <select id="site_name">
      <!-- <option value="biology">Biology</option>
@@ -29,12 +29,16 @@
     </select>
   </p>
 <div class="site_info">
-  <h2 id="title"></h2>
+  <h2 id="title">(Select site!)</h2>
   <div id="dscr">(Here will be some info on the site.)</div>
 </div>
-<div class="tag_info">(And here: on the tag.)</div>
+<div class="tag_info">
+  <h2 id="title">(Click on tag!)</h2>
+  <div id="dscr">(And here: on the tag.)</div>
+</div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="d3.v3.min.js"></script>
+<script src="se_query.js"></script>
 <script src="se_tags.js"></script>
 <script>
 
@@ -181,7 +185,10 @@ var force = d3.layout.force()
       .style("fill-opacity", 1)
 
   };
-  var click_node = function(z){ 
+
+  var click_node = function(z){
+    $(".tag_info #title").html(z.name);
+    $(".tag_info #dscr").html("count: " + z.count);
   };
 
 };
