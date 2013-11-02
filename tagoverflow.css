@@ -34,7 +34,6 @@ div.site_info {
 	color: #ddd;
 	border: solid 1px #aaa;
 	border-radius: 4px;
-	pointer-events: none;
 	z-index:10;
     /*overflow-y: auto;*/
 }
@@ -49,7 +48,6 @@ div.tag_info {
   color: #222;
   border: solid 1px #aaa;
   border-radius: 4px;
-  pointer-events: none;
   z-index:10;
   /*overflow-y: auto;*/
 }
