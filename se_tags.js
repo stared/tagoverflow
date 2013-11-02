@@ -1,5 +1,4 @@
-var apiName = "http://api.stackexchange.com/2.1/";
-var apiKey = "of3hmyFapahonChi8EED6g((";
+// require se_query.js
 
 function httpGetJSON(theUrl)
 {
@@ -13,11 +12,7 @@ function httpGetJSON(theUrl)
 
 function fetchSites()
 {
-  var sites = httpGetJSON(apiName
-              + "sites"
-              + "?key="
-              + apiKey
-              + "&pagesize=100").items;
+  sites = seQuery("sites", {}, 10000);
   return sites.filter(function(x) {return x.site_type === "main_site";})
               .sort(function(x,y){
                 if (x.name > y.name)
