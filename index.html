@@ -190,13 +190,13 @@ var force = d3.layout.force()
     $(".tag_info #title").html(z.name);
     //$(".tag_info #dscr").html("count: " + z.count);
     var askers = fetchTopAskers(siteName, z.name);
-    var askersNames = [];
+    var askersNames = "";
     for (var i = 0; i < askers.length; i++)
      {
      console.log(askers[i].user.display_name);
-     askersNames.push(askers[i].user.display_name);
+     askersNames += askers[i].user.display_name + "<br/>";
      };
-     $(".tag_info #dscr").html(askersNames);
+     $(".tag_info #dscr").html("<b>Top askers:</b><br/>" + askersNames);
   };
 
 };
