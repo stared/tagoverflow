@@ -28,13 +28,21 @@
       <option value="100">100</option>
     </select>
   </p>
-<div class="site_info">(Here will be some info on the site.)</div>
+<div class="site_info">
+  <h2 id="title"></h2>
+  <div id="dscr">(Here will be some info on the site.)</div>
+</div>
 <div class="tag_info">(And here: on the tag.)</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="d3.v3.min.js"></script>
 <script src="se_tags.js"></script>
 <script>
 
 var sites = fetchSites();
+sitesDict = {};
+for(var i=0; i < sites.length; i++){
+  sitesDict[sites[i]["api_site_parameter"]] = sites[i]
+}
 
 d3.select("select#site_name").selectAll("option")
     .data(sites)
@@ -43,21 +51,26 @@ d3.select("select#site_name").selectAll("option")
         .attr("value", function(d){ return d.api_site_parameter; })
         .text(function(d){ return d.name; })
 
-d3.json("jsons/biology.json", function(error, graph) { draw_graph(graph); });
+// d3.json("jsons/biology.json", function(error, graph) { draw_graph(graph); });
 
 d3.select("select#site_name").on("change", function(){
   var  pageSize = parseInt(d3.select("select#pageSize")[0][0].value);
-  draw_graph(getNodesLinks(this.value, pageSize));
+  var  siteName = this.value;
+  draw_graph(getNodesLinks(siteName, pageSize), siteName);
 });
 
 d3.select("select#pageSize").on("change", function(){
   var  pageSize = this.value;
   var  siteName = d3.select("select#site_name")[0][0].value;
-  draw_graph(getNodesLinks(siteName, pageSize));
+  draw_graph(getNodesLinks(siteName, pageSize), siteName);
 });
 
 
-function draw_graph(graph){
+function draw_graph(graph, siteName){
+
+// var siteInfo = fetchSiteStats(siteName);
+$(".site_info #title").html(sitesDict[siteName].name);
+$(".site_info #dscr").html(sitesDict[siteName].audience);
 
 d3.select("body").select("svg").remove();
 
