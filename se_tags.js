@@ -24,39 +24,22 @@ function fetchSites()
 
 function fetchSiteStats(siteName)
 {
-  return httpGetJSON(apiName
-              + "info?site="
-              + siteName
-              + "&key="
-              + apiKey).items;
+  return seQuery("info", {site: siteName}, 1);
 }
     
-function fetchPopularTags(siteName, pageSize)
+function fetchPopularTags(siteName, tagLimit)
 {
-  return httpGetJSON(apiName
-              + "tags?pagesize="
-              + pageSize
-              + "&order=desc&sort=popular&site="
-              + siteName
-              + "&key="
-              + apiKey).items;
+  return seQuery("tags", {site: siteName, sort: "popular", order: "desc"}, tagLimit);
 }
 
 // not all connections may appear (higher number of related tags?)
-function fetchRelatedTags(siteName, tagName, pageSize)
+function fetchRelatedTags(siteName, tagName, tagLimit)
 {
-  return httpGetJSON(apiName 
-              + "tags/"
-              + tagName.replace("#", "%23")  // may be problems with other characteres
-              + "/related?pagesize="
-              + pageSize
-              + "&site="
-              + siteName
-              + "&key="
-              + apiKey).items;
+  var tagNameFixed = tagName.replace("#", "%23");  // may be problems with other characteres
+  return seQuery("tags/" + tagNameFixed + "/related", {site: siteName}, tagLimit);
 }
 
-function tagConnections(siteName, popularTags, pageSize)
+function tagConnections(siteName, popularTags, tagLimit)
 {
   var siteInfo = fetchSiteStats(siteName);
   var noQuestion = siteInfo[0].total_questions;
@@ -72,7 +55,7 @@ function tagConnections(siteName, popularTags, pageSize)
    
   for (var i = 0; i < popularTags.length; i++)
   {
-    var relatedTags = fetchRelatedTags(siteName, popularTags[i].name, pageSize);
+    var relatedTags = fetchRelatedTags(siteName, popularTags[i].name, tagLimit);
     for (var j = 0; j < relatedTags.length; j++)
     {
       var relatedTag = relatedTags[j];
@@ -97,12 +80,29 @@ function tagConnections(siteName, popularTags, pageSize)
 
 }
 
-function getNodesLinks(siteName, pageSize)
+function getNodesLinks(siteName, tagLimit)
 {
 
-  // var pageSize = 20;
-  var nodes = fetchPopularTags(siteName, pageSize);
-  var links = tagConnections(siteName, nodes, pageSize); // change source & target name to number?
+  // var tagLimit = 20;
+  var nodes = fetchPopularTags(siteName, tagLimit);
+  var links = tagConnections(siteName, nodes, tagLimit); // change source & target name to number?
   return {nodes: nodes, links:links};
   
 }
+
+
+// not yet finished
+var SeDataLoader = function(site_name){
+  this.status = "Initializing...";
+  this.site_name = site_name;
+  this.site_stats = fetchSiteStats(site_name);
+  this.tags = [];
+
+  // load site stats
+  // load tags
+  // load tags connections
+  // create nodes & links
+  // load auxiliary information
+  // show loading status
+  // tag info chached
+};
