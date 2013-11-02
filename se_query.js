@@ -1,0 +1,37 @@
+var apiName = "http://api.stackexchange.com/2.1/";
+var apiKey = "of3hmyFapahonChi8EED6g((";
+
+function httpGetJSON(theUrl)
+{
+  var xmlHttp = null;
+
+  xmlHttp = new XMLHttpRequest();
+  xmlHttp.open("GET", theUrl, false);
+  xmlHttp.send(null);
+  return JSON.parse(xmlHttp.responseText);
+}
+
+var seQuery = function(command, dict, noOfItems){
+  var pageSize = noOfItems || 100;
+  pageSize = Math.min(pageSize, 100);
+  var queryString = apiName + command + "/?";
+  for (var k in dict) {
+    queryString += k + "=" + dict[k] + "&";
+  }
+  var res = [];
+  queryString += "key=" + apiKey + "&pagesize=" + pageSize;
+  for (var i=0; (noOfItems === undefined) || (i * pageSize < noOfItems); i++){
+    var resp = httpGetJSON(queryString + "&page=" + (i+1));
+    if (resp.items === undefined){
+      console.log("Error with SE API:\n(call: "
+                  + queryString + "&page=" + (i+1) + ")\n"
+                  + JSON.stringify(resp, null, 2)
+      );
+      return undefined;
+    }
+    res = res.concat(resp.items);
+    if (resp.has_more === false)
+      break;
+  }
+  return res;
+};
