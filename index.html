@@ -92,9 +92,9 @@ var count_scale = d3.scale.linear()
   .range([0, 2500]);
 
 var force = d3.layout.force()
-    .charge( function(d) { return -50 * Math.sqrt(count_scale(d.count))} )
+    .charge( function(d) { return -70 * Math.sqrt(count_scale(d.count))} )
     .linkDistance(50)
-    .gravity(0.15)
+    .gravity(0.4)
     .size([width - 250, height]);
 
   var main = svg.append("g")

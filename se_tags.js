@@ -35,7 +35,7 @@ function fetchPopularTags(siteName, tagLimit)
 // not all connections may appear (higher number of related tags?)
 function fetchRelatedTags(siteName, tagName, tagLimit)
 {
-  var tagNameFixed = tagName.replace("#", "%23");  // may be problems with other characteres
+  var tagNameFixed = tagName.replace("#", "%23");  // for "C#" may be problems with other characteres
   return seQuery("tags/" + tagNameFixed + "/related", {site: siteName}, tagLimit);
 }
 
@@ -100,7 +100,8 @@ function getNodesLinks(siteName, tagLimit)
 function fetchTopAskers(siteName, tagName)
 {
   var askersSize = 5;
-  return seQuery("tags/" + tagName + "/top-askers/all_time", {site: siteName}, askersSize);
+  var tagNameFixed = tagName.replace("#", "%23");  // for "C#" may be problems with other characteres
+  return seQuery("tags/" + tagNameFixed + "/top-askers/all_time", {site: siteName}, askersSize);
 }
 
 
@@ -118,4 +119,5 @@ var SeDataLoader = function(site_name){
   // load auxiliary information
   // show loading status
   // tag info chached
+  this.status = "DONE!";
 };
