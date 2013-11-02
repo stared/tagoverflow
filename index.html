@@ -36,6 +36,7 @@
 <div class="tag_info">
   <h2 id="title">(Click on tag!)</h2>
   <div id="dscr">(And here: on the tag.)</div>
+  <div id="askers">(And here: on the tag.)</div>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="d3.v3.min.js"></script>
@@ -190,15 +191,14 @@ var force = d3.layout.force()
 
   var click_node = function(z){
     $(".tag_info #title").html(z.name);
-    //$(".tag_info #dscr").html("count: " + z.count);
+    $(".tag_info #dscr").html("count: " + z.count);
     var askers = fetchTopAskers(siteName, z.name);
     var askersNames = "";
     for (var i = 0; i < askers.length; i++)
      {
-     console.log('<a href="' + askers[i].link + '">');
-     askersNames += '<a href="' + askers[i].user.link + '">' + '<img src="' + askers[i].user.profile_image + '" width="50" height="50">' + askers[i].user.display_name + "</a><br/>";
+     askersNames += '<a href="' + askers[i].user.link + '">' + '<img src="' + askers[i].user.profile_image + '" width="32" height="32">' + askers[i].user.display_name + "</a><br/>";
      };
-     $(".tag_info #dscr").html("<b>Top askers:</b><br/>" + askersNames);
+     $(".tag_info #askers").html("<b>Top askers:</b><br/>" + askersNames);
   };
 
 };
