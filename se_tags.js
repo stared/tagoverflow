@@ -55,6 +55,9 @@ function tagConnections(siteName, popularTags, tagLimit)
    
   for (var i = 0; i < popularTags.length; i++)
   {
+    // // UGLY - delete ASAP ->
+    // $(".site_info #loading_status").html("Loading tag info: " + (i+1) + "/" + popularTags.length + "...");
+    // // <- UGLU - delete ASAP
     var relatedTags = fetchRelatedTags(siteName, popularTags[i].name, tagLimit);
     for (var j = 0; j < relatedTags.length; j++)
     {
@@ -75,6 +78,10 @@ function tagConnections(siteName, popularTags, tagLimit)
       }
     }
   }
+
+  // // UGLY - delete ASAP ->
+  // $(".site_info #loading_status").html("");
+  // // <- UGLU - delete ASAP
   
   return links;
 
