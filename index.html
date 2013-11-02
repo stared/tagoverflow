@@ -188,7 +188,15 @@ var force = d3.layout.force()
 
   var click_node = function(z){
     $(".tag_info #title").html(z.name);
-    $(".tag_info #dscr").html("count: " + z.count);
+    //$(".tag_info #dscr").html("count: " + z.count);
+    var askers = fetchTopAskers(siteName, z.name);
+    var askersNames = [];
+    for (var i = 0; i < askers.length; i++)
+     {
+     console.log(askers[i].user.display_name);
+     askersNames.push(askers[i].user.display_name);
+     };
+     $(".tag_info #dscr").html(askersNames);
   };
 
 };

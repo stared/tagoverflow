@@ -109,5 +109,19 @@ function getNodesLinks(siteName, pageSize)
   var nodes = fetchPopularTags(siteName, pageSize);
   var links = tagConnections(siteName, nodes, pageSize); // change source & target name to number?
   return {nodes: nodes, links:links};
+}
+
   
+function fetchTopAskers(siteName, tagName)
+{
+  var askersSize = 5;
+  return httpGetJSON(apiName
+              + "tags/"
+              + tagName
+              + "/top-askers/all_time?pagesize="
+              + askersSize
+              + "&site="
+              + siteName
+              + "&key="
+              + apiKey).items; 
 }
