@@ -100,15 +100,7 @@ function getNodesLinks(siteName, tagLimit)
 function fetchTopAskers(siteName, tagName)
 {
   var askersSize = 5;
-  return httpGetJSON(apiName
-              + "tags/"
-              + tagName
-              + "/top-askers/all_time?pagesize="
-              + askersSize
-              + "&site="
-              + siteName
-              + "&key="
-              + apiKey).items; 
+  return seQuery("tags/" + tagName + "/top-askers/all_time", {site: siteName}, askersSize);
 }
 
 
