@@ -1,5 +1,4 @@
-var apiName = "http://api.stackexchange.com/2.1/";
-var apiKey = "of3hmyFapahonChi8EED6g((";
+// require se_query.js
 
 function httpGetJSON(theUrl)
 {
@@ -13,11 +12,7 @@ function httpGetJSON(theUrl)
 
 function fetchSites()
 {
-  var sites = httpGetJSON(apiName
-              + "sites"
-              + "?key="
-              + apiKey
-              + "&pagesize=100").items;
+  sites = seQuery("sites", {}, 10000);
   return sites.filter(function(x) {return x.site_type === "main_site";})
               .sort(function(x,y){
                 if (x.name > y.name)
@@ -29,39 +24,22 @@ function fetchSites()
 
 function fetchSiteStats(siteName)
 {
-  return httpGetJSON(apiName
-              + "info?site="
-              + siteName
-              + "&key="
-              + apiKey).items;
+  return seQuery("info", {site: siteName}, 1);
 }
     
-function fetchPopularTags(siteName, pageSize)
+function fetchPopularTags(siteName, tagLimit)
 {
-  return httpGetJSON(apiName
-              + "tags?pagesize="
-              + pageSize
-              + "&order=desc&sort=popular&site="
-              + siteName
-              + "&key="
-              + apiKey).items;
+  return seQuery("tags", {site: siteName, sort: "popular", order: "desc"}, tagLimit);
 }
 
 // not all connections may appear (higher number of related tags?)
-function fetchRelatedTags(siteName, tagName, pageSize)
+function fetchRelatedTags(siteName, tagName, tagLimit)
 {
-  return httpGetJSON(apiName 
-              + "tags/"
-              + tagName.replace("#", "%23")  // may be problems with other characteres
-              + "/related?pagesize="
-              + pageSize
-              + "&site="
-              + siteName
-              + "&key="
-              + apiKey).items;
+  var tagNameFixed = tagName.replace("#", "%23");  // may be problems with other characteres
+  return seQuery("tags/" + tagNameFixed + "/related", {site: siteName}, tagLimit);
 }
 
-function tagConnections(siteName, popularTags, pageSize)
+function tagConnections(siteName, popularTags, tagLimit)
 {
   var siteInfo = fetchSiteStats(siteName);
   var noQuestion = siteInfo[0].total_questions;
@@ -77,7 +55,10 @@ function tagConnections(siteName, popularTags, pageSize)
    
   for (var i = 0; i < popularTags.length; i++)
   {
-    var relatedTags = fetchRelatedTags(siteName, popularTags[i].name, pageSize);
+    // // UGLY - delete ASAP ->
+    // $(".site_info #loading_status").html("Loading tag info: " + (i+1) + "/" + popularTags.length + "...");
+    // // <- UGLU - delete ASAP
+    var relatedTags = fetchRelatedTags(siteName, popularTags[i].name, tagLimit);
     for (var j = 0; j < relatedTags.length; j++)
     {
       var relatedTag = relatedTags[j];
@@ -97,17 +78,21 @@ function tagConnections(siteName, popularTags, pageSize)
       }
     }
   }
+
+  // // UGLY - delete ASAP ->
+  // $(".site_info #loading_status").html("");
+  // // <- UGLU - delete ASAP
   
   return links;
 
 }
 
-function getNodesLinks(siteName, pageSize)
+function getNodesLinks(siteName, tagLimit)
 {
 
-  // var pageSize = 20;
-  var nodes = fetchPopularTags(siteName, pageSize);
-  var links = tagConnections(siteName, nodes, pageSize); // change source & target name to number?
+  // var tagLimit = 20;
+  var nodes = fetchPopularTags(siteName, tagLimit);
+  var links = tagConnections(siteName, nodes, tagLimit); // change source & target name to number?
   return {nodes: nodes, links:links};
 }
 
@@ -115,13 +100,22 @@ function getNodesLinks(siteName, pageSize)
 function fetchTopAskers(siteName, tagName)
 {
   var askersSize = 5;
-  return httpGetJSON(apiName
-              + "tags/"
-              + tagName
-              + "/top-askers/all_time?pagesize="
-              + askersSize
-              + "&site="
-              + siteName
-              + "&key="
-              + apiKey).items; 
+  return seQuery("tags/" + tagName + "/top-askers/all_time", {site: siteName}, askersSize);
 }
+
+
+// not yet finished
+var SeDataLoader = function(site_name){
+  this.status = "Initializing...";
+  this.site_name = site_name;
+  this.site_stats = fetchSiteStats(site_name);
+  this.tags = [];
+
+  // load site stats
+  // load tags
+  // load tags connections
+  // create nodes & links
+  // load auxiliary information
+  // show loading status
+  // tag info chached
+};
