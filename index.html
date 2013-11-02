@@ -113,7 +113,8 @@ var force = d3.layout.force()
       .attr("r", function(d) { return 0.5 * Math.sqrt(count_scale(d.count)); })
       .style("fill", function(d){ return "red" } )
       .on("mouseover", function(d) { mouseover_node(d); })
-      .on("mouseout", function(d) { mouseout_node(d) });
+      .on("mouseout", function(d) { mouseout_node(d) })
+      .on("click", function(d){ click_node(d) });
 
   var label = main.selectAll(".node_label")
       .data(graph.nodes)
@@ -179,6 +180,8 @@ var force = d3.layout.force()
       .attr("font-size", 10)
       .style("fill-opacity", 1)
 
+  };
+  var click_node = function(z){ 
   };
 
 };
