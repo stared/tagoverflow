@@ -104,7 +104,7 @@ function fetchTopAskers(siteName, tagName)
   return seQuery("tags/" + tagNameFixed + "/top-askers/all_time", {site: siteName}, askersSize);
 }
 
-function fetchTopAanswerers(siteName, tagName)
+function fetchTopAnswerers(siteName, tagName)
 {
   var answerersSize = 5;
   return seQuery("tags/" + tagName + "/top-answerers/all_time", {site: siteName}, answerersSize);

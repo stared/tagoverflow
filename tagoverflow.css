@@ -58,6 +58,12 @@ div.subtitle {
   font-weight: bold;
 }
 
+div.subsubtitle {
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
 ul
 {
   list-style-type: none;

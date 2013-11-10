@@ -40,7 +40,14 @@
     <span id="title">(Click on tag!)</h2>
   </div>
   <div id="dscr">(And here: on the tag.)</div>
-  <div id="askers"><ul></ul></div>
+  <div id="askers" style="width: 45%; float:left">
+    <div class="subsubtitle">top askers</div>
+    <ul></ul>
+  </div>
+  <div id="answerers" style="width: 45%; float:right">
+    <div class="subsubtitle">top answerers</div>
+    <ul></ul>
+  </div>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="d3.v3.min.js"></script>
@@ -196,6 +203,8 @@ var force = d3.layout.force()
   var click_node = function(z){
     $(".tag_info #title").html(z.name);
     $(".tag_info #dscr").html("count: " + z.count);
+
+
     var askers = fetchTopAskers(siteName, z.name);
 
     var d3asker = d3.select(".tag_info #askers ul").selectAll("a")
@@ -224,6 +233,39 @@ var force = d3.layout.force()
       .text(function (d) { return d.user.display_name; });
 
     d3asker.exit()
+      .remove();
+
+
+    var answerers = fetchTopAnswerers(siteName, z.name);
+
+    var d3answerer = d3.select(".tag_info #answerers ul").selectAll("a")
+      .data(answerers);
+    
+    var answerer = d3answerer.enter()
+      .append("li")
+        .append("a")
+          .append("div")
+            .style("display", "table-cell")
+            .style("vertical-align", "middle")
+            .style("overflow", "hidden");
+
+    answerer.append("img")
+      .style("vertical-align", "middle");
+    answerer.append("span")  // or "p", or "div"
+      .style("width", 100);
+
+    d3answerer.select("a")
+      .attr("href", function (d) { return d.user.link; });
+
+    d3answerer.select("a div img")
+      .attr("src", function (d) { return d.user.profile_image; })
+      .attr("width", 32)
+      .attr("height", 32);
+
+    d3answerer.select("a div span")
+      .text(function (d) { return d.user.display_name; });
+
+    d3answerer.exit()
       .remove();
 
   };
