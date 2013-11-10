@@ -51,3 +51,10 @@ div.tag_info {
   z-index:10;
   /*overflow-y: auto;*/
 }
+
+ul
+{
+  list-style-type: none;
+  list-style:none;
+  padding-left:0;
+}

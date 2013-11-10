@@ -36,7 +36,7 @@
 <div class="tag_info">
   <h2 id="title">(Click on tag!)</h2>
   <div id="dscr">(And here: on the tag.)</div>
-  <div id="askers"></div>
+  <div id="askers"><ul></ul></div>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="d3.v3.min.js"></script>
@@ -193,12 +193,35 @@ var force = d3.layout.force()
     $(".tag_info #title").html(z.name);
     $(".tag_info #dscr").html("count: " + z.count);
     var askers = fetchTopAskers(siteName, z.name);
-    var askersNames = "";
-    for (var i = 0; i < askers.length; i++)
-     {
-     askersNames += '<a href="' + askers[i].user.link + '">' + '<img src="' + askers[i].user.profile_image + '" width="32" height="32">' + askers[i].user.display_name + "</a><br/>";
-     };
-     $(".tag_info #askers").html("<b>Top askers:</b><br/>" + askersNames);
+
+    var d3asker = d3.select(".tag_info #askers ul").selectAll("a")
+      .data(askers);
+    
+    var asker = d3asker.enter()
+      .append("li")
+        .append("a")
+          .append("div")
+            .style("display", "table-cell")
+            .style("vertical-align", "middle");
+
+    asker.append("img")
+      .style("vertical-align", "middle");
+    asker.append("span");  // or "p", or "div" 
+
+    d3asker.select("a")
+      .attr("href", function (d) { return d.user.link; });
+
+    d3asker.select("a div img")
+      .attr("src", function (d) { return d.user.profile_image; })
+      .attr("width", 32)
+      .attr("height", 32);
+
+    d3asker.select("a div span")
+      .text(function (d) { return d.user.display_name; });
+
+    d3asker.exit()
+      .remove();
+
   };
 
 };
