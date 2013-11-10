@@ -26,10 +26,10 @@ text.legend {
 
 div.site_info {
 	position: fixed;
-	top: 50px;
+	top: 20px;
 	right: 20px;
   padding: 12px;
-  width: 260px;
+  width: 300px;
   background: #000;
 	color: #ddd;
 	border: solid 1px #aaa;
@@ -40,10 +40,10 @@ div.site_info {
 
 div.tag_info {
 	position: fixed;
-	top: 250px;
+	top: 170px;
 	right: 20px;
   padding: 12px;
-  width: 260px;
+  width: 300px;
   background: #eee;
   color: #222;
   border: solid 1px #aaa;
@@ -52,9 +52,20 @@ div.tag_info {
   /*overflow-y: auto;*/
 }
 
+div.subtitle {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 ul
 {
   list-style-type: none;
   list-style:none;
   padding-left:0;
 }
+
+a:link { color:#33a; text-decoration: none; }
+a:visited { color:#833; text-decoration: none; }
+a:hover { color:#aaa; text-decoration: none; }
+/*a:active { color:#aaa; text-decoration: underline; }*/
