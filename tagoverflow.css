@@ -52,6 +52,13 @@ div.tag_info {
   /*overflow-y: auto;*/
 }
 
+div.questions {
+  position: absolute;
+  top: 300px;
+  width: 100%;
+  height: 400px;
+}
+
 div.subtitle {
   text-align: center;
   font-size: 1.5em;

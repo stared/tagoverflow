@@ -111,11 +111,18 @@ function fetchTopAnswerers(siteName, tagName)
   return seQuery("tags/" + tagNameFixed + "/top-answerers/all_time", {site: siteName}, answerersSize);
 }
 
-function fetchFrequentQuestions(siteName, tagName)
+// function fetchFrequentQuestions(siteName, tagName)
+// {
+//   var faqSize = 5;
+//   var tagNameFixed = tagName.replace("#", "%23");
+//   return seQuery("tags/" + tagNameFixed + "/faq", {site: siteName}, faqSize);
+// }
+
+function fetchTopQuestions(siteName, tagName)
 {
-  var faqSize = 5;
+  var howMany = 5;
   var tagNameFixed = tagName.replace("#", "%23");
-  return seQuery("tags/" + tagNameFixed + "/faq", {site: siteName}, faqSize);
+  return seQuery("questions", {site: siteName, tagged: tagNameFixed, sort: "votes", order: "desc"}, howMany);
 }
 
 function fetchLastQuestions(siteName, tagName)

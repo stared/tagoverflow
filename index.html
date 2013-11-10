@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="tagoverflow.css">
 </head>
 <body>
-  <p>TagOverflow v0.2 (not-yet-publishable)</p>
+  <p>TagOverflow v0.3 (not-yet-publishable)</p>
   <p>Select site:
     <select id="site_name">
      <!-- <option value="biology">Biology</option>
@@ -46,6 +46,10 @@
   </div>
   <div id="answerers" style="width: 45%; float:right">
     <div class="subsubtitle">top answerers</div>
+    <ul></ul>
+  </div>
+  <div id="questions" class="questions">
+    <div class="subsubtitle">top questions</div>
     <ul></ul>
   </div>
 </div>
@@ -208,7 +212,7 @@ var force = d3.layout.force()
 
     var askers = fetchTopAskers(siteName, z.name);
 
-    var d3asker = d3.select(".tag_info #askers ul").selectAll("a")
+    var d3asker = d3.select(".tag_info #askers ul").selectAll("li")
       .data(askers);
     
     var asker = d3asker.enter()
@@ -239,7 +243,7 @@ var force = d3.layout.force()
 
     var answerers = fetchTopAnswerers(siteName, z.name);
 
-    var d3answerer = d3.select(".tag_info #answerers ul").selectAll("a")
+    var d3answerer = d3.select(".tag_info #answerers ul").selectAll("li")
       .data(answerers);
     
     var answerer = d3answerer.enter()
@@ -268,6 +272,26 @@ var force = d3.layout.force()
 
     d3answerer.exit()
       .remove();
+
+
+    var questions = fetchTopQuestions(siteName, z.name);
+
+    var d3question = d3.select(".tag_info #questions ul").selectAll("li")
+      .data(questions);
+
+    d3question.enter()
+      .append("li")
+        .append("a");
+
+    d3question.select("a")
+      .attr("href", function (d) { return d.link; })
+      .text(function (d) { return d.title; });
+
+    d3question.exit()
+      .remove();
+    
+
+    console.log(questions);
 
   };
 
