@@ -107,29 +107,51 @@ function fetchTopAskers(siteName, tagName)
 function fetchTopAanswerers(siteName, tagName)
 {
   var answerersSize = 5;
-  return seQuery("tags/" + tagName + "/top-answerers/all_time", {site: siteName}, answerersSize);
+  var tagNameFixed = tagName.replace("#", "%23");
+  return seQuery("tags/" + tagNameFixed + "/top-answerers/all_time", {site: siteName}, answerersSize);
 }
 
 function fetchFrequentQuestions(siteName, tagName)
 {
   var faqSize = 5;
-  return seQuery("tags/" + tagName + "/faq", {site: siteName}, faqSize);
+  var tagNameFixed = tagName.replace("#", "%23");
+  return seQuery("tags/" + tagNameFixed + "/faq", {site: siteName}, faqSize);
 }
 
 function fetchLastQuestions(siteName, tagName)
 {
   var size = 100;
   //TODO: todate
-  return seQuery("questions?order=desc&sort=creation&tagged=" + tagName, {site: siteName}, size);
+  var tagNameFixed = tagName.replace("#", "%23");
+  return seQuery("questions", {order: "desc", sort: "creation", tagged: tagNameFixed, site: siteName}, size);
+  //return seQuery("questions?order=desc&sort=creation&tagged=" + tagNameFixed, {site: siteName}, size);
 }
 
-function percentAnswered(questions)
+function answered(siteName, tagName)
 {
+  var questions=fetchLastQuestions(siteName, tagName);
   var questionNumber=questions.length;
   var answeredNumber=questions.filter(function(x) {return x.is_answered;}).length;
   if (questionNumber>0) {return answeredNumber/questionNumber}
   else {return 0};
 }
+
+var color = d3.scale.linear()
+  .domain([0, 1])
+  .range(["red", "blue"])
+
+function tagsColors(siteName, tags)
+{
+  var colors ={}
+  for (var i = 0; i < tags.length; i++)
+  {
+    tagName=tags[i].name;
+    console.log(tagName)
+    colors[tagName]=color(answered(siteName, tagName))
+    //colors.push(tagName:color(answered(siteName, tagName)));
+  };
+  return colors;
+};
 
 // not yet finished
 var SeDataLoader = function(site_name){
