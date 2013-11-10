@@ -103,6 +103,17 @@ function fetchTopAskers(siteName, tagName)
   return seQuery("tags/" + tagName + "/top-askers/all_time", {site: siteName}, askersSize);
 }
 
+function fetchTopAanswerers(siteName, tagName)
+{
+  var answerersSize = 5;
+  return seQuery("tags/" + tagName + "/top-answerers/all_time", {site: siteName}, answerersSize);
+}
+
+function fetchFrequentQuestions(siteName, tagName)
+{
+  var faqSize = 5;
+  return seQuery("tags/" + tagName + "/faq", {site: siteName}, faqSize);
+}
 
 // not yet finished
 var SeDataLoader = function(site_name){

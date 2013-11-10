@@ -196,7 +196,7 @@ var force = d3.layout.force()
     for (var i = 0; i < askers.length; i++)
      {
      console.log('<a href="' + askers[i].link + '">');
-     askersNames += '<a href="' + askers[i].user.link + '">' + '<img src="' + askers[i].user.profile_image + '" width="50" height="50">' + askers[i].user.display_name + "</a><br/>";
+     askersNames += '<a href="' + askers[i].user.link + '">' + '<img src="' + askers[i].user.profile_image + '" width="32" height="32">' + askers[i].user.display_name + "</a><br/>";
      };
      $(".tag_info #dscr").html("<b>Top askers:</b><br/>" + askersNames);
   };
