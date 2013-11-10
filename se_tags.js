@@ -116,6 +116,21 @@ function fetchFrequentQuestions(siteName, tagName)
   return seQuery("tags/" + tagName + "/faq", {site: siteName}, faqSize);
 }
 
+function fetchLastQuestions(siteName, tagName)
+{
+  var size = 100;
+  //TODO: todate
+  return seQuery("questions?order=desc&sort=creation&tagged=" + tagName, {site: siteName}, size);
+}
+
+function percentAnswered(questions)
+{
+  var questionNumber=questions.length;
+  var answeredNumber=questions.filter(function(x) {return x.is_answered;}).length;
+  if (questionNumber>0) {return answeredNumber/questionNumber}
+  else {return 0};
+}
+
 // not yet finished
 var SeDataLoader = function(site_name){
   this.status = "Initializing...";
