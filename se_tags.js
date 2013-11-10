@@ -118,7 +118,7 @@ function fetchFrequentQuestions(siteName, tagName)
   return seQuery("tags/" + tagNameFixed + "/faq", {site: siteName}, faqSize);
 }
 
-function fetchLastQuestions(siteName, tagName)
+function fetchLastQuestions(siteName, tags)
 {
   var size = 100;
   //TODO: todate
