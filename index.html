@@ -193,12 +193,30 @@ var force = d3.layout.force()
     $(".tag_info #title").html(z.name);
     $(".tag_info #dscr").html("count: " + z.count);
     var askers = fetchTopAskers(siteName, z.name);
-    var askersNames = "";
-    for (var i = 0; i < askers.length; i++)
-     {
-     askersNames += '<a href="' + askers[i].user.link + '">' + '<img src="' + askers[i].user.profile_image + '" width="32" height="32">' + askers[i].user.display_name + "</a><br/>";
-     };
-     $(".tag_info #askers").html("<b>Top askers:</b><br/>" + askersNames);
+
+    var d3asker = d3.select(".tag_info #askers").selectAll("a")
+      .data(askers);
+    
+    var asker = d3asker.enter()
+      .append("a")  // or inside "li"?
+        .attr("href", function (d) { return d.user.link; });
+
+    asker.append("img")
+      .attr("src", function (d) { return d.user.profile_image; })
+      .attr("width", 32)
+      .attr("height", 32);
+    asker.append("span")  // or "p", or "div" 
+      .text(function (d) { return d.user.display_name; });
+
+    d3asker.exit()
+      .remove();
+
+    // var askersNames = "";
+    // for (var i = 0; i < askers.length; i++)
+    //  {
+    //  askersNames += '<a href="' + askers[i].user.link + '">' + '<img src="' + askers[i].user.profile_image + '" width="32" height="32">' + askers[i].user.display_name + "</a><br/>";
+    //  };
+    //  $(".tag_info #askers").html("<b>Top askers:</b><br/>" + askersNames);
   };
 
 };
