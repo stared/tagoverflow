@@ -102,6 +102,7 @@ var svg = d3.select("body").append("svg")
 var count_scale = d3.scale.linear()
   .domain([0, d3.max(graph.nodes, function (d) { return d.count; })])
   .range([0, 2500]);
+ 
 
 var force = d3.layout.force()
     .charge( function(d) { return -70 * Math.sqrt(count_scale(d.count))} )
@@ -129,7 +130,7 @@ var force = d3.layout.force()
     .enter().append("circle")
       .attr("class", "node_circle")
       .attr("r", function(d) { return 0.5 * Math.sqrt(count_scale(d.count)); })
-      .style("fill", function(d){ return "red" } )
+      .style("fill", "#888" )
       .on("mouseover", function(d) { mouseover_node(d); })
       .on("mouseout", function(d) { mouseout_node(d) })
       .on("click", function(d){ click_node(d) });
@@ -269,6 +270,14 @@ var force = d3.layout.force()
       .remove();
 
   };
+
+
+  // how to make it going _after_ the main part?
+
+  var nodes_colors = tagsColors(siteName, graph.nodes);
+
+  node.style("fill", function(d){ return nodes_colors[d.name] } );
+
 
 };
 
