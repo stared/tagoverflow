@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="tagoverflow.css">
 </head>
 <body>
-  <p>TagOverflow v0.2 (not-yet-publishable)</p>
+  <p>TagOverflow v0.3 (not-yet-publishable)</p>
   <p>Select site:
     <select id="site_name">
      <!-- <option value="biology">Biology</option>
@@ -40,7 +40,18 @@
     <span id="title">(Click on tag!)</h2>
   </div>
   <div id="dscr">(And here: on the tag.)</div>
-  <div id="askers"><ul></ul></div>
+  <div id="askers" style="width: 45%; float:left">
+    <div class="subsubtitle">top askers</div>
+    <ul></ul>
+  </div>
+  <div id="answerers" style="width: 45%; float:right">
+    <div class="subsubtitle">top answerers</div>
+    <ul></ul>
+  </div>
+  <div id="questions" class="questions">
+    <div class="subsubtitle">top questions</div>
+    <ul></ul>
+  </div>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="d3.v3.min.js"></script>
@@ -96,8 +107,6 @@ var count_scale = d3.scale.linear()
   .domain([0, d3.max(graph.nodes, function (d) { return d.count; })])
   .range([0, 2500]);
  
-var nodes_colors = tagsColors(siteName, graph.nodes)
-//console.log(node_colors)  
 
 var force = d3.layout.force()
     .charge( function(d) { return -70 * Math.sqrt(count_scale(d.count))} )
@@ -125,7 +134,7 @@ var force = d3.layout.force()
     .enter().append("circle")
       .attr("class", "node_circle")
       .attr("r", function(d) { return 0.5 * Math.sqrt(count_scale(d.count)); })
-      .style("fill", function(d){ return nodes_colors[d.name] } )
+      .style("fill", "#888" )
       .on("mouseover", function(d) { mouseover_node(d); })
       .on("mouseout", function(d) { mouseout_node(d) })
       .on("click", function(d){ click_node(d) });
@@ -199,9 +208,11 @@ var force = d3.layout.force()
   var click_node = function(z){
     $(".tag_info #title").html(z.name);
     $(".tag_info #dscr").html("count: " + z.count);
+
+
     var askers = fetchTopAskers(siteName, z.name);
 
-    var d3asker = d3.select(".tag_info #askers ul").selectAll("a")
+    var d3asker = d3.select(".tag_info #askers ul").selectAll("li")
       .data(askers);
     
     var asker = d3asker.enter()
@@ -229,7 +240,68 @@ var force = d3.layout.force()
     d3asker.exit()
       .remove();
 
-  }; 
+
+    var answerers = fetchTopAnswerers(siteName, z.name);
+
+    var d3answerer = d3.select(".tag_info #answerers ul").selectAll("li")
+      .data(answerers);
+    
+    var answerer = d3answerer.enter()
+      .append("li")
+        .append("a")
+          .append("div")
+            .style("display", "table-cell")
+            .style("vertical-align", "middle")
+            .style("overflow", "hidden");
+
+    answerer.append("img")
+      .style("vertical-align", "middle");
+    answerer.append("span")  // or "p", or "div"
+      .style("width", 100);
+
+    d3answerer.select("a")
+      .attr("href", function (d) { return d.user.link; });
+
+    d3answerer.select("a div img")
+      .attr("src", function (d) { return d.user.profile_image; })
+      .attr("width", 32)
+      .attr("height", 32);
+
+    d3answerer.select("a div span")
+      .text(function (d) { return d.user.display_name; });
+
+    d3answerer.exit()
+      .remove();
+
+
+    var questions = fetchTopQuestions(siteName, z.name);
+
+    var d3question = d3.select(".tag_info #questions ul").selectAll("li")
+      .data(questions);
+
+    d3question.enter()
+      .append("li")
+        .append("a");
+
+    d3question.select("a")
+      .attr("href", function (d) { return d.link; })
+      .text(function (d) { return d.title; });
+
+    d3question.exit()
+      .remove();
+    
+
+    console.log(questions);
+
+  };
+
+
+  // how to make it going _after_ the main part?
+
+  var nodes_colors = tagsColors(siteName, graph.nodes);
+
+  node.style("fill", function(d){ return nodes_colors[d.name] } );
+
 
 };
 

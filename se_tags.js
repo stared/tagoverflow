@@ -104,18 +104,25 @@ function fetchTopAskers(siteName, tagName)
   return seQuery("tags/" + tagNameFixed + "/top-askers/all_time", {site: siteName}, askersSize);
 }
 
-function fetchTopAanswerers(siteName, tagName)
+function fetchTopAnswerers(siteName, tagName)
 {
   var answerersSize = 5;
   var tagNameFixed = tagName.replace("#", "%23");
   return seQuery("tags/" + tagNameFixed + "/top-answerers/all_time", {site: siteName}, answerersSize);
 }
 
-function fetchFrequentQuestions(siteName, tagName)
+// function fetchFrequentQuestions(siteName, tagName)
+// {
+//   var faqSize = 5;
+//   var tagNameFixed = tagName.replace("#", "%23");
+//   return seQuery("tags/" + tagNameFixed + "/faq", {site: siteName}, faqSize);
+// }
+
+function fetchTopQuestions(siteName, tagName)
 {
-  var faqSize = 5;
+  var howMany = 5;
   var tagNameFixed = tagName.replace("#", "%23");
-  return seQuery("tags/" + tagNameFixed + "/faq", {site: siteName}, faqSize);
+  return seQuery("questions", {site: siteName, tagged: tagNameFixed, sort: "votes", order: "desc"}, howMany);
 }
 
 function fetchLastQuestions(siteName, tags)
@@ -146,7 +153,6 @@ function tagsColors(siteName, tags)
   for (var i = 0; i < tags.length; i++)
   {
     tagName=tags[i].name;
-    console.log(tagName)
     colors[tagName]=color(answered(siteName, tagName))
     //colors.push(tagName:color(answered(siteName, tagName)));
   };
