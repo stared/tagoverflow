@@ -28,16 +28,18 @@
       <option value="100">100</option>
     </select>
   </p>
+  
 <div class="site_info">
   <div class="subtitle">
-    <span id="title">(Select site!)</h2>
+    <a><span id="title">(Select site!)</span></a>
   </div>
   <div id="dscr">(Here will be some info on the site.)</div>
   <div id="loading_status"><!-- (Loading status.) --></div>
 </div>
+
 <div class="tag_info">
   <div class="subtitle">
-    <span id="title">(Click on tag!)</h2>
+    <span id="title"><a>(Click on tag!)</a></span>
   </div>
   <div id="dscr">(And here: on the tag.)</div>
   <div id="askers" style="width: 45%; float:left">
@@ -90,9 +92,12 @@ var siteName = $("select#site_name")[0].value;
 var pageSize = parseInt($("select#pageSize")[0].value);
 var graph = getNodesLinks(siteName, pageSize);
 
-// var siteInfo = fetchSiteStats(siteName);
+var siteInfo = sitesDict[siteName];
+ 
 $(".site_info #title").html(sitesDict[siteName].name);
 $(".site_info #dscr").html(sitesDict[siteName].audience);
+$(".site_info a").attr("href",siteInfo.site_url);
+
 
 d3.select("body").select("svg").remove();
 
@@ -291,7 +296,7 @@ var force = d3.layout.force()
       .remove();
     
 
-    console.log(questions);
+   // console.log(questions);
 
   };
 
@@ -302,7 +307,8 @@ var force = d3.layout.force()
 
   node.style("fill", function(d){ return nodes_colors[d.name] } );
 
-
 };
+
+
 
 </script>
