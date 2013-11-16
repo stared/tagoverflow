@@ -39,7 +39,7 @@
 
 <div class="tag_info">
   <div class="subtitle">
-    <span id="title"><a>(Click on tag!)</a></span>
+    <a><span id="title">(Click on tag!)</span></a>
   </div>
   <div id="dscr">(And here: on the tag.)</div>
   <div id="askers" style="width: 45%; float:left">
@@ -74,8 +74,10 @@ d3.select("select#site_name").selectAll("option")
         .attr("value", function(d){ return d.api_site_parameter; })
         .text(function(d){ return d.name; })
 
-$("select#site_name")[0].value = "stackoverflow";
-draw_graph();
+// $("select#site_name")[0].value = "stackoverflow";
+
+// window.onload=function(){draw_graph();};
+// // draw_graph();
 
 d3.select("select#site_name").on("change", function(){
   draw_graph();
@@ -118,6 +120,7 @@ var force = d3.layout.force()
     .linkDistance(50)
     .gravity(0.4)
     .size([width - 250, height]);
+    // .on("end", colorize);  // takes to long before it ends
 
   var main = svg.append("g")
    .attr("class", "graph");
@@ -302,10 +305,14 @@ var force = d3.layout.force()
 
 
   // how to make it going _after_ the main part?
+  function colorize () {
+    var nodes_colors = tagsColors(siteName, graph.nodes);
 
-  var nodes_colors = tagsColors(siteName, graph.nodes);
+    node.style("fill", function(d){ return nodes_colors[d.name] } );
+  };
 
-  node.style("fill", function(d){ return nodes_colors[d.name] } );
+  window.setTimeout(colorize, 1500); // hack to make it after graph is rendered
+  // very likely I should do it async
 
 };
 

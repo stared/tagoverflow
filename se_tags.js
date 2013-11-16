@@ -55,6 +55,7 @@ function tagConnections(siteName, popularTags, tagLimit)
    
   for (var i = 0; i < popularTags.length; i++)
   {
+    console.log("Tag neighbors: " + i + "/" + popularTags.length);
     // // UGLY - delete ASAP ->
     // $(".site_info #loading_status").html("Loading tag info: " + (i+1) + "/" + popularTags.length + "...");
     // // <- UGLU - delete ASAP
@@ -152,6 +153,7 @@ function tagsColors(siteName, tags)
   var colors ={}
   for (var i = 0; i < tags.length; i++)
   {
+    console.log("Tag info: " + i + "/" + tags.length);
     tagName=tags[i].name;
     colors[tagName]=color(answered(siteName, tagName))
     //colors.push(tagName:color(answered(siteName, tagName)));
