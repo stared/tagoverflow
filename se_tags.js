@@ -127,7 +127,7 @@ function fetchTopQuestions(siteName, tagName)
   return seQuery("questions", {site: siteName, tagged: tagNameFixed, sort: "votes", order: "desc"}, howMany);
 }
 
-function fetchLastQuestions(siteName, tagName)
+function fetchLastQuestions(siteName, tags)
 {
   var size = 100;
   //TODO: todate
@@ -136,12 +136,23 @@ function fetchLastQuestions(siteName, tagName)
   //return seQuery("questions?order=desc&sort=creation&tagged=" + tagNameFixed, {site: siteName}, size);
 }
 
-function answered(siteName, tagName)
+function answered(questions) 
 {
-  var questions=fetchLastQuestions(siteName, tagName);
   var questionNumber=questions.length;
   var answeredNumber=questions.filter(function(x) {return x.is_answered;}).length;
   if (questionNumber>0) {return answeredNumber/questionNumber}
+  else {return 0};
+}
+
+function questionsScore(questions)
+{
+  var questionNumber=questions.length;
+  var scoreSum = 0;
+  for (var q = 0; q < questionNumber; q++)
+  {
+    scoreSum += questions[q].score;
+  };
+  if (questionNumber>0) {return scoreSum/questionNumber}
   else {return 0};
 }
 
@@ -149,15 +160,22 @@ var color = d3.scale.linear()
   .domain([0, 1])
   .range(["red", "blue"])
 
-function tagsColors(siteName, tags)
+function answeredColors(questionsDict)
 {
-  var colors ={}
-  for (var i = 0; i < tags.length; i++)
+  colors = {};
+  for (tagName in questionsDict)
   {
-    console.log("Tag info: " + i + "/" + tags.length);
-    tagName=tags[i].name;
-    colors[tagName]=color(answered(siteName, tagName))
-    //colors.push(tagName:color(answered(siteName, tagName)));
+    colors[tagName]=color(answered(questionsDict[tagName]))
+  };
+  return colors;
+};
+
+function scoreColors(questionsDict)
+{
+  colors = {};
+  for (tagName in questionsDict)
+  {
+    colors[tagName]=color(questionsScore(questionsDict[tagName]))
   };
   return colors;
 };
