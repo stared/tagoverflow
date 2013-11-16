@@ -52,12 +52,13 @@ function tagConnections(siteName, popularTags, tagLimit)
   }
 
   var links = [];
-   
+  
+  // maybe something with setTimeout loop?
   for (var i = 0; i < popularTags.length; i++)
   {
     console.log("Tag neighbors: " + i + "/" + popularTags.length);
     // // UGLY - delete ASAP ->
-    // $(".site_info #loading_status").html("Loading tag info: " + (i+1) + "/" + popularTags.length + "...");
+    $(".site_info #loading_status").html("Loading tag info: " + (i+1) + "/" + popularTags.length + "...");
     // // <- UGLU - delete ASAP
     var relatedTags = fetchRelatedTags(siteName, popularTags[i].name, tagLimit);
     for (var j = 0; j < relatedTags.length; j++)
@@ -166,6 +167,9 @@ var SeDataLoader = function(site_name){
   this.status = "Initializing...";
   this.site_name = site_name;
   this.site_stats = fetchSiteStats(site_name);
+
+  var nodes = fetchPopularTags(siteName, tagLimit);
+
   this.tags = [];
 
   // load site stats
