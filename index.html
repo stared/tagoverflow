@@ -31,6 +31,7 @@
     <select id="colorParameter">
       <option value="answered">% answered</option>
       <option value="score">averange score</option>
+      <option value="view">averange view count</option>
     </select>
     </p>
   </p>
@@ -322,6 +323,7 @@ var force = d3.layout.force()
    questions = fetchLastQuestions(siteName, tagName);
    questionsDict[tagName] = questions;
   } 
+  //console.log(questionsDict)
  
   function colorize (d, colorParameter) {
     if (colorParameter == "answered")
@@ -330,13 +332,15 @@ var force = d3.layout.force()
     } else if (colorParameter == "score")
     {
       var nodes_colors = scoreColors(questionsDict);
+    } else if (colorParameter == "view")
+    {
+      var nodes_colors = viewColors(questionsDict); 
     } else
     {
       var nodes_colors = answeredColors(questionsDict);
     }
 
     node.style("fill", function(d){ return nodes_colors[d.name] } );
-    //console.log(colorParameter)
   };  
   
   //window.setTimeout(colorize(graph.nodes,colorParameter), 1500); // hack to make it after graph is rendered

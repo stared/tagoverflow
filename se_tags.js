@@ -155,28 +155,63 @@ function questionsScore(questions)
   else {return 0};
 }
 
-var color = d3.scale.linear()
-  .domain([0, 1])
-  .range(["red", "blue"])
+function questionsView(questions)
+{
+  var questionNumber=questions.length;
+  var viewSum = 0;
+  for (var q = 0; q < questionNumber; q++)
+  {
+    viewSum += questions[q].view_count;
+  };
+  if (questionNumber>0) {return viewSum/questionNumber}
+  else {return 0};
+}
+
+function color(lowcolor,highcolor,valuesDict){
+  var values = [];
+  for (key in valuesDict){
+    values.push(valuesDict[key]);
+  };
+  var minvalue = d3.min(values);
+  var maxvalue = d3.max(values);
+  var color = d3.scale.linear()
+    .domain([minvalue, maxvalue])
+    .range([lowcolor, highcolor])
+  colors = {};
+  for (key in valuesDict){
+    colors[key]=color(valuesDict[key]);
+  };  
+  return colors;
+};
 
 function answeredColors(questionsDict)
 {
-  colors = {};
+  valueDict = {};
   for (tagName in questionsDict)
   {
-    colors[tagName]=color(answered(questionsDict[tagName]))
+    valueDict[tagName]=answered(questionsDict[tagName])
   };
-  return colors;
+  return color("blue","red",valueDict);
 };
 
 function scoreColors(questionsDict)
 {
-  colors = {};
+  valueDict = {};
   for (tagName in questionsDict)
   {
-    colors[tagName]=color(questionsScore(questionsDict[tagName]))
+    valueDict[tagName]=questionsScore(questionsDict[tagName])
   };
-  return colors;
+  return color("blue","yellow",valueDict);
+};
+
+function viewColors(questionsDict)
+{
+  valueDict = {};
+  for (tagName in questionsDict)
+  {
+    valueDict[tagName]=questionsView(questionsDict[tagName])
+  };
+  return color("purple","green",valueDict);
 };
 
 // not yet finished
