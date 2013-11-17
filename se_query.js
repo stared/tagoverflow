@@ -11,6 +11,17 @@ function httpGetJSON(theUrl)
   return JSON.parse(xmlHttp.responseText);
 }
 
+function httpGetJSONasync(theUrl, func)
+{
+  var xmlHttp = null;
+
+  xmlHttp = new XMLHttpRequest();
+  xmlHttp.onload = function(){ func(JSON.parse(this.responseText)); };
+  xmlHttp.open("GET", theUrl, true);
+  xmlHttp.send(null);
+}
+
+
 var seQuery = function(command, dict, noOfItems){
   var pageSize = noOfItems || 100;
   pageSize = Math.min(pageSize, 100);
@@ -34,4 +45,19 @@ var seQuery = function(command, dict, noOfItems){
       break;
   }
   return res;
+};
+
+var seQueryAsync = function(command, dict, noOfItems, func){
+  var pageSize = noOfItems || 100;
+  if (pageSize > 100){
+    concole.log("aync calls for only up to 100 elements at once");
+    return false;
+  }
+  var queryString = apiName + command + "/?";
+  for (var k in dict) {
+    queryString += k + "=" + dict[k] + "&";
+  }
+  var res = [];
+  queryString += "key=" + apiKey + "&pagesize=" + pageSize;
+  httpGetJSONasync(queryString, func);
 };
