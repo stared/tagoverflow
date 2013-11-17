@@ -32,6 +32,7 @@
       <option value="answered">% answered</option>
       <option value="score">averange score</option>
       <option value="view">averange view count</option>
+      <option value="reputation">averange owner reputation</option>
     </select>
     </p>
   </p>
@@ -323,7 +324,109 @@ var force = d3.layout.force()
    questions = fetchLastQuestions(siteName, tagName);
    questionsDict[tagName] = questions;
   } 
-  //console.log(questionsDict)
+  console.log(questionsDict)
+  
+  function answered(questions) 
+  {
+    var questionNumber=questions.length;
+    var answeredNumber=questions.filter(function(x) {return x.is_answered;}).length;
+    if (questionNumber>0) {return answeredNumber/questionNumber}
+    else {return 0};
+  }
+
+  function questionsScore(questions)
+  {
+    var questionNumber=questions.length;
+    var score = [];
+    for (var q = 0; q < questionNumber; q++)
+    {
+      score.push(questions[q].score);
+    };
+    if (questionNumber>0) {return d3.mean(score)}
+    else {return 0};
+    }
+
+  function questionsView(questions)
+  {
+    var questionNumber=questions.length;
+    var view = [];
+    for (var q = 0; q < questionNumber; q++)
+    {
+      view.push(questions[q].view_count);
+    };
+    if (questionNumber>0) {return d3.mean(view)}
+    else {return 0};
+  }
+
+  function ownerReputation(questions)
+  {
+    var questionNumber=questions.length;
+    var rep = [];
+    for (var q = 0; q < questionNumber; q++)
+    {
+      rep.push(questions[q].owner.reputation);
+    };
+    if (questionNumber>0) {return d3.mean(rep)}
+    else {return 0};
+  }
+
+  function color(lowcolor,highcolor,valuesDict){
+    var values = [];
+    for (key in valuesDict){
+      values.push(valuesDict[key]);
+    };
+    var minvalue = d3.min(values);
+    var maxvalue = d3.max(values);
+    var color = d3.scale.linear()
+      .domain([minvalue, maxvalue])
+      .range([lowcolor, highcolor])
+    colors = {};
+    for (key in valuesDict){
+      colors[key]=color(valuesDict[key]);
+    };  
+    return colors;
+  };
+
+  function answeredColors(questionsDict)
+  {
+    valueDict = {};
+    for (tagName in questionsDict)
+    {
+      valueDict[tagName]=answered(questionsDict[tagName])
+    };
+    return color("blue","red",valueDict);
+  };
+
+  function scoreColors(questionsDict)
+  {
+    valueDict = {};
+    for (tagName in questionsDict)
+    {
+      valueDict[tagName]=questionsScore(questionsDict[tagName])
+    };
+    return color("blue","yellow",valueDict);
+  };
+
+  function viewColors(questionsDict)
+  {
+    valueDict = {};
+    for (tagName in questionsDict)
+    {
+      valueDict[tagName]=questionsView(questionsDict[tagName])
+    };
+    return color("purple","green",valueDict);
+  };
+
+  function repColors(questionsDict)
+  {
+    valueDict = {};
+    for (tagName in questionsDict)
+    {
+      valueDict[tagName]=ownerReputation(questionsDict[tagName])
+    };
+    return color("yellow","red",valueDict);
+  };
+
  
   function colorize (d, colorParameter) {
     if (colorParameter == "answered")
@@ -335,6 +438,9 @@ var force = d3.layout.force()
     } else if (colorParameter == "view")
     {
       var nodes_colors = viewColors(questionsDict); 
+    } else if (colorParameter == "reputation")
+    {
+      var nodes_colors = repColors(questionsDict); 
     } else
     {
       var nodes_colors = answeredColors(questionsDict);
