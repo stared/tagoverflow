@@ -193,9 +193,16 @@ var SeDataLoaderPerSite = function(siteName, tagLimit){
   // this.status = "Initializing...";
   this.siteName = siteName;
   this.tagLimit = tagLimit;
-  this.siteStats = fetchSiteStats(siteName)[0];
+  this.siteStats = null;
 
-  var nodes = fetchPopularTags(siteName, tagLimit);
+  this.run = function(){
+    this.siteStats = fetchSiteStats(siteName)[0];
+    $(".site_info #title").html(sitesDict[siteName].name);
+    $(".site_info #dscr").html(sitesDict[siteName].audience);
+    $(".site_info a").attr("href",sitesDict[siteName].site_url);
+    this.retriveTags();
+    this.retriveRelatedTags();
+  }
 
   this.tags = [];
   this.tagsDict = {};
@@ -221,7 +228,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit){
                    {site: siteName},
                    tagLimit,
                    this.putRelatedTagInDict,
-                   [tagName, this.relatedTagDict, this.tags.length]);
+                   [tagName, this.relatedTagDict, this.tags.length, this]);
     }
   };
 
@@ -239,15 +246,16 @@ var SeDataLoaderPerSite = function(siteName, tagLimit){
     }
   };
 
-  this.putRelatedTagInDict = function(x, tagName, targetDict, tagsLength){
+  this.putRelatedTagInDict = function(x, tagName, targetDict, tagsLength, that){
     targetDict[tagName] = x.items;
     var progress = Object.keys(targetDict).length;
     if (progress === tagsLength) {
-      console.log("Related tags: DONE!");
+      // console.log("Related tags: DONE!");
       $(".site_info #loading_status").html("Loading tag neighbors: DONE!");
-      // and we can fire something
+      that.processRelatedTags();  // onDone();  // this.processRelatedTags();
+      // f--king with references
     } else {
-      console.log("Related tags: " + progress + "/" + tagsLength);
+      // console.log("Related tags: " + progress + "/" + tagsLength);
       $(".site_info #loading_status").html("Loading tag neighbors: " + (progress) + "/" + tagsLength + "...");
     }
   };
@@ -256,11 +264,11 @@ var SeDataLoaderPerSite = function(siteName, tagLimit){
     targetDict[tagName] = x.items;
     var progress = Object.keys(targetDict).length;
     if (progress === tagsLength) {
-      console.log("Additional tag info: DONE!");
+      // console.log("Additional tag info: DONE!");
       $(".site_info #loading_status").html("Loading additional tag info: DONE!");
       // and we can fire something
     } else {
-      console.log("Additional tag info: " + progress + "/" + tagsLength);
+      // console.log("Additional tag info: " + progress + "/" + tagsLength);
       $(".site_info #loading_status").html("Loading additional tag info: " + (progress) + "/" + tagsLength + "...");
     }
   };
@@ -276,8 +284,6 @@ var SeDataLoaderPerSite = function(siteName, tagLimit){
       for (var i = 0; i < relatedTags.length; i++){
         var tag2info = relatedTags[i];
         var tag2 = tag2info.name;
-        console.log(tag1 + " " + tag2);
-        console.log(tag2 in this.tagsDict);
 
         if ((tag2 in this.tagsDict) && (tag1 < tag2))
         // isnt this order stuff making as loose some entries?
@@ -289,8 +295,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit){
                       target_name: tag2,
                       oe_ratio: (tag2info.count * noOfQuestions) / (tag1info.count * this.tagsDict[tag2].count)
                      };
-          console.log(link.count);
-          console.log(link.oe_ratio);
+          // console.log(link.oe_ratio);
           if ((link.count > 1) && (link.oe_ratio > 1))
           {
             this.links.push(link);
@@ -298,6 +303,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit){
         }
       }
     }
+    draw_graph(this);
   };
 
   // load auxiliary information

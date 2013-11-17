@@ -85,34 +85,32 @@ d3.select("select#site_name").selectAll("option")
 $("select#site_name")[0].value = "stackoverflow";
 
 // window.onload=function(){draw_graph();};
-draw_graph();
+preGraphDrawing();
 
 d3.select("select#site_name").on("change", function(){
-  draw_graph();
+  preGraphDrawing();
 });
 
 d3.select("select#pageSize").on("change", function(){
-  draw_graph();
+  preGraphDrawing();
 });
 
 
-function draw_graph(){
+function preGraphDrawing(){
+  var siteName = $("select#site_name")[0].value;
+  var pageSize = parseInt($("select#pageSize")[0].value);
+  seSiteData = new SeDataLoaderPerSite(siteName, pageSize);
+  seSiteData.run();
+  // fires draw_graph() after doing necessary stuff
+}
+
+function draw_graph(seSiteData){
+
 d3.select("select#colorParameter").on("change", function(){
   colorize(graph.nodes, this.value);
 });
 
-var siteName = $("select#site_name")[0].value;
-var pageSize = parseInt($("select#pageSize")[0].value);
-//var colorParameter = $("select#colorParameter")[0].value;
-
-var graph = getNodesLinks(siteName, pageSize);
-
-var siteInfo = sitesDict[siteName];
- 
-$(".site_info #title").html(sitesDict[siteName].name);
-$(".site_info #dscr").html(sitesDict[siteName].audience);
-$(".site_info a").attr("href",siteInfo.site_url);
-
+var graph = {nodes: seSiteData.tags, links: seSiteData.links};
 
 d3.select("body").select("svg").remove();
 
@@ -231,7 +229,7 @@ var force = d3.layout.force()
     $(".tag_info #dscr").html("count: " + z.count);
 
 
-    var askers = fetchTopAskers(siteName, z.name);
+    var askers = fetchTopAskers(seSiteData.siteName, z.name);
 
     var d3asker = d3.select(".tag_info #askers ul").selectAll("li")
       .data(askers);
@@ -262,7 +260,7 @@ var force = d3.layout.force()
       .remove();
 
 
-    var answerers = fetchTopAnswerers(siteName, z.name);
+    var answerers = fetchTopAnswerers(seSiteData.siteName, z.name);
 
     var d3answerer = d3.select(".tag_info #answerers ul").selectAll("li")
       .data(answerers);
@@ -295,7 +293,7 @@ var force = d3.layout.force()
       .remove();
 
 
-    var questions = fetchTopQuestions(siteName, z.name);
+    var questions = fetchTopQuestions(seSiteData.siteName, z.name);
 
     var d3question = d3.select(".tag_info #questions ul").selectAll("li")
       .data(questions);
@@ -313,18 +311,10 @@ var force = d3.layout.force()
 
   };
 
-  
-  // how to make it going _after_ the main part?
+  // Below is asynch.
+  seSiteData.retriveLastQuestionsPerTag();
+  var questionsDict = seSiteData.lastQuestionsPerTagDict;
 
-  
-  var questionsDict = {};
-  for (var i = 0; i < graph.nodes.length; i++)
-  { 
-   tagName = graph.nodes[i].name;
-   questions = fetchLastQuestions(siteName, tagName);
-   questionsDict[tagName] = questions;
-  } 
-  console.log(questionsDict)
   
   function answered(questions) 
   {
