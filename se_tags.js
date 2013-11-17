@@ -180,20 +180,126 @@ function scoreColors(questionsDict)
   return colors;
 };
 
-// not yet finished
-var SeDataLoader = function(site_name){
-  this.status = "Initializing...";
-  this.site_name = site_name;
-  this.site_stats = fetchSiteStats(site_name);
+var arrayOfDictToDict = function(list, field){
+  var res = {};
+  for (var i=0; i < list.length; i++){
+    res[list[i][field]] = list[i];
+    res[list[i][field]]['pos'] = i;
+  }
+  return res;
+};
+
+var SeDataLoaderPerSite = function(siteName, tagLimit){
+  // this.status = "Initializing...";
+  this.siteName = siteName;
+  this.tagLimit = tagLimit;
+  this.siteStats = fetchSiteStats(siteName)[0];
 
   var nodes = fetchPopularTags(siteName, tagLimit);
 
   this.tags = [];
+  this.tagsDict = {};
+  this.links = [];
+  this.relatedTagDict = {};
+  this.lastQuestionsPerTagDict = {};
 
-  // load site stats
-  // load tags
-  // load tags connections
-  // create nodes & links
+  this.retriveTags = function(){
+    var tagLimit = this.tagLimit;
+    // here we can do well with doing it synchronously
+    this.tags = fetchPopularTags(siteName, tagLimit);
+    this.tagsDict = arrayOfDictToDict(this.tags, "name");
+  };
+
+  // below, tag limit does not need to be the same
+  this.retriveRelatedTags = function(){
+    this.relatedTagDict = {};
+    var tagLimit = this.tagLimit;  // this one does not need to be the same
+    for (var i=0; i < this.tags.length; i++){
+      var tagName = this.tags[i].name;
+      var tagNameFixed = tagName.replace("#", "%23");  // for "C#" may be problems with other characteres
+      seQueryAsync("tags/" + tagNameFixed + "/related",
+                   {site: siteName},
+                   tagLimit,
+                   this.putRelatedTagInDict,
+                   [tagName, this.relatedTagDict, this.tags.length]);
+    }
+  };
+
+  this.retriveLastQuestionsPerTag = function(){
+    this.lastQuestionsPerTagDict = {};
+    var tagLimit = this.tagLimit;
+    for (var i=0; i < this.tags.length; i++){
+      var tagName = this.tags[i].name;
+      var tagNameFixed = tagName.replace("#", "%23");  // for "C#" may be problems with other characteres
+      seQueryAsync("questions",
+                   {order: "desc", sort: "creation", tagged: tagNameFixed, site: siteName},
+                   100,  // 100 last questions
+                   this.putLastQuestionsPerTagDict,
+                   [tagName, this.lastQuestionsPerTagDict, this.tags.length]);
+    }
+  };
+
+  this.putRelatedTagInDict = function(x, tagName, targetDict, tagsLength){
+    targetDict[tagName] = x.items;
+    var progress = Object.keys(targetDict).length;
+    if (progress === tagsLength) {
+      console.log("Related tags: DONE!");
+      $(".site_info #loading_status").html("Loading tag neighbors: DONE!");
+      // and we can fire something
+    } else {
+      console.log("Related tags: " + progress + "/" + tagsLength);
+      $(".site_info #loading_status").html("Loading tag neighbors: " + (progress) + "/" + tagsLength + "...");
+    }
+  };
+
+  this.putLastQuestionsPerTagDict = function(x, tagName, targetDict, tagsLength){
+    targetDict[tagName] = x.items;
+    var progress = Object.keys(targetDict).length;
+    if (progress === tagsLength) {
+      console.log("Additional tag info: DONE!");
+      $(".site_info #loading_status").html("Loading additional tag info: DONE!");
+      // and we can fire something
+    } else {
+      console.log("Additional tag info: " + progress + "/" + tagsLength);
+      $(".site_info #loading_status").html("Loading additional tag info: " + (progress) + "/" + tagsLength + "...");
+    }
+  };
+
+  this.processRelatedTags = function(){
+    var noOfQuestions = this.siteStats.total_questions;
+    this.links = [];
+    for (var tag1 in this.relatedTagDict)
+    {
+      var tag1info = this.tagsDict[tag1];
+      var relatedTags = this.relatedTagDict[tag1];
+
+      for (var i = 0; i < relatedTags.length; i++){
+        var tag2info = relatedTags[i];
+        var tag2 = tag2info.name;
+        console.log(tag1 + " " + tag2);
+        console.log(tag2 in this.tagsDict);
+
+        if ((tag2 in this.tagsDict) && (tag1 < tag2))
+        // isnt this order stuff making as loose some entries?
+        {
+          var link = {count: tag2info.count,
+                      source: this.tagsDict[tag1].pos,
+                      target: this.tagsDict[tag2].pos,
+                      source_name: tag1,
+                      target_name: tag2,
+                      oe_ratio: (tag2info.count * noOfQuestions) / (tag1info.count * this.tagsDict[tag2].count)
+                     };
+          console.log(link.count);
+          console.log(link.oe_ratio);
+          if ((link.count > 1) && (link.oe_ratio > 1))
+          {
+            this.links.push(link);
+          }
+        }
+      }
+    }
+  };
+
   // load auxiliary information
   // show loading status
   // tag info chached
