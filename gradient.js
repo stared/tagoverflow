@@ -39,25 +39,37 @@ function legend(startcolor,stopcolor,minvalue,maxvalue)
       .attr("height",barHeight)
       //.attr("rx",20) //rounded corners, of course!
       //.attr("ry",20);
+  
+  var axisScale = d3.scale.linear()
+    .domain([minvalue, maxvalue])
+    .range([y1, barHeight + y1]);
+    
+
+  var yAxis = d3.svg.axis().scale(axisScale)
+    .orient("right")
+    .ticks(numberScaleLines);
+    
+  svgForLegendStuff.append("g")
+    .attr("transform", "translate(" + barWidth + ",0)")
+    .call(yAxis);
    
   //add text on either side of the bar
    
-  var textY = y1 + barHeight/2 + 5;
-  svgForLegendStuff.append("text")
-      .attr("class","legendText")
-      .attr("text-anchor", "middle")
-      .attr("x",x1 - 20)
-      .attr("y",textY)
-      .attr("dy",0)
-      .text(minvalue);
+//  var textY = y1 + barHeight/2 + 5;
+//  svgForLegendStuff.append("text")
+//      .attr("class","legendText")
+//      .attr("text-anchor", "middle")//      .attr("x",x1 - 20)
+//      .attr("y",textY)
+//      .attr("dy",0)
+//      .text(minvalue);
    
-  svgForLegendStuff.append("text")
-      .attr("class","legendText")
-      .attr("text-anchor", "left")
-      .attr("x",x1 + barWidth + 5)
-      .attr("y",textY)
-      .attr("dy",0)
-      .text(maxvalue);
+//  svgForLegendStuff.append("text")
+//      .attr("class","legendText")
+//      .attr("text-anchor", "left")
+//      .attr("x",x1 + barWidth + 5)
+//      .attr("y",textY)
+//      .attr("dy",0)
+//      .text(maxvalue);
  
   var theData = [];
   var color = d3.scale.linear()  
