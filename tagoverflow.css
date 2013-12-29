@@ -18,6 +18,18 @@
   fill: #999;
 }
 
+div#theBar {
+ 	position: fixed;
+	top: 200px;
+	left: 20px; 
+}
+
+.legendText {
+  font-size:12px;
+  font-family:"Arial, sans-serif";
+  font-weight: bold;
+}
+
 text.legend {
   font-family: Verdana;
   font-size: 13px;

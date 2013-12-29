@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="tagoverflow.css">
 </head>
+
 <body>
   <p>TagOverflow v0.3 (not-yet-publishable)</p>
   <p>Select site:
@@ -36,7 +37,8 @@
     </select>
     </p>
   </p>
-  
+ 
+<div id="theBar"></div>  
 <div class="site_info">
   <div class="subtitle">
     <a><span id="title">(Select site!)</span></a>
@@ -67,6 +69,7 @@
 <script src="d3.v3.min.js"></script>
 <script src="se_query.js"></script>
 <script src="se_tags.js"></script>
+<script src="gradient.js"></script>
 <script>
 
 var sites = fetchSites();
@@ -380,64 +383,90 @@ var force = d3.layout.force()
   function answeredColors(questionsDict)
   {
     valueDict = {};
+    valueList = [];
     for (tagName in questionsDict)
     {
-      valueDict[tagName]=answered(questionsDict[tagName])
+      var value = answered(questionsDict[tagName]);
+      valueDict[tagName]=value;
+      valueList.push(value);
     };
-    return color("blue","red",valueDict);
+    //console.log(d3.min(valueList))
+    var dict = {start:"blue", stop:"red", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
+    return dict;
   };
 
   function scoreColors(questionsDict)
   {
-    valueDict = {};
+    var valueDict = {};
+    var valueList = [];
     for (tagName in questionsDict)
     {
-      valueDict[tagName]=questionsScore(questionsDict[tagName])
+      var value = questionsScore(questionsDict[tagName]);
+      valueDict[tagName]=value;
+      valueList.push(value);
     };
-    return color("blue","yellow",valueDict);
+    var dict = {start:"blue", stop:"yellow", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
+    return dict;
   };
 
   function viewColors(questionsDict)
   {
-    valueDict = {};
+    var valueDict = {};
+    var valueList = [];
     for (tagName in questionsDict)
     {
-      valueDict[tagName]=questionsView(questionsDict[tagName])
+      var value = questionsView(questionsDict[tagName]);
+      valueDict[tagName]=value;
+      valueList.push(value);
     };
-    return color("purple","green",valueDict);
+    var dict = {start:"purple", stop:"green", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
+    return dict;
   };
 
   function repColors(questionsDict)
   {
-    valueDict = {};
+    var valueDict = {};
+    var valueList = [];
     for (tagName in questionsDict)
     {
-      valueDict[tagName]=ownerReputation(questionsDict[tagName])
+      var value = ownerReputation(questionsDict[tagName]);
+      valueDict[tagName]=value;
+      valueList.push(value);
     };
-    return color("yellow","red",valueDict);
+    var dict = {start:"yellow", stop:"red", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
+    return dict;
   };
 
  
   function colorize (d, colorParameter) {
     if (colorParameter == "answered")
     {
-      var nodes_colors = answeredColors(questionsDict);
+      var data = answeredColors(questionsDict);
     } else if (colorParameter == "score")
     {
-      var nodes_colors = scoreColors(questionsDict);
+      var data = scoreColors(questionsDict);
     } else if (colorParameter == "view")
     {
-      var nodes_colors = viewColors(questionsDict); 
+      var data = viewColors(questionsDict);
     } else if (colorParameter == "reputation")
     {
-      var nodes_colors = repColors(questionsDict); 
+      var data = repColors(questionsDict);
     } else
     {
       var nodes_colors = answeredColors(questionsDict);
     }
-
+    
+    var nodes_colors = color(data.start, data.stop, data.values);
+    var valueDomain = data.range;
+    var colorRange = [data.start, data.stop];
+    legend(data.start,data.stop,data.range[0],data.range[1])
+    
     node.style("fill", function(d){ return nodes_colors[d.name] } );
-  };  
+    console.log(data)
+    
+  }; 
+  
+
   
   //window.setTimeout(colorize(graph.nodes,colorParameter), 1500); // hack to make it after graph is rendered
   // very likely I should do it async
