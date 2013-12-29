@@ -315,6 +315,15 @@ var force = d3.layout.force()
   seSiteData.retriveLastQuestionsPerTag();
   var questionsDict = seSiteData.lastQuestionsPerTagDict;
 
+  function colorizeTimeouted(){
+    if (seSiteData.status === "Done!") {
+      colorize(graph.nodes, $("select#colorParameter").val());
+    } else {
+      setTimeout(colorizeTimeouted, 500);
+    }
+  }
+
+  setTimeout(colorizeTimeouted, 500);
   
   function answered(questions) 
   {
