@@ -9,7 +9,8 @@
 </head>
 
 <body>
-  <p>TagOverflow v0.3 (not-yet-publishable)</p>
+  <p>TagOverflow v0.3 (not-yet-publishable).
+    <a href="https://github.com/stared/tagoverflow/">Source on GitHub.</a></p>
   <p>Select site:
     <select id="site_name">
      <!-- <option value="biology">Biology</option>
@@ -320,6 +321,15 @@ var force = d3.layout.force()
   seSiteData.retriveLastQuestionsPerTag();
   var questionsDict = seSiteData.lastQuestionsPerTagDict;
 
+  function colorizeTimeouted(){
+    if (seSiteData.status === "Done!") {
+      colorize(graph.nodes, $("select#colorParameter").val());
+    } else {
+      setTimeout(colorizeTimeouted, 500);
+    }
+  }
+
+  setTimeout(colorizeTimeouted, 500);
   
   function answered(questions) 
   {

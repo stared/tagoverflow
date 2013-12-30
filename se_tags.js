@@ -18,7 +18,7 @@ function fetchSites()
                 if (x.name > y.name)
                   return 1;
                 else
-                  return -1; 
+                  return -1;
               });
 }
 
@@ -136,12 +136,12 @@ function fetchLastQuestions(siteName, tags)
   //return seQuery("questions?order=desc&sort=creation&tagged=" + tagNameFixed, {site: siteName}, size);
 }
 
-function answered(questions) 
+function answered(questions)
 {
   var questionNumber=questions.length;
   var answeredNumber=questions.filter(function(x) {return x.is_answered;}).length;
-  if (questionNumber>0) {return answeredNumber/questionNumber}
-  else {return 0};
+  if (questionNumber>0) {return answeredNumber/questionNumber;}
+  else {return 0;};
 }
 
 function questionsScore(questions)
@@ -151,34 +151,34 @@ function questionsScore(questions)
   for (var q = 0; q < questionNumber; q++)
   {
     scoreSum += questions[q].score;
-  };
-  if (questionNumber>0) {return scoreSum/questionNumber}
-  else {return 0};
+  }
+  if (questionNumber > 0) {return scoreSum / questionNumber;}
+  else {return 0;};
 }
 
 var color = d3.scale.linear()
   .domain([0, 1])
-  .range(["red", "blue"])
+  .range(["red", "blue"]);
 
 function answeredColors(questionsDict)
 {
   colors = {};
-  for (tagName in questionsDict)
+  for (var tagName in questionsDict)
   {
-    colors[tagName]=color(answered(questionsDict[tagName]))
-  };
+    colors[tagName] = color(answered(questionsDict[tagName]))
+  }
   return colors;
-};
+}
 
 function scoreColors(questionsDict)
 {
   colors = {};
-  for (tagName in questionsDict)
+  for (var tagName in questionsDict)
   {
-    colors[tagName]=color(questionsScore(questionsDict[tagName]))
-  };
+    colors[tagName]=color(questionsScore(questionsDict[tagName]));
+  }
   return colors;
-};
+}
 
 var arrayOfDictToDict = function(list, field){
   var res = {};
@@ -190,7 +190,7 @@ var arrayOfDictToDict = function(list, field){
 };
 
 var SeDataLoaderPerSite = function(siteName, tagLimit){
-  // this.status = "Initializing...";
+  this.status = "Initializing...";
   this.siteName = siteName;
   this.tagLimit = tagLimit;
   this.siteStats = null;
@@ -202,7 +202,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit){
     $(".site_info a").attr("href",sitesDict[siteName].site_url);
     this.retriveTags();
     this.retriveRelatedTags();
-  }
+  };
 
   this.tags = [];
   this.tagsDict = {};
@@ -242,7 +242,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit){
                    {order: "desc", sort: "creation", tagged: tagNameFixed, site: siteName},
                    100,  // 100 last questions
                    this.putLastQuestionsPerTagDict,
-                   [tagName, this.lastQuestionsPerTagDict, this.tags.length]);
+                   [tagName, this.lastQuestionsPerTagDict, this.tags.length, this]);
     }
   };
 
@@ -260,12 +260,16 @@ var SeDataLoaderPerSite = function(siteName, tagLimit){
     }
   };
 
-  this.putLastQuestionsPerTagDict = function(x, tagName, targetDict, tagsLength){
+  this.putLastQuestionsPerTagDict = function(x, tagName, targetDict, tagsLength, that){
     targetDict[tagName] = x.items;
     var progress = Object.keys(targetDict).length;
     if (progress === tagsLength) {
       // console.log("Additional tag info: DONE!");
       $(".site_info #loading_status").html("Loading additional tag info: DONE!");
+      that.status = "Done!";
+      setTimeout(function(){
+        $(".site_info #loading_status").html("");
+      }, 1000);
       // and we can fire something
     } else {
       // console.log("Additional tag info: " + progress + "/" + tagsLength);
@@ -306,8 +310,4 @@ var SeDataLoaderPerSite = function(siteName, tagLimit){
     draw_graph(this);
   };
 
-  // load auxiliary information
-  // show loading status
-  // tag info chached
-  this.status = "DONE!";
 };
