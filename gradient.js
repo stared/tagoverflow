@@ -23,8 +23,8 @@ function legend(startcolor,stopcolor,minvalue,maxvalue)
       .attr("id",idGradient)
       .attr("x1","0%")
       .attr("x2","0%")
-      .attr("y1","0%")
-      .attr("y2","100%"); // x1=0, x2=100%, y1=y2 results in a horizontal gradient
+      .attr("y1","100%")
+      .attr("y2","0%"); // x1=0, x2=100%, y1=y2 results in a horizontal gradient
                         // it would have been vertical if x1=x2, y1=0, y2=100%
                         // See
                         // http://www.w3.org/TR/SVG/pservers.html#LinearGradients

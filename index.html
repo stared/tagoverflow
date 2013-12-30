@@ -343,11 +343,12 @@ var force = d3.layout.force()
   {
     var questionNumber=questions.length;
     var score = [];
-    console.log(questions)
+    //console.log(questions)
     for (var q = 0; q < questionNumber; q++)
     {
       score.push(questions[q].score);
     };
+    //console.log(score)
     if (questionNumber>0) {return d3.mean(score)}
     else {return 0};
     }
@@ -399,7 +400,7 @@ var force = d3.layout.force()
     valueList = [];
     for (tagName in questionsDict)
     {
-      var value = answered(questionsDict[tagName]);
+      var value = answered(questionsDict[tagName])*100;
       valueDict[tagName]=value;
       valueList.push(value);
     };
