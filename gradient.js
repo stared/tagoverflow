@@ -1,6 +1,6 @@
 function legend(startcolor,stopcolor,minvalue,maxvalue)
   {
-  var svgWidth = 80,
+  var svgWidth = 100,
     svgHeight = 300,
     x1 = 5,
     barWidth = 20,
@@ -31,6 +31,23 @@ function legend(startcolor,stopcolor,minvalue,maxvalue)
                         // for more details and fancier things you can do
                         //create the bar for the legend to go into
                         // the "fill" attribute hooks the gradient up to this rect
+                        
+  var axisScale = d3.scale.linear()
+    .domain([minvalue, maxvalue])
+    .range([barHeight + y1, y1]);
+    
+
+  var yAxis = d3.svg.axis().scale(axisScale)
+    .orient("right")
+    .ticks(5)
+    .tickSize(8, 3, 0)
+    .ticks(numberScaleLines);
+    
+  svgForLegendStuff.append("g")
+    .attr("class", "axis") 
+    .attr("transform", "translate(" + barWidth + ",0)")
+    .call(yAxis);
+    
   svgForLegendStuff.append("rect")
       .attr("fill","url(#" + idGradient + ")")
       .attr("x",x1)
@@ -39,19 +56,6 @@ function legend(startcolor,stopcolor,minvalue,maxvalue)
       .attr("height",barHeight)
       //.attr("rx",20) //rounded corners, of course!
       //.attr("ry",20);
-  
-  var axisScale = d3.scale.linear()
-    .domain([minvalue, maxvalue])
-    .range([y1, barHeight + y1]);
-    
-
-  var yAxis = d3.svg.axis().scale(axisScale)
-    .orient("right")
-    .ticks(numberScaleLines);
-    
-  svgForLegendStuff.append("g")
-    .attr("transform", "translate(" + barWidth + ",0)")
-    .call(yAxis);
    
   //add text on either side of the bar
    

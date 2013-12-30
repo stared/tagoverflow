@@ -24,16 +24,21 @@ div#theBar {
 	left: 20px; 
 }
 
-.legendText {
-  font-size:12px;
-  font-family:"Arial, sans-serif";
-  font-weight: bold;
-}
-
 text.legend {
   font-family: Verdana;
   font-size: 13px;
   fill: #000;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: gray;
+}
+
+.axis text {
+    font-family: "Arial, sans-serif";
+    font-size: 11px;
 }
 
 div.site_info {

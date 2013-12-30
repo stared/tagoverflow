@@ -115,12 +115,14 @@ d3.select("select#colorParameter").on("change", function(){
 
 var graph = {nodes: seSiteData.tags, links: seSiteData.links};
 
-d3.select("body").select("svg").remove();
+d3.select("body").select("svg#graph").remove();
+d3.select("body").select("#theBar svg").remove();
 
 var width = 1000,
     height = 600;
 
 var svg = d3.select("body").append("svg")
+    .attr("id", "graph")
     .attr("width", width)
     .attr("height", height);
 
@@ -331,6 +333,7 @@ var force = d3.layout.force()
   {
     var questionNumber=questions.length;
     var score = [];
+    console.log(questions)
     for (var q = 0; q < questionNumber; q++)
     {
       score.push(questions[q].score);
@@ -462,7 +465,7 @@ var force = d3.layout.force()
     legend(data.start,data.stop,data.range[0],data.range[1])
     
     node.style("fill", function(d){ return nodes_colors[d.name] } );
-    console.log(data)
+    //console.log(data)
     
   }; 
   
