@@ -260,7 +260,7 @@ var force = d3.layout.force()
       .attr("height", 32);
 
     d3asker.select("a div span")
-      .text(function (d) { return d.user.display_name; });
+      .html(function (d) { return d.user.display_name; });
 
     d3asker.exit()
       .remove();
@@ -293,7 +293,7 @@ var force = d3.layout.force()
       .attr("height", 32);
 
     d3answerer.select("a div span")
-      .text(function (d) { return d.user.display_name; });
+      .html(function (d) { return d.user.display_name; });
 
     d3answerer.exit()
       .remove();
@@ -310,7 +310,7 @@ var force = d3.layout.force()
 
     d3question.select("a")
       .attr("href", function (d) { return d.link; })
-      .text(function (d) { return d.title; });
+      .html(function (d) { return d.title; });
 
     d3question.exit()
       .remove();
