@@ -189,10 +189,17 @@ var arrayOfDictToDict = function(list, field){
   return res;
 };
 
-var SeDataLoaderPerSite = function(siteName, tagLimit){
+var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
   this.status = "Initializing...";
   this.siteName = siteName;
   this.tagLimit = tagLimit;
+  this.delay = delay || 50;
+  // see in SE API documentation:
+  // "If a single IP is making more than 30 requests a second,
+  // new requests will be dropped"
+  // i.e. 33.(3) ms 
+  // but anyway, even for slower requests,
+  // longer bursts does not look good
   this.siteStats = null;
 
   this.run = function(){
@@ -221,28 +228,41 @@ var SeDataLoaderPerSite = function(siteName, tagLimit){
   this.retriveRelatedTags = function(){
     this.relatedTagDict = {};
     var tagLimit = this.tagLimit;  // this one does not need to be the same
+    var that = this;
     for (var i=0; i < this.tags.length; i++){
-      var tagName = this.tags[i].name;
-      var tagNameFixed = tagName.replace("#", "%23");  // for "C#" may be problems with other characteres
-      seQueryAsync("tags/" + tagNameFixed + "/related",
-                   {site: siteName},
-                   tagLimit,
-                   this.putRelatedTagInDict,
-                   [tagName, this.relatedTagDict, this.tags.length, this]);
+      // closure for setTimeout;
+      // otherwise it uses LAST value of tagName and tagNameFixed
+      // i is fine, as it is not a parameter of seQueryAsync
+      (function(){
+        var tagName = that.tags[i].name;
+        var tagNameFixed = tagName.replace("#", "%23");  // for "C#" may be problems with other characteres
+        setTimeout( function() {
+            seQueryAsync("tags/" + tagNameFixed + "/related",
+                         {site: siteName},
+                         tagLimit,
+                         that.putRelatedTagInDict,
+                         [tagName, that.relatedTagDict, that.tags.length, that]);
+          }, i * that.delay);
+      })();
     }
   };
 
   this.retriveLastQuestionsPerTag = function(){
     this.lastQuestionsPerTagDict = {};
     var tagLimit = this.tagLimit;
+    var that = this;
     for (var i=0; i < this.tags.length; i++){
-      var tagName = this.tags[i].name;
-      var tagNameFixed = tagName.replace("#", "%23");  // for "C#" may be problems with other characteres
-      seQueryAsync("questions",
-                   {order: "desc", sort: "creation", tagged: tagNameFixed, site: siteName},
-                   100,  // 100 last questions
-                   this.putLastQuestionsPerTagDict,
-                   [tagName, this.lastQuestionsPerTagDict, this.tags.length, this]);
+      (function(){
+        var tagName = that.tags[i].name;
+        var tagNameFixed = tagName.replace("#", "%23");  // for "C#" may be problems with other characteres
+        setTimeout( function() {
+            seQueryAsync("questions",
+                         {order: "desc", sort: "creation", tagged: tagNameFixed, site: siteName},
+                         100,  // 100 last questions
+                         that.putLastQuestionsPerTagDict,
+                         [tagName, that.lastQuestionsPerTagDict, that.tags.length, that]);
+         }, i * that.delay);
+      })();
     }
   };
 
