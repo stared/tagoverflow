@@ -70,6 +70,7 @@
 <script src="d3.v3.min.js"></script>
 <script src="se_query.js"></script>
 <script src="se_tags.js"></script>
+<script src="se_stats.js"></script>
 <script src="gradient.js"></script>
 <script>
 
@@ -330,7 +331,7 @@ var force = d3.layout.force()
   }
 
   setTimeout(colorizeTimeouted, 500);
-  
+/*  
   function answered(questions) 
   {
     var questionNumber=questions.length;
@@ -376,6 +377,7 @@ var force = d3.layout.force()
     if (questionNumber>0) {return d3.mean(rep)}
     else {return 0};
   }
+*/
 
   function color(lowcolor,highcolor,valuesDict){
     var values = [];
@@ -405,7 +407,7 @@ var force = d3.layout.force()
       valueList.push(value);
     };
     //console.log(d3.min(valueList))
-    var dict = {start:"blue", stop:"red", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
+    var dict = {start:"sienna", stop:"wheat", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
     return dict;
   };
 
@@ -419,7 +421,7 @@ var force = d3.layout.force()
       valueDict[tagName]=value;
       valueList.push(value);
     };
-    var dict = {start:"blue", stop:"yellow", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
+    var dict = {start:"green", stop:"yellow", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
     return dict;
   };
 
@@ -433,7 +435,7 @@ var force = d3.layout.force()
       valueDict[tagName]=value;
       valueList.push(value);
     };
-    var dict = {start:"purple", stop:"green", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
+    var dict = {start:"blue", stop:"cyan", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
     return dict;
   };
 
@@ -441,13 +443,20 @@ var force = d3.layout.force()
   {
     var valueDict = {};
     var valueList = [];
+    var rep =[]; //spr
     for (tagName in questionsDict)
     {
       var value = ownerReputation(questionsDict[tagName]);
       valueDict[tagName]=value;
       valueList.push(value);
+      rep[tagName]=questionsDict[tagName].map(function (q) { return q.owner.reputation; }); //spr
     };
-    var dict = {start:"yellow", stop:"red", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
+    
+    //spr
+    console.log(rep);
+    //
+    
+    var dict = {start:"red", stop:"yellow", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
     return dict;
   };
 
@@ -469,7 +478,6 @@ var force = d3.layout.force()
     {
       var nodes_colors = answeredColors(questionsDict);
     }
-    
     var nodes_colors = color(data.start, data.stop, data.values);
     var valueDomain = data.range;
     var colorRange = [data.start, data.stop];
