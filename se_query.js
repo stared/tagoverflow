@@ -50,7 +50,7 @@ var seQuery = function(command, dict, noOfItems){
 var seQueryAsync = function(command, dict, noOfItems, func, args){
   var pageSize = noOfItems || 100;
   if (pageSize > 100){
-    concole.log("aync calls for only up to 100 elements at once");
+    console.log("aync calls for only up to 100 elements at once");
     return false;
   }
   var queryString = apiName + command + "/?";

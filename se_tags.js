@@ -201,6 +201,12 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
   // but anyway, even for slower requests,
   // longer bursts does not look good
   this.siteStats = null;
+  // age of extracted data:
+  // warning: Date object count in milisceconds,SEapi count in seconds.  
+  this.monthFrame = {start:2*1000*60*60*24*30, stop:1*1000*60*60*24*30};
+  this.today = new Date().getTime(); //actual date
+  this.fromdate = Math.floor(new Date(this.today - this.monthFrame["start"]).getTime()/1000);
+  this.todate = Math.floor(new Date(this.today - this.monthFrame["stop"]).getTime()/1000);
 
   this.run = function(){
     this.siteStats = fetchSiteStats(siteName)[0];
@@ -257,7 +263,8 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
         var tagNameFixed = tagName.replace("#", "%23");  // for "C#" may be problems with other characteres
         setTimeout( function() {
             seQueryAsync("questions",
-                         {order: "desc", sort: "creation", tagged: tagNameFixed, site: siteName},
+                         {order: "desc", sort: "creation", tagged: tagNameFixed, site: siteName,
+                         fromdate: that.fromdate, todate: that.todate},
                          100,  // 100 last questions
                          that.putLastQuestionsPerTagDict,
                          [tagName, that.lastQuestionsPerTagDict, that.tags.length, that]);
