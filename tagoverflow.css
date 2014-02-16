@@ -73,8 +73,8 @@ div.site_info {
 	right: 20px;
   padding: 12px;
   width: 300px;
-  background: rgba(20, 20, 20, 0.85);
-	color: #ddd;
+  background: rgba(230, 230, 230, 0.85);
+	color: #222;
 	border: solid 1px #aaa;
 	border-radius: 4px;
 	z-index:10;
