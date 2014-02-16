@@ -41,6 +41,32 @@ text.legend {
     font-size: 11px;
 }
 
+#footnote {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px;
+  width: 300px;
+  background: #eee;
+  color: #222;
+  border: solid 1px #aaa;
+  border-radius: 4px;
+  z-index:10;
+}
+
+#options {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 12px;
+/*  width: 300px;*/
+  background: #eee;
+  color: #222;
+  border: solid 1px #aaa;
+  border-radius: 4px;
+  z-index:10;
+}
+
 div.site_info {
 	position: fixed;
 	top: 20px;

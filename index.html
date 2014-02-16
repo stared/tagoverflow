@@ -9,35 +9,35 @@
 </head>
 
 <body>
-  <p>TagOverflow v0.3 (not-yet-publishable).
-    <a href="https://github.com/stared/tagoverflow/">Source on GitHub.</a></p>
-  <p>Select site:
-    <select id="site_name">
-     <!-- <option value="biology">Biology</option>
-      <option value="academia">Academia</option>
-      <option value="mathoverflow">MathOverflow</option>
-      <option value="physics">Physics</option>
-      <option value="stackoverflow">StackOverflow</option>-->
-      
-    </select>
-    <p>Select number of tags:
-    <select id="pageSize">
-      <option value="10">10</option>
-      <option value="25">25</option>
-      <option value="50">50</option>
-      <option value="75">75</option>
-      <option value="100">100</option>
-    </select>
-    </p>
-    <p>Select parameter for tag coloring:
-    <select id="colorParameter">
-      <option value="answered">% answered</option>
-      <option value="score">averange score</option>
-      <option value="view">averange view count</option>
-      <option value="reputation">averange owner reputation</option>
-    </select>
-    </p>
-  </p>
+
+<div id="footnote">
+  TagOverflow v0.3 (not-yet-publishable).<br>
+  <a href="https://github.com/stared/tagoverflow/">Source on GitHub.</a>
+</div>
+
+<div id="options">
+
+  Site:<br>
+  <select id="site_name">
+  </select><br><br>
+
+  Number of tags:<br>
+  <select id="pageSize">
+    <option value="8" selected="selected">8</option>
+    <option value="16">16</option>
+    <option value="32">32</option>
+    <option value="64">64</option>
+  </select><br><br>
+
+  Tag coloring:<br>
+  <select id="colorParameter">
+    <option value="answered">% answered</option>
+    <option value="score">av. score</option>
+    <option value="view">av. view count</option>
+    <option value="reputation">av. owner reputation</option>
+  </select>
+
+</div>
  
 <div id="theBar"></div>  
 <div class="site_info">
@@ -85,7 +85,7 @@ d3.select("select#site_name").selectAll("option")
     .enter()
       .append("option")
         .attr("value", function(d){ return d.api_site_parameter; })
-        .text(function(d){ return d.name; })
+        .html(function(d){ return d.name; })
 
 $("select#site_name")[0].value = "stackoverflow";
 
