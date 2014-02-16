@@ -128,3 +128,47 @@ a:link { color:#33a; text-decoration: none; }
 a:visited { color:#833; text-decoration: none; }
 a:hover { color:#aaa; text-decoration: none; }
 /*a:active { color:#aaa; text-decoration: underline; }*/
+
+#askers {
+  width: 45%;
+  float:left;
+}
+
+#answerers {
+  width: 45%;
+  float: right;
+}
+
+.user_row
+{
+    width: 132px;
+    height: 32px;
+    display: table-row;
+}
+
+.userface
+{
+    width: 32px;
+    height: 32px;
+    display: table-cell;
+}
+
+
+.username_wrapper
+{
+    width: 100px;
+    height: 32px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.username
+{
+    width: 100px;
+    height: 32px;
+    /*vertical-align: middle;*/
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
