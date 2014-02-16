@@ -47,7 +47,7 @@ text.legend {
   right: 20px;
   padding: 12px;
   width: 300px;
-  background: #eee;
+  background: rgba(230, 230, 230, 0.85);
   color: #222;
   border: solid 1px #aaa;
   border-radius: 4px;
@@ -60,7 +60,7 @@ text.legend {
   left: 20px;
   padding: 12px;
 /*  width: 300px;*/
-  background: #eee;
+  background: rgba(230, 230, 230, 0.85);
   color: #222;
   border: solid 1px #aaa;
   border-radius: 4px;
@@ -73,7 +73,7 @@ div.site_info {
 	right: 20px;
   padding: 12px;
   width: 300px;
-  background: #000;
+  background: rgba(20, 20, 20, 0.85);
 	color: #ddd;
 	border: solid 1px #aaa;
 	border-radius: 4px;
@@ -87,7 +87,7 @@ div.tag_info {
 	right: 20px;
   padding: 12px;
   width: 300px;
-  background: #eee;
+  background: rgba(230, 230, 230, 0.85);
   color: #222;
   border: solid 1px #aaa;
   border-radius: 4px;
