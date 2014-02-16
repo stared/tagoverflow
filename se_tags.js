@@ -201,18 +201,22 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
   // but anyway, even for slower requests,
   // longer bursts does not look good
   this.siteStats = null;
+
   // age of extracted data:
   // warning: Date object count in milisceconds,SEapi count in seconds.  
   this.monthFrame = {start:2*1000*60*60*24*30, stop:1*1000*60*60*24*30};
   this.today = new Date().getTime(); //actual date
   this.fromdate = Math.floor(new Date(this.today - this.monthFrame["start"]).getTime()/1000);
   this.todate = Math.floor(new Date(this.today - this.monthFrame["stop"]).getTime()/1000);
+  
+  this.siteData = sitesDict[siteName];
+  // at least to have this info here
 
   this.run = function(){
     this.siteStats = fetchSiteStats(siteName)[0];
-    $(".site_info #title").html(sitesDict[siteName].name);
-    $(".site_info #dscr").html(sitesDict[siteName].audience);
-    $(".site_info a").attr("href",sitesDict[siteName].site_url);
+    $(".site_info #title").html(this.siteData.name);
+    $(".site_info #dscr").html(this.siteData.audience);
+    $(".site_info a").attr("href", this.siteData.site_url);
     this.retriveTags();
     this.retriveRelatedTags();
   };
