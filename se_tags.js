@@ -278,12 +278,12 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
     var progress = Object.keys(targetDict).length;
     if (progress === tagsLength) {
       // console.log("Related tags: DONE!");
-      $(".site_info #loading_status").html("Loading tag neighbors: DONE!");
+      $(".site_info #loading_status").html("<br>Loading tag neighbors: DONE!");
       that.processRelatedTags();  // onDone();  // this.processRelatedTags();
       // f--king with references
     } else {
       // console.log("Related tags: " + progress + "/" + tagsLength);
-      $(".site_info #loading_status").html("Loading tag neighbors: " + (progress) + "/" + tagsLength + "...");
+      $(".site_info #loading_status").html("<br>Loading tag neighbors: " + (progress) + "/" + tagsLength + "...");
     }
   };
 
@@ -292,7 +292,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
     var progress = Object.keys(targetDict).length;
     if (progress === tagsLength) {
       // console.log("Additional tag info: DONE!");
-      $(".site_info #loading_status").html("Loading additional tag info: DONE!");
+      $(".site_info #loading_status").html("<br>Loading additional tag info: DONE!");
       that.status = "Done!";
       setTimeout(function(){
         $(".site_info #loading_status").html("");
@@ -300,7 +300,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
       // and we can fire something
     } else {
       // console.log("Additional tag info: " + progress + "/" + tagsLength);
-      $(".site_info #loading_status").html("Loading additional tag info: " + (progress) + "/" + tagsLength + "...");
+      $(".site_info #loading_status").html("<br>Loading additional tag info: " + (progress) + "/" + tagsLength + "...");
     }
   };
 
