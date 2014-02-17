@@ -1,0 +1,3771 @@
+[
+  {
+    "site_state": "normal", 
+    "launch_date": 1221436800, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://www.stackoverflow.com", 
+      "http://facebook.stackoverflow.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#3E6D8E", 
+      "tag_background_color": "#E0EAF1"
+    }, 
+    "site_url": "http://stackoverflow.com", 
+    "favicon_url": "http://cdn.sstatic.net/stackoverflow/img/favicon.ico", 
+    "audience": "professional and enthusiast programmers", 
+    "api_site_parameter": "stackoverflow", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "relation": "chat", 
+        "name": "Stack Overflow Chat", 
+        "site_url": "http://chat.stackoverflow.com"
+      }
+    ], 
+    "logo_url": "http://cdn.sstatic.net/stackoverflow/img/logo.png", 
+    "name": "Stack Overflow"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "ServerFault", 
+    "launch_date": 1243296000, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/serverfault/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#10456A", 
+      "tag_foreground_color": "#444444", 
+      "tag_background_color": "#F3F1D9"
+    }, 
+    "site_url": "http://serverfault.com", 
+    "favicon_url": "http://cdn.sstatic.net/serverfault/img/favicon.ico", 
+    "audience": "professional system and network administrators", 
+    "api_site_parameter": "serverfault", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/serverfault/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.serverfault", 
+        "relation": "meta", 
+        "name": "Meta Server Fault", 
+        "site_url": "http://meta.serverfault.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "logo_url": "http://cdn.sstatic.net/serverfault/img/logo.png", 
+    "name": "Server Fault"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "super_user", 
+    "launch_date": 1250553600, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/superuser/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#1086A4", 
+      "tag_foreground_color": "#1087A4", 
+      "tag_background_color": "#FFFFFF"
+    }, 
+    "site_url": "http://superuser.com", 
+    "favicon_url": "http://cdn.sstatic.net/superuser/img/favicon.ico", 
+    "audience": "computer enthusiasts and power users", 
+    "api_site_parameter": "superuser", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/superuser/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.superuser", 
+        "relation": "meta", 
+        "name": "Meta Super User", 
+        "site_url": "http://meta.superuser.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "logo_url": "http://cdn.sstatic.net/superuser/img/logo.png", 
+    "name": "Super User"
+  }, 
+  {
+    "site_state": "normal", 
+    "launch_date": 1246147200, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://meta.stackexchange.com", 
+      "http://bugs.meta.stackoverflow.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/stackoverflowmeta/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#3D3D3D", 
+      "tag_foreground_color": "#6F6F6F", 
+      "tag_background_color": "#E7E7E7"
+    }, 
+    "site_url": "http://meta.stackoverflow.com", 
+    "favicon_url": "http://cdn.sstatic.net/stackoverflowmeta/img/favicon.ico", 
+    "audience": "meta-discussion of the Stack Exchange family of Q&amp;A websites", 
+    "api_site_parameter": "meta.stackoverflow", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/stackoverflowmeta/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "relation": "chat", 
+        "name": "Meta Stack Overflow Chat", 
+        "site_url": "http://chat.meta.stackoverflow.com"
+      }
+    ], 
+    "logo_url": "http://cdn.sstatic.net/stackoverflowmeta/img/logo.png", 
+    "name": "Meta Stack Overflow"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackWebApps", 
+    "launch_date": 1285804800, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://nothingtoinstall.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/webapps/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#426389", 
+      "tag_foreground_color": "#5D7A9C", 
+      "tag_background_color": "#E2EDFA"
+    }, 
+    "site_url": "http://webapps.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/webapps/img/favicon.ico", 
+    "audience": "power users of web applications", 
+    "api_site_parameter": "webapps", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/webapps/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.webapps", 
+        "relation": "meta", 
+        "name": "Web Applications Meta Stack Exchange", 
+        "site_url": "http://meta.webapps.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1278460800, 
+    "logo_url": "http://cdn.sstatic.net/webapps/img/logo.png", 
+    "closed_beta_date": 1277856000, 
+    "name": "Web Applications"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "TheArqade", 
+    "launch_date": 1286323200, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://arqade.com", 
+      "http://thearqade.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/gaming/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#5A8F53", 
+      "tag_foreground_color": "#666", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://gaming.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/gaming/img/favicon.ico", 
+    "audience": "passionate videogamers on all platforms", 
+    "api_site_parameter": "gaming", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/gaming/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.gaming", 
+        "relation": "meta", 
+        "name": "Arqade Meta", 
+        "site_url": "http://meta.gaming.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1279065600, 
+    "logo_url": "http://cdn.sstatic.net/gaming/img/logo.png", 
+    "closed_beta_date": 1278460800, 
+    "name": "Arqade"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackWebmasters", 
+    "launch_date": 1286928000, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://webmaster.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/webmasters/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#1C69A4", 
+      "tag_foreground_color": "#1B8FBB", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://webmasters.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/webmasters/img/favicon.ico", 
+    "audience": "pro webmasters", 
+    "api_site_parameter": "webmasters", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/webmasters/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.webmasters", 
+        "relation": "meta", 
+        "name": "Webmasters Meta Stack Exchange", 
+        "site_url": "http://meta.webmasters.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1279152000, 
+    "logo_url": "http://cdn.sstatic.net/webmasters/img/logo.png", 
+    "closed_beta_date": 1278547200, 
+    "name": "Webmasters"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackCooking", 
+    "launch_date": 1287014400, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://seasonedadvice.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/cooking/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#AB2020", 
+      "tag_foreground_color": "#847454", 
+      "tag_background_color": "#FFF5E4"
+    }, 
+    "site_url": "http://cooking.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/cooking/img/favicon.ico", 
+    "audience": "professional and amateur chefs", 
+    "api_site_parameter": "cooking", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/cooking/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.cooking", 
+        "relation": "meta", 
+        "name": "Seasoned Advice Meta", 
+        "site_url": "http://meta.cooking.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1279238400, 
+    "logo_url": "http://cdn.sstatic.net/cooking/img/logo.png", 
+    "closed_beta_date": 1278633600, 
+    "name": "Seasoned Advice"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackGameDev", 
+    "launch_date": 1287619200, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/gamedev/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#416D63", 
+      "tag_foreground_color": "#444444", 
+      "tag_background_color": "#eeeeee"
+    }, 
+    "site_url": "http://gamedev.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/gamedev/img/favicon.ico", 
+    "audience": "professional and independent game developers", 
+    "api_site_parameter": "gamedev", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/gamedev/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.gamedev", 
+        "relation": "meta", 
+        "name": "Game Development Meta Stack Exchange", 
+        "site_url": "http://meta.gamedev.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1279670400, 
+    "logo_url": "http://cdn.sstatic.net/gamedev/img/logo.png", 
+    "closed_beta_date": 1279065600, 
+    "name": "Game Development"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackPhotos", 
+    "launch_date": 1288224000, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://photography.stackexchange.com", 
+      "http://photos.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/photo/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#444", 
+      "tag_background_color": "#F7F7F7"
+    }, 
+    "site_url": "http://photo.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/photo/img/favicon.ico", 
+    "audience": "professional, enthusiast and amateur photographers", 
+    "api_site_parameter": "photo", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/photo/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.photo", 
+        "relation": "meta", 
+        "name": "Photography Meta Stack Exchange", 
+        "site_url": "http://meta.photo.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1279756800, 
+    "logo_url": "http://cdn.sstatic.net/photo/img/logo.png", 
+    "closed_beta_date": 1279152000, 
+    "name": "Photography"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackStats", 
+    "launch_date": 1288828800, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://statistics.stackexchange.com", 
+      "http://crossvalidated.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/stats/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax", 
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#5D5D5D", 
+      "tag_background_color": "#edefed"
+    }, 
+    "site_url": "http://stats.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/stats/img/favicon.ico", 
+    "audience": "statisticians, data analysts, data miners and data visualization experts", 
+    "api_site_parameter": "stats", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/stats/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.stats", 
+        "relation": "meta", 
+        "name": "Cross Validated Meta", 
+        "site_url": "http://meta.stats.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1280102400, 
+    "logo_url": "http://cdn.sstatic.net/stats/img/logo.png", 
+    "closed_beta_date": 1279497600, 
+    "name": "Cross Validated"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackMath", 
+    "launch_date": 1287964800, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://maths.stackexchange.com", 
+      "http://mathematics.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/math/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#888888"
+    }, 
+    "site_url": "http://math.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/math/img/favicon.ico", 
+    "audience": "people studying math at any level and professionals in related fields", 
+    "api_site_parameter": "math", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/math/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.math", 
+        "relation": "meta", 
+        "name": "Mathematics Meta Stack Exchange", 
+        "site_url": "http://meta.math.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1280188800, 
+    "logo_url": "http://cdn.sstatic.net/math/img/logo.png", 
+    "closed_beta_date": 1279584000, 
+    "name": "Mathematics"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackDIY", 
+    "launch_date": 1299110400, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/diy/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#696969", 
+      "tag_background_color": "#f5f5f5"
+    }, 
+    "site_url": "http://diy.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/diy/img/favicon.ico", 
+    "audience": "contractors and serious DIYers", 
+    "api_site_parameter": "diy", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/diy/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.diy", 
+        "relation": "meta", 
+        "name": "Home Improvement Meta Stack Exchange", 
+        "site_url": "http://meta.diy.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1280275200, 
+    "logo_url": "http://cdn.sstatic.net/diy/img/logo.png", 
+    "closed_beta_date": 1279670400, 
+    "name": "Home Improvement"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackGIS", 
+    "launch_date": 1299456000, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/gis/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#176F8C", 
+      "tag_foreground_color": "#696969", 
+      "tag_background_color": "#f5f5f5"
+    }, 
+    "site_url": "http://gis.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/gis/img/favicon.ico", 
+    "audience": "cartographers, geographers and GIS professionals", 
+    "api_site_parameter": "gis", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/gis/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.gis", 
+        "relation": "meta", 
+        "name": "Geographic Information Systems Meta Stack Exchange", 
+        "site_url": "http://meta.gis.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1280361600, 
+    "logo_url": "http://cdn.sstatic.net/gis/img/logo-small.png", 
+    "closed_beta_date": 1279756800, 
+    "name": "Geographic Information Systems"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackTeX", 
+    "launch_date": 1289433600, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/tex/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#444444", 
+      "tag_background_color": "#FEFEFA"
+    }, 
+    "site_url": "http://tex.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/tex/img/favicon.ico", 
+    "audience": "users of TeX, LaTeX, ConTeXt, and related typesetting systems", 
+    "api_site_parameter": "tex", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/tex/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.tex", 
+        "relation": "meta", 
+        "name": "TeX - LaTeX Meta Stack Exchange", 
+        "site_url": "http://meta.tex.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1280707200, 
+    "logo_url": "http://cdn.sstatic.net/tex/img/logo.png", 
+    "closed_beta_date": 1280102400, 
+    "name": "TeX - LaTeX"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "AskUbuntu", 
+    "launch_date": 1286668800, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://ubuntu.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/askubuntu/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#333333", 
+      "tag_foreground_color": "#5E5E5E", 
+      "tag_background_color": "#E8E7E5"
+    }, 
+    "site_url": "http://askubuntu.com", 
+    "favicon_url": "http://cdn.sstatic.net/askubuntu/img/favicon.ico", 
+    "audience": "Ubuntu users and developers", 
+    "api_site_parameter": "askubuntu", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/askubuntu/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.askubuntu", 
+        "relation": "meta", 
+        "name": "Ask Ubuntu Meta", 
+        "site_url": "http://meta.askubuntu.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1280880000, 
+    "logo_url": "http://cdn.sstatic.net/askubuntu/img/logo.png", 
+    "closed_beta_date": 1280275200, 
+    "name": "Ask Ubuntu"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackFinance", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://basicallymoney.com", 
+      "http://www.basicallymoney.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/money/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://money.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/money/img/favicon.ico", 
+    "audience": "people who want to be financially literate", 
+    "api_site_parameter": "money", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.money", 
+        "relation": "meta", 
+        "name": "Personal Finance &amp; Money Meta Stack Exchange", 
+        "site_url": "http://meta.money.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1281484800, 
+    "logo_url": "http://cdn.sstatic.net/money/img/logo.png", 
+    "closed_beta_date": 1280880000, 
+    "name": "Personal Finance &amp; Money"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackEnglish", 
+    "launch_date": 1290384000, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://elu.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/english/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#5E5E5E", 
+      "tag_background_color": "#F4ECE3"
+    }, 
+    "site_url": "http://english.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/english/img/favicon.ico", 
+    "audience": "linguists, etymologists, and serious English language enthusiasts", 
+    "api_site_parameter": "english", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/english/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.english", 
+        "relation": "meta", 
+        "name": "English Language &amp; Usage Meta Stack Exchange", 
+        "site_url": "http://meta.english.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1281571200, 
+    "logo_url": "http://cdn.sstatic.net/english/img/logo.png", 
+    "closed_beta_date": 1280966400, 
+    "name": "English Language &amp; Usage"
+  }, 
+  {
+    "site_state": "normal", 
+    "launch_date": 1274313600, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/stackapps/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077DD", 
+      "tag_foreground_color": "#555555", 
+      "tag_background_color": "#E7ECEC"
+    }, 
+    "site_url": "http://stackapps.com", 
+    "favicon_url": "http://cdn.sstatic.net/stackapps/img/favicon.ico", 
+    "audience": "apps, scripts, and development with the Stack Exchange API", 
+    "api_site_parameter": "stackapps", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/stackapps/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "logo_url": "http://cdn.sstatic.net/stackapps/img/logo.png", 
+    "name": "Stack Apps"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackUX", 
+    "launch_date": 1325548800, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://ui.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/ux/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Balsamiq"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://ux.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/ux/img/favicon.ico", 
+    "audience": "user experience researchers and experts", 
+    "api_site_parameter": "ux", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/ux/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.ux", 
+        "relation": "meta", 
+        "name": "User Experience Meta Stack Exchange", 
+        "site_url": "http://meta.ux.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1281916800, 
+    "logo_url": "http://cdn.sstatic.net/ux/img/logo.png", 
+    "closed_beta_date": 1281312000, 
+    "name": "User Experience"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackUnix", 
+    "launch_date": 1294790400, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://linux.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/unix/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#444444", 
+      "tag_background_color": "#F0F0F0"
+    }, 
+    "site_url": "http://unix.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/unix/img/favicon.ico", 
+    "audience": "users of Linux, FreeBSD and other Un*x-like operating systems.", 
+    "api_site_parameter": "unix", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/unix/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.unix", 
+        "relation": "meta", 
+        "name": "Unix &amp; Linux Meta Stack Exchange", 
+        "site_url": "http://meta.unix.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1282003200, 
+    "logo_url": "http://cdn.sstatic.net/unix/img/logo.png", 
+    "closed_beta_date": 1281398400, 
+    "name": "Unix &amp; Linux"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackWordPress", 
+    "launch_date": 1297641600, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/wordpress/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#666", 
+      "tag_background_color": "#F5F5F5"
+    }, 
+    "site_url": "http://wordpress.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/wordpress/img/favicon.ico", 
+    "audience": "WordPress developers and administrators", 
+    "api_site_parameter": "wordpress", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/wordpress/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.wordpress", 
+        "relation": "meta", 
+        "name": "WordPress Answers Meta", 
+        "site_url": "http://meta.wordpress.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1282089600, 
+    "logo_url": "http://cdn.sstatic.net/wordpress/img/logo.png", 
+    "closed_beta_date": 1281484800, 
+    "name": "WordPress Answers"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackCSTheory", 
+    "launch_date": 1291075200, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/cstheory/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#fCf7ed", 
+      "tag_background_color": "#696969"
+    }, 
+    "site_url": "http://cstheory.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/cstheory/img/favicon.ico", 
+    "audience": "theoretical computer scientists and researchers in related fields", 
+    "api_site_parameter": "cstheory", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/cstheory/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.cstheory", 
+        "relation": "meta", 
+        "name": "Theoretical Computer Science Meta Stack Exchange", 
+        "site_url": "http://meta.cstheory.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1282521600, 
+    "logo_url": "http://cdn.sstatic.net/cstheory/img/logo.png", 
+    "closed_beta_date": 1281916800, 
+    "name": "Theoretical Computer Science"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "askdifferent", 
+    "launch_date": 1296172800, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://askdifferent.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/apple/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#304955", 
+      "tag_background_color": "#E6F1F7"
+    }, 
+    "site_url": "http://apple.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/apple/img/favicon.ico", 
+    "audience": "power users of Apple hardware and software", 
+    "api_site_parameter": "apple", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/apple/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.apple", 
+        "relation": "meta", 
+        "name": "Ask Different Meta", 
+        "site_url": "http://meta.apple.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1282608000, 
+    "logo_url": "http://cdn.sstatic.net/apple/img/logo.png", 
+    "closed_beta_date": 1282003200, 
+    "name": "Ask Different"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackRPG", 
+    "launch_date": 1334102400, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/rpg/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://rpg.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/rpg/img/favicon.ico", 
+    "audience": "gamemasters and players of tabletop, paper-and-pencil role-playing games", 
+    "api_site_parameter": "rpg", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/rpg/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.rpg", 
+        "relation": "meta", 
+        "name": "Role-playing Games Meta Stack Exchange", 
+        "site_url": "http://meta.rpg.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1282780800, 
+    "logo_url": "http://cdn.sstatic.net/rpg/img/logo.png", 
+    "closed_beta_date": 1282176000, 
+    "name": "Role-playing Games"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackBicycles", 
+    "launch_date": 1312243200, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://bicycle.stackexchange.com", 
+      "http://cycling.stackexchange.com", 
+      "http://bikes.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/bicycles/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#478EA7", 
+      "tag_background_color": "#E7F0F3"
+    }, 
+    "site_url": "http://bicycles.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/bicycles/img/favicon.ico", 
+    "audience": "people who build and repair bicycles, people who train cycling, or commute on bicycles", 
+    "api_site_parameter": "bicycles", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/bicycles/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.bicycles", 
+        "relation": "meta", 
+        "name": "Bicycles Meta Stack Exchange", 
+        "site_url": "http://meta.bicycles.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1283299200, 
+    "logo_url": "http://cdn.sstatic.net/bicycles/img/logo.png", 
+    "closed_beta_date": 1282694400, 
+    "name": "Bicycles"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackProgrammer", 
+    "launch_date": 1292457600, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://programmer.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/programmers/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#5D5D5D", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://programmers.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/programmers/img/favicon.ico", 
+    "audience": "professional programmers interested in conceptual questions about software development", 
+    "api_site_parameter": "programmers", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/programmers/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.programmers", 
+        "relation": "meta", 
+        "name": "Programmers Meta Stack Exchange", 
+        "site_url": "http://meta.programmers.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1283904000, 
+    "logo_url": "http://cdn.sstatic.net/programmers/img/logo.png", 
+    "closed_beta_date": 1283299200, 
+    "name": "Programmers"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackElectronix", 
+    "launch_date": 1300665600, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://chiphacker.com", 
+      "http://www.chiphacker.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/electronics/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax", 
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#696969", 
+      "tag_background_color": "#ffffff"
+    }, 
+    "site_url": "http://electronics.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/electronics/img/favicon.ico", 
+    "audience": "electronics and electrical engineering professionals, students, and enthusiasts", 
+    "api_site_parameter": "electronics", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/electronics/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.electronics", 
+        "relation": "meta", 
+        "name": "Electrical Engineering Meta Stack Exchange", 
+        "site_url": "http://meta.electronics.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1285718400, 
+    "logo_url": "http://cdn.sstatic.net/electronics/img/logo.png", 
+    "closed_beta_date": 1285718400, 
+    "name": "Electrical Engineering"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackAndroid", 
+    "launch_date": 1300924800, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/android/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#666666", 
+      "tag_background_color": "#F1F5E6"
+    }, 
+    "site_url": "http://android.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/android/img/favicon.ico", 
+    "audience": "enthusiasts and power users of the Android operating system", 
+    "api_site_parameter": "android", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/android/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.android", 
+        "relation": "meta", 
+        "name": "Android Enthusiasts Meta Stack Exchange", 
+        "site_url": "http://meta.android.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1284940800, 
+    "logo_url": "http://cdn.sstatic.net/android/img/logo.png", 
+    "closed_beta_date": 1284336000, 
+    "name": "Android Enthusiasts"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackOnStartups", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://onstartups.stackexchange.com", 
+      "http://startups.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/onstartups/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://answers.onstartups.com", 
+    "favicon_url": "http://cdn.sstatic.net/onstartups/img/favicon.ico", 
+    "audience": "entrepreneurs looking to start or run a new business", 
+    "api_site_parameter": "answers.onstartups", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.answers.onstartups", 
+        "relation": "meta", 
+        "name": "Answers OnStartups Meta", 
+        "site_url": "http://meta.answers.onstartups.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1285027200, 
+    "logo_url": "http://cdn.sstatic.net/onstartups/img/logo.png", 
+    "closed_beta_date": 1285027200, 
+    "name": "Answers OnStartups"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackBoardGames", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://boardgame.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/boardgames/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://boardgames.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/boardgames/img/favicon.ico", 
+    "audience": "people who like playing board games, designing board games or modifying the rules of existing board games", 
+    "api_site_parameter": "boardgames", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.boardgames", 
+        "relation": "meta", 
+        "name": "Board &amp; Card Games Meta Stack Exchange", 
+        "site_url": "http://meta.boardgames.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1288051200, 
+    "logo_url": "http://cdn.sstatic.net/boardgames/img/logo.png", 
+    "closed_beta_date": 1287446400, 
+    "name": "Board &amp; Card Games"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackPhysics", 
+    "launch_date": 1298505600, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/physics/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#5A8788", 
+      "tag_background_color": "#EBF5F5"
+    }, 
+    "site_url": "http://physics.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/physics/img/favicon.ico", 
+    "audience": "active researchers, academics and students of physics", 
+    "api_site_parameter": "physics", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/physics/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.physics", 
+        "relation": "meta", 
+        "name": "Physics Meta Stack Exchange", 
+        "site_url": "http://meta.physics.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1289260800, 
+    "logo_url": "http://cdn.sstatic.net/physics/img/logo.png", 
+    "closed_beta_date": 1288656000, 
+    "name": "Physics"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackHomebrew", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://homebrewing.stackexchange.com", 
+      "http://brewadvice.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/homebrew/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://homebrew.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/homebrew/img/favicon.ico", 
+    "audience": "dedicated home brewers and serious enthusiasts", 
+    "api_site_parameter": "homebrew", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.homebrew", 
+        "relation": "meta", 
+        "name": "Homebrewing Meta Stack Exchange", 
+        "site_url": "http://meta.homebrew.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1289779200, 
+    "logo_url": "http://cdn.sstatic.net/homebrew/img/logo.png", 
+    "closed_beta_date": 1289174400, 
+    "name": "Homebrewing"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackSecurity", 
+    "launch_date": 1310428800, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://itsecurity.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/security/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://security.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/security/img/favicon.ico", 
+    "audience": "IT security professionals", 
+    "api_site_parameter": "security", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/security/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.security", 
+        "relation": "meta", 
+        "name": "IT Security Meta Stack Exchange", 
+        "site_url": "http://meta.security.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1290038400, 
+    "logo_url": "http://cdn.sstatic.net/security/img/logo.png", 
+    "closed_beta_date": 1289433600, 
+    "name": "IT Security"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackWriters", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://writer.stackexchange.com", 
+      "http://writing.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/writers/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://writers.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/writers/img/favicon.ico", 
+    "audience": "authors, editors, reviewers, professional writers, and aspiring writers", 
+    "api_site_parameter": "writers", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.writers", 
+        "relation": "meta", 
+        "name": "Writers Meta Stack Exchange", 
+        "site_url": "http://meta.writers.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1290643200, 
+    "logo_url": "http://cdn.sstatic.net/writers/img/logo.png", 
+    "closed_beta_date": 1290038400, 
+    "name": "Writers"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackAVP", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://audio.stackexchange.com", 
+      "http://video.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/avp/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://avp.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/avp/img/favicon.ico", 
+    "audience": "engineers, producers, editors, and enthusiasts spanning the fields of audio, video, and media creation", 
+    "api_site_parameter": "avp", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.avp", 
+        "relation": "meta", 
+        "name": "Audio-Video Production Meta Stack Exchange", 
+        "site_url": "http://meta.avp.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1292284800, 
+    "logo_url": "http://cdn.sstatic.net/avp/img/logo.png", 
+    "closed_beta_date": 1291680000, 
+    "name": "Audio-Video Production"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackDesign", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://graphicsdesign.stackexchange.com", 
+      "http://graphicdesigns.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/graphicdesign/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://graphicdesign.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/graphicdesign/img/favicon.ico", 
+    "audience": "professional graphic designers and non-designers trying to do their own graphic design", 
+    "api_site_parameter": "graphicdesign", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.graphicdesign", 
+        "relation": "meta", 
+        "name": "Graphic Design Meta Stack Exchange", 
+        "site_url": "http://meta.graphicdesign.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1294704000, 
+    "logo_url": "http://cdn.sstatic.net/graphicdesign/img/logo.png", 
+    "closed_beta_date": 1294099200, 
+    "name": "Graphic Design"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackDBAs", 
+    "launch_date": 1313452800, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/dba/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://dba.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/dba/img/favicon.ico", 
+    "audience": "database professionals who wish to improve their database skills and learn from others in the community", 
+    "api_site_parameter": "dba", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/dba/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.dba", 
+        "relation": "meta", 
+        "name": "Database Administrators Meta Stack Exchange", 
+        "site_url": "http://meta.dba.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1294617600, 
+    "logo_url": "http://cdn.sstatic.net/dba/img/logo.png", 
+    "closed_beta_date": 1294012800, 
+    "name": "Database Administrators"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackSciFi", 
+    "launch_date": 1323734400, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://sciencefiction.stackexchange.com", 
+      "http://fantasy.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/scifi/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#777", 
+      "tag_background_color": "#d9e6ec"
+    }, 
+    "site_url": "http://scifi.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/scifi/img/favicon.ico", 
+    "audience": "science fiction and fantasy enthusiasts", 
+    "api_site_parameter": "scifi", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/scifi/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.scifi", 
+        "relation": "meta", 
+        "name": "Science Fiction &amp; Fantasy Meta Stack Exchange", 
+        "site_url": "http://meta.scifi.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1295308800, 
+    "logo_url": "http://cdn.sstatic.net/scifi/img/logo.png", 
+    "closed_beta_date": 1294704000, 
+    "name": "Science Fiction &amp; Fantasy"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackCodeReview", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/codereview/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://codereview.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/codereview/img/favicon.ico", 
+    "audience": "peer programmer code reviews", 
+    "api_site_parameter": "codereview", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.codereview", 
+        "relation": "meta", 
+        "name": "Code Review Meta Stack Exchange", 
+        "site_url": "http://meta.codereview.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1296000000, 
+    "logo_url": "http://cdn.sstatic.net/codereview/img/logo.png", 
+    "closed_beta_date": 1295395200, 
+    "name": "Code Review"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackCodeGolf", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/codegolf/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://codegolf.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/codegolf/img/favicon.ico", 
+    "audience": "programming puzzle enthusiasts and code golfers", 
+    "api_site_parameter": "codegolf", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.codegolf", 
+        "relation": "meta", 
+        "name": "Programming Puzzles &amp; Code Golf Meta Stack Exchange", 
+        "site_url": "http://meta.codegolf.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1296691200, 
+    "logo_url": "http://cdn.sstatic.net/codegolf/img/logo.png", 
+    "closed_beta_date": 1296086400, 
+    "name": "Programming Puzzles &amp; Code Golf"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackQuant", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/quant/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://quant.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/quant/img/favicon.ico", 
+    "audience": "finance professionals and academics", 
+    "api_site_parameter": "quant", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.quant", 
+        "relation": "meta", 
+        "name": "Quantitative Finance Meta Stack Exchange", 
+        "site_url": "http://meta.quant.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1297036800, 
+    "logo_url": "http://cdn.sstatic.net/quant/img/logo.png", 
+    "closed_beta_date": 1296432000, 
+    "name": "Quantitative Finance"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackProjects", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/pm/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://pm.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/pm/img/favicon.ico", 
+    "audience": "project managers", 
+    "api_site_parameter": "pm", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.pm", 
+        "relation": "meta", 
+        "name": "Project Management Meta Stack Exchange", 
+        "site_url": "http://meta.pm.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1297641600, 
+    "logo_url": "http://cdn.sstatic.net/pm/img/logo.png", 
+    "closed_beta_date": 1297036800, 
+    "name": "Project Management"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackSkeptic", 
+    "launch_date": 1332288000, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://skeptic.stackexchange.com", 
+      "http://skepticexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/skeptics/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://skeptics.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/skeptics/img/favicon.ico", 
+    "audience": "scientific skepticism", 
+    "api_site_parameter": "skeptics", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/skeptics/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.skeptics", 
+        "relation": "meta", 
+        "name": "Skeptics Meta Stack Exchange", 
+        "site_url": "http://meta.skeptics.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1299196800, 
+    "logo_url": "http://cdn.sstatic.net/skeptics/img/logo.png", 
+    "closed_beta_date": 1298505600, 
+    "name": "Skeptics"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackFitness", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/fitness/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://fitness.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/fitness/img/favicon.ico", 
+    "audience": "physical fitness professionals, athletes, trainers, and those providing health-related needs", 
+    "api_site_parameter": "fitness", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.fitness", 
+        "relation": "meta", 
+        "name": "Physical Fitness Meta Stack Exchange", 
+        "site_url": "http://meta.fitness.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1299542400, 
+    "logo_url": "http://cdn.sstatic.net/fitness/img/logo.png", 
+    "closed_beta_date": 1298937600, 
+    "name": "Physical Fitness"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackDrupal", 
+    "launch_date": 1314662400, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/drupal/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#3D89B7", 
+      "tag_foreground_color": "#707070", 
+      "tag_background_color": "#F8F8F8"
+    }, 
+    "site_url": "http://drupal.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/drupal/img/favicon.ico", 
+    "audience": "Drupal developers and administrators", 
+    "api_site_parameter": "drupal", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/drupal/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.drupal", 
+        "relation": "meta", 
+        "name": "Drupal Answers Meta", 
+        "site_url": "http://meta.drupal.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1299628800, 
+    "logo_url": "http://cdn.sstatic.net/drupal/img/logo.png", 
+    "closed_beta_date": 1299024000, 
+    "name": "Drupal Answers"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackMechanics", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://garage.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/mechanics/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://mechanics.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/mechanics/img/favicon.ico", 
+    "audience": "mechanics and DIY enthusiast owners of cars, trucks, and motorcycles", 
+    "api_site_parameter": "mechanics", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.mechanics", 
+        "relation": "meta", 
+        "name": "Motor Vehicle Maintenance &amp; Repair Meta Stack Exchange", 
+        "site_url": "http://meta.mechanics.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1300060800, 
+    "logo_url": "http://cdn.sstatic.net/mechanics/img/logo.png", 
+    "closed_beta_date": 1299456000, 
+    "name": "Motor Vehicle Maintenance &amp; Repair"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackParenting", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/parenting/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://parenting.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/parenting/img/favicon.ico", 
+    "audience": "parents, grandparents, nannies and others with a parenting role", 
+    "api_site_parameter": "parenting", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.parenting", 
+        "relation": "meta", 
+        "name": "Parenting Meta Stack Exchange", 
+        "site_url": "http://meta.parenting.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1301961600, 
+    "logo_url": "http://cdn.sstatic.net/parenting/img/logo.png", 
+    "closed_beta_date": 1301356800, 
+    "name": "Parenting"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackSharePoint", 
+    "launch_date": 1315872000, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://sharepointoverflow.com", 
+      "http://www.sharepointoverflow.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/sharepoint/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#707070", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://sharepoint.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/sharepoint/img/favicon.ico", 
+    "audience": "SharePoint enthusiasts", 
+    "api_site_parameter": "sharepoint", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/sharepoint/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.sharepoint", 
+        "relation": "meta", 
+        "name": "SharePoint Meta Stack Exchange", 
+        "site_url": "http://meta.sharepoint.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1302134400, 
+    "logo_url": "http://cdn.sstatic.net/sharepoint/img/logo.png", 
+    "closed_beta_date": 1302134400, 
+    "name": "SharePoint"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackMusic", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://guitars.stackexchange.com", 
+      "http://guitar.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/music/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://music.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/music/img/favicon.ico", 
+    "audience": "musicians, students, and enthusiasts", 
+    "api_site_parameter": "music", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.music", 
+        "relation": "meta", 
+        "name": "Musical Practice &amp; Performance Meta Stack Exchange", 
+        "site_url": "http://meta.music.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1304380800, 
+    "logo_url": "http://cdn.sstatic.net/music/img/logo.png", 
+    "closed_beta_date": 1303776000, 
+    "name": "Musical Practice &amp; Performance"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackSQA", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/sqa/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://sqa.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/sqa/img/favicon.ico", 
+    "audience": "software quality control experts, automation engineers, and software testers", 
+    "api_site_parameter": "sqa", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.sqa", 
+        "relation": "meta", 
+        "name": "Software Quality Assurance &amp; Testing Meta Stack Exchange", 
+        "site_url": "http://meta.sqa.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1304985600, 
+    "logo_url": "http://cdn.sstatic.net/sqa/img/logo.png", 
+    "closed_beta_date": 1304380800, 
+    "name": "Software Quality Assurance &amp; Testing"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackJudaism", 
+    "launch_date": 1336435200, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://mi.yodeya.com", 
+      "http://yodeya.com", 
+      "http://yodeya.stackexchange.com", 
+      "http://miyodeya.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/judaism/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://judaism.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/judaism/img/favicon.ico", 
+    "audience": "those who base their lives on Jewish law and tradition and anyone interested in learning more", 
+    "api_site_parameter": "judaism", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/judaism/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.judaism", 
+        "relation": "meta", 
+        "name": "Mi Yodeya Meta", 
+        "site_url": "http://meta.judaism.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1304985600, 
+    "logo_url": "http://cdn.sstatic.net/judaism/img/logo.png", 
+    "closed_beta_date": 1304985600, 
+    "name": "Mi Yodeya"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackGerman", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://deutsch.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/german/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://german.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/german/img/favicon.ico", 
+    "audience": "speakers of German wanting to discuss the finer points of the language and translation", 
+    "api_site_parameter": "german", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.german", 
+        "relation": "meta", 
+        "name": "German Language &amp; Usage Meta Stack Exchange", 
+        "site_url": "http://meta.german.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1306800000, 
+    "logo_url": "http://cdn.sstatic.net/german/img/logo.png", 
+    "closed_beta_date": 1306195200, 
+    "name": "German Language &amp; Usage"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackJapanese", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/japanese/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://japanese.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/japanese/img/favicon.ico", 
+    "audience": "students, teachers, and linguists wanting to discuss the finer points of the Japanese language", 
+    "api_site_parameter": "japanese", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.japanese", 
+        "relation": "meta", 
+        "name": "Japanese Language &amp; Usage Meta Stack Exchange", 
+        "site_url": "http://meta.japanese.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1307404800, 
+    "logo_url": "http://cdn.sstatic.net/japanese/img/logo.png", 
+    "closed_beta_date": 1306800000, 
+    "name": "Japanese Language &amp; Usage"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackPhilosophy", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/philosophy/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://philosophy.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/philosophy/img/favicon.ico", 
+    "audience": "those interested in logical reasoning", 
+    "api_site_parameter": "philosophy", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.philosophy", 
+        "relation": "meta", 
+        "name": "Philosophy Meta Stack Exchange", 
+        "site_url": "http://meta.philosophy.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1308096000, 
+    "logo_url": "http://cdn.sstatic.net/philosophy/img/logo.png", 
+    "closed_beta_date": 1307404800, 
+    "name": "Philosophy"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackGardening", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://landscaping.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/gardening/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://gardening.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/gardening/img/favicon.ico", 
+    "audience": "gardeners and landscapers", 
+    "api_site_parameter": "gardening", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.gardening", 
+        "relation": "meta", 
+        "name": "Gardening &amp; Landscaping Meta Stack Exchange", 
+        "site_url": "http://meta.gardening.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1308096000, 
+    "logo_url": "http://cdn.sstatic.net/gardening/img/logo.png", 
+    "closed_beta_date": 1307491200, 
+    "name": "Gardening &amp; Landscaping"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackTravel", 
+    "launch_date": 1358812800, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/travel/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://travel.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/travel/img/favicon.ico", 
+    "audience": "road warriors and seasoned travelers", 
+    "api_site_parameter": "travel", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/travel/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.travel", 
+        "relation": "meta", 
+        "name": "Travel Meta Stack Exchange", 
+        "site_url": "http://meta.travel.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1309219200, 
+    "logo_url": "http://cdn.sstatic.net/travel/img/logo.png", 
+    "closed_beta_date": 1308614400, 
+    "name": "Travel"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackProd", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/productivity/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://productivity.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/productivity/img/favicon.ico", 
+    "audience": "people wanting to improve their personal productivity", 
+    "api_site_parameter": "productivity", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.productivity", 
+        "relation": "meta", 
+        "name": "Personal Productivity Meta Stack Exchange", 
+        "site_url": "http://meta.productivity.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1309305600, 
+    "logo_url": "http://cdn.sstatic.net/productivity/img/logo.png", 
+    "closed_beta_date": 1308700800, 
+    "name": "Personal Productivity"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackCrypto", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://cryptography.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/crypto/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://crypto.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/crypto/img/favicon.ico", 
+    "audience": "software developers, mathematicians and others interested in cryptography", 
+    "api_site_parameter": "crypto", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.crypto", 
+        "relation": "meta", 
+        "name": "Cryptography Meta Stack Exchange", 
+        "site_url": "http://meta.crypto.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1312243200, 
+    "logo_url": "http://cdn.sstatic.net/crypto/img/logo.png", 
+    "closed_beta_date": 1310428800, 
+    "name": "Cryptography"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackSignals", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://signals.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/dsp/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://dsp.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/dsp/img/favicon.ico", 
+    "audience": "practitioners of the art and science of signal, image and video processing", 
+    "api_site_parameter": "dsp", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.dsp", 
+        "relation": "meta", 
+        "name": "Signal Processing Meta Stack Exchange", 
+        "site_url": "http://meta.dsp.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1315267200, 
+    "logo_url": "http://cdn.sstatic.net/dsp/img/logo.png", 
+    "closed_beta_date": 1313452800, 
+    "name": "Signal Processing"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackFrench", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/french/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://french.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/french/img/favicon.ico", 
+    "audience": "students, teachers, and linguists wanting to discuss the finer points of the French language", 
+    "api_site_parameter": "french", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.french", 
+        "relation": "meta", 
+        "name": "French Language &amp; Usage Meta Stack Exchange", 
+        "site_url": "http://meta.french.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1314144000, 
+    "logo_url": "http://cdn.sstatic.net/french/img/logo.png", 
+    "closed_beta_date": 1313539200, 
+    "name": "French Language &amp; Usage"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackChristian", 
+    "launch_date": 1369785600, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/christianity/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#ab9e67", 
+      "tag_background_color": "#fcf5e0"
+    }, 
+    "site_url": "http://christianity.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/christianity/img/favicon.ico", 
+    "audience": "committed Christians, experts in Christianity and those interested in learning more", 
+    "api_site_parameter": "christianity", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/christianity/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.christianity", 
+        "relation": "meta", 
+        "name": "Christianity Meta Stack Exchange", 
+        "site_url": "http://meta.christianity.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1314662400, 
+    "logo_url": "http://cdn.sstatic.net/christianity/img/logo.png", 
+    "closed_beta_date": 1314057600, 
+    "name": "Christianity"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackBitcoin", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/bitcoin/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://bitcoin.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/bitcoin/img/favicon.ico", 
+    "audience": "Bitcoin crypto-currency enthusiasts", 
+    "api_site_parameter": "bitcoin", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.bitcoin", 
+        "relation": "meta", 
+        "name": "Bitcoin Meta Stack Exchange", 
+        "site_url": "http://meta.bitcoin.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1315353600, 
+    "logo_url": "http://cdn.sstatic.net/bitcoin/img/logo.png", 
+    "closed_beta_date": 1314662400, 
+    "name": "Bitcoin"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackLinguist", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://linguist.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/linguistics/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://linguistics.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/linguistics/img/favicon.ico", 
+    "audience": "professional linguists and others with an interest in linguistic research and theory", 
+    "api_site_parameter": "linguistics", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.linguistics", 
+        "relation": "meta", 
+        "name": "Linguistics Meta Stack Exchange", 
+        "site_url": "http://meta.linguistics.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1316476800, 
+    "logo_url": "http://cdn.sstatic.net/linguistics/img/logo.png", 
+    "closed_beta_date": 1315872000, 
+    "name": "Linguistics"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackBibleHerm", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/hermeneutics/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://hermeneutics.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/hermeneutics/img/favicon.ico", 
+    "audience": "professors, theologians, and those interested in exegetical analysis of biblical texts", 
+    "api_site_parameter": "hermeneutics", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.hermeneutics", 
+        "relation": "meta", 
+        "name": "Biblical Hermeneutics Meta Stack Exchange", 
+        "site_url": "http://meta.hermeneutics.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1318291200, 
+    "logo_url": "http://cdn.sstatic.net/hermeneutics/img/logo.png", 
+    "closed_beta_date": 1317686400, 
+    "name": "Biblical Hermeneutics"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackHistory", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/history/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://history.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/history/img/favicon.ico", 
+    "audience": "historians and history buffs", 
+    "api_site_parameter": "history", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.history", 
+        "relation": "meta", 
+        "name": "History Meta Stack Exchange", 
+        "site_url": "http://meta.history.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1319500800, 
+    "logo_url": "http://cdn.sstatic.net/history/img/logo.png", 
+    "closed_beta_date": 1318291200, 
+    "name": "History"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackBrix", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/bricks/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://bricks.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/bricks/img/favicon.ico", 
+    "audience": "LEGO&#174; and building block enthusiasts", 
+    "api_site_parameter": "bricks", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.bricks", 
+        "relation": "meta", 
+        "name": "LEGO&#174; Answers Meta", 
+        "site_url": "http://meta.bricks.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1320105600, 
+    "logo_url": "http://cdn.sstatic.net/bricks/img/logo.png", 
+    "closed_beta_date": 1319500800, 
+    "name": "LEGO&#174; Answers"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackSpanish", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://espanol.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/spanish/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://spanish.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/spanish/img/favicon.ico", 
+    "audience": "students, teachers, and linguists wanting to discuss the finer points of the Spanish language", 
+    "api_site_parameter": "spanish", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.spanish", 
+        "relation": "meta", 
+        "name": "Spanish Language &amp; Usage Meta Stack Exchange", 
+        "site_url": "http://meta.spanish.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1321920000, 
+    "logo_url": "http://cdn.sstatic.net/spanish/img/logo.png", 
+    "closed_beta_date": 1321315200, 
+    "name": "Spanish Language &amp; Usage"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackSciComp", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/scicomp/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax", 
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://scicomp.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/scicomp/img/favicon.ico", 
+    "audience": "scientists using computers to solve scientific problems", 
+    "api_site_parameter": "scicomp", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.scicomp", 
+        "relation": "meta", 
+        "name": "Computational Science Meta Stack Exchange", 
+        "site_url": "http://meta.scicomp.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1323129600, 
+    "logo_url": "http://cdn.sstatic.net/scicomp/img/logo.png", 
+    "closed_beta_date": 1322524800, 
+    "name": "Computational Science"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackMovies", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/movies/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://movies.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/movies/img/favicon.ico", 
+    "audience": "movie and tv enthusiasts", 
+    "api_site_parameter": "movies", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.movies", 
+        "relation": "meta", 
+        "name": "Movies &amp; TV Meta Stack Exchange", 
+        "site_url": "http://meta.movies.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1323216000, 
+    "logo_url": "http://cdn.sstatic.net/movies/img/logo.png", 
+    "closed_beta_date": 1322611200, 
+    "name": "Movies &amp; TV"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackChinese", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/chinese/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://chinese.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/chinese/img/favicon.ico", 
+    "audience": "students, teachers, and linguists wanting to discuss the finer points of the Chinese language", 
+    "api_site_parameter": "chinese", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.chinese", 
+        "relation": "meta", 
+        "name": "Chinese Language &amp; Usage Meta Stack Exchange", 
+        "site_url": "http://meta.chinese.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1324425600, 
+    "logo_url": "http://cdn.sstatic.net/chinese/img/logo.png", 
+    "closed_beta_date": 1323734400, 
+    "name": "Chinese Language &amp; Usage"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackBiology", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/biology/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://biology.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/biology/img/favicon.ico", 
+    "audience": "biology researchers, academics, and students", 
+    "api_site_parameter": "biology", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.biology", 
+        "relation": "meta", 
+        "name": "Biology Meta Stack Exchange", 
+        "site_url": "http://meta.biology.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1324425600, 
+    "logo_url": "http://cdn.sstatic.net/biology/img/logo.png", 
+    "closed_beta_date": 1323820800, 
+    "name": "Biology"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackPoker", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/poker/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://poker.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/poker/img/favicon.ico", 
+    "audience": "serious players and enthusiasts of poker", 
+    "api_site_parameter": "poker", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.poker", 
+        "relation": "meta", 
+        "name": "Poker Meta Stack Exchange", 
+        "site_url": "http://meta.poker.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1327363200, 
+    "logo_url": "http://cdn.sstatic.net/poker/img/logo.png", 
+    "closed_beta_date": 1326153600, 
+    "name": "Poker"
+  }, 
+  {
+    "site_state": "normal", 
+    "twitter_account": "StackMma", 
+    "launch_date": 1342483200, 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/mathematica/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax", 
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://mathematica.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/mathematica/img/favicon.ico", 
+    "audience": "users of Mathematica", 
+    "api_site_parameter": "mathematica", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/mathematica/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.mathematica", 
+        "relation": "meta", 
+        "name": "Mathematica Meta Stack Exchange", 
+        "site_url": "http://meta.mathematica.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1327449600, 
+    "logo_url": "http://cdn.sstatic.net/mathematica/img/logo.png", 
+    "closed_beta_date": 1326758400, 
+    "name": "Mathematica"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackCogSci", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/cogsci/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://cogsci.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/cogsci/img/favicon.ico", 
+    "audience": "practitioners, researchers, and students in cognitive science, psychology, neuroscience, and psychiatry", 
+    "api_site_parameter": "cogsci", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.cogsci", 
+        "relation": "meta", 
+        "name": "Cognitive Sciences Meta Stack Exchange", 
+        "site_url": "http://meta.cogsci.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1327449600, 
+    "logo_url": "http://cdn.sstatic.net/cogsci/img/logo.png", 
+    "closed_beta_date": 1326844800, 
+    "name": "Cognitive Sciences"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackOutdoors", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/outdoors/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://outdoors.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/outdoors/img/favicon.ico", 
+    "audience": "people who love outdoor activities, excursions, and outdoorsmanship", 
+    "api_site_parameter": "outdoors", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.outdoors", 
+        "relation": "meta", 
+        "name": "The Great Outdoors Meta Stack Exchange", 
+        "site_url": "http://meta.outdoors.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1327968000, 
+    "logo_url": "http://cdn.sstatic.net/outdoors/img/logo.png", 
+    "closed_beta_date": 1327363200, 
+    "name": "The Great Outdoors"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackMartialArt", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/martialarts/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://martialarts.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/martialarts/img/favicon.ico", 
+    "audience": "students and teachers of all martial arts", 
+    "api_site_parameter": "martialarts", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.martialarts", 
+        "relation": "meta", 
+        "name": "Martial Arts Meta Stack Exchange", 
+        "site_url": "http://meta.martialarts.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1328572800, 
+    "logo_url": "http://cdn.sstatic.net/martialarts/img/logo.png", 
+    "closed_beta_date": 1327968000, 
+    "name": "Martial Arts"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackSport", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/sports/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://sports.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/sports/img/favicon.ico", 
+    "audience": "participants in team and individual sport activities", 
+    "api_site_parameter": "sports", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.sports", 
+        "relation": "meta", 
+        "name": "Sports Meta Stack Exchange", 
+        "site_url": "http://meta.sports.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1329264000, 
+    "logo_url": "http://cdn.sstatic.net/sports/img/logo.png", 
+    "closed_beta_date": 1328659200, 
+    "name": "Sports"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackAcademia", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://academics.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/academia/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://academia.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/academia/img/favicon.ico", 
+    "audience": "academics and those enrolled in higher education", 
+    "api_site_parameter": "academia", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.academia", 
+        "relation": "meta", 
+        "name": "Academia Meta Stack Exchange", 
+        "site_url": "http://meta.academia.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1329782400, 
+    "logo_url": "http://cdn.sstatic.net/academia/img/logo.png", 
+    "closed_beta_date": 1329177600, 
+    "name": "Academia"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackCompSci", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://computerscience.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/cs/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://cs.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/cs/img/favicon.ico", 
+    "audience": "students, researchers and practitioners of computer science", 
+    "api_site_parameter": "cs", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.cs", 
+        "relation": "meta", 
+        "name": "Computer Science Meta Stack Exchange", 
+        "site_url": "http://meta.cs.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1332201600, 
+    "logo_url": "http://cdn.sstatic.net/cs/img/logo.png", 
+    "closed_beta_date": 1330992000, 
+    "name": "Computer Science"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackWorkplace", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/workplace/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://workplace.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/workplace/img/favicon.ico", 
+    "audience": "members of the workforce navigating the professional setting", 
+    "api_site_parameter": "workplace", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.workplace", 
+        "relation": "meta", 
+        "name": "The Workplace Meta Stack Exchange", 
+        "site_url": "http://meta.workplace.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1334620800, 
+    "logo_url": "http://cdn.sstatic.net/workplace/img/logo.png", 
+    "closed_beta_date": 1334016000, 
+    "name": "The Workplace"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackWinPhone", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/windowsphone/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://windowsphone.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/windowsphone/img/favicon.ico", 
+    "audience": "enthusiasts and power users of Windows Phone OS", 
+    "api_site_parameter": "windowsphone", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.windowsphone", 
+        "relation": "meta", 
+        "name": "Windows Phone Meta Stack Exchange", 
+        "site_url": "http://meta.windowsphone.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1335830400, 
+    "logo_url": "http://cdn.sstatic.net/windowsphone/img/logo.png", 
+    "closed_beta_date": 1335225600, 
+    "name": "Windows Phone"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackChemistry", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/chemistry/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://chemistry.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/chemistry/img/favicon.ico", 
+    "audience": "scientists, academics, teachers and students", 
+    "api_site_parameter": "chemistry", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.chemistry", 
+        "relation": "meta", 
+        "name": "Chemistry Meta Stack Exchange", 
+        "site_url": "http://meta.chemistry.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1336435200, 
+    "logo_url": "http://cdn.sstatic.net/chemistry/img/logo.png", 
+    "closed_beta_date": 1335312000, 
+    "name": "Chemistry"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackChess", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/chess/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://chess.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/chess/img/favicon.ico", 
+    "audience": "serious players and enthusiasts of chess", 
+    "api_site_parameter": "chess", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.chess", 
+        "relation": "meta", 
+        "name": "Chess Meta Stack Exchange", 
+        "site_url": "http://meta.chess.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1337040000, 
+    "logo_url": "http://cdn.sstatic.net/chess/img/logo.png", 
+    "closed_beta_date": 1335830400, 
+    "name": "Chess"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackRaspi", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/raspberrypi/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://raspberrypi.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/raspberrypi/img/favicon.ico", 
+    "audience": "users and developers of hardware and software for Raspberry Pi", 
+    "api_site_parameter": "raspberrypi", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.raspberrypi", 
+        "relation": "meta", 
+        "name": "Raspberry Pi Meta Stack Exchange", 
+        "site_url": "http://meta.raspberrypi.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1340064000, 
+    "logo_url": "http://cdn.sstatic.net/raspberrypi/img/logo.png", 
+    "closed_beta_date": 1339459200, 
+    "name": "Raspberry Pi"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackRussian", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/russian/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://russian.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/russian/img/favicon.ico", 
+    "audience": "students, teachers, and linguists wanting to discuss the finer points of the Russian language", 
+    "api_site_parameter": "russian", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.russian", 
+        "relation": "meta", 
+        "name": "Russian Language &amp; Usage Meta Stack Exchange", 
+        "site_url": "http://meta.russian.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1340668800, 
+    "logo_url": "http://cdn.sstatic.net/russian/img/logo.png", 
+    "closed_beta_date": 1339545600, 
+    "name": "Russian Language &amp; Usage"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackIslam", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/islam/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://islam.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/islam/img/favicon.ico", 
+    "audience": "Muslims, experts in Islam, and those interested in learning more about Islam", 
+    "api_site_parameter": "islam", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.islam", 
+        "relation": "meta", 
+        "name": "Islam Meta Stack Exchange", 
+        "site_url": "http://meta.islam.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1340668800, 
+    "logo_url": "http://cdn.sstatic.net/islam/img/logo.png", 
+    "closed_beta_date": 1340064000, 
+    "name": "Islam"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackSalesforce", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/salesforce/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://salesforce.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/salesforce/img/favicon.ico", 
+    "audience": "Salesforce administrators, implementation experts, developers and anybody in-between", 
+    "api_site_parameter": "salesforce", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.salesforce", 
+        "relation": "meta", 
+        "name": "Salesforce Meta Stack Exchange", 
+        "site_url": "http://meta.salesforce.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1344988800, 
+    "logo_url": "http://cdn.sstatic.net/salesforce/img/logo.png", 
+    "closed_beta_date": 1343692800, 
+    "name": "Salesforce"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "launch_date": 1348099200, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://askpatents.com", 
+      "http://askpatents.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/patents/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://patents.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/patents/img/favicon.ico", 
+    "audience": "people interested in improving and participating in the patent system", 
+    "api_site_parameter": "patents", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.patents", 
+        "relation": "meta", 
+        "name": "Ask Patents Meta", 
+        "site_url": "http://meta.patents.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "logo_url": "http://cdn.sstatic.net/patents/img/logo.png", 
+    "name": "Ask Patents"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackGenealogy", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/genealogy/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://genealogy.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/genealogy/img/favicon.ico", 
+    "audience": "expert genealogists and people interested in genealogy or family history", 
+    "api_site_parameter": "genealogy", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.genealogy", 
+        "relation": "meta", 
+        "name": "Genealogy &amp; Family History Meta Stack Exchange", 
+        "site_url": "http://meta.genealogy.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1350345600, 
+    "logo_url": "http://cdn.sstatic.net/genealogy/img/logo.png", 
+    "closed_beta_date": 1349740800, 
+    "name": "Genealogy &amp; Family History"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackRobotics", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/robotics/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://robotics.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/robotics/img/favicon.ico", 
+    "audience": "professional robotic engineers, hobbyists, researchers and students", 
+    "api_site_parameter": "robotics", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.robotics", 
+        "relation": "meta", 
+        "name": "Robotics Meta Stack Exchange", 
+        "site_url": "http://meta.robotics.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1352160000, 
+    "logo_url": "http://cdn.sstatic.net/robotics/img/logo.png", 
+    "closed_beta_date": 1350950400, 
+    "name": "Robotics"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackExpression", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/expressionengine/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://expressionengine.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/expressionengine/img/favicon.ico", 
+    "audience": "administrators, end users, developers and designers for ExpressionEngine&#174; CMS", 
+    "api_site_parameter": "expressionengine", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.expressionengine", 
+        "relation": "meta", 
+        "name": "ExpressionEngine&#174; Answers Meta", 
+        "site_url": "http://meta.expressionengine.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1353974400, 
+    "logo_url": "http://cdn.sstatic.net/expressionengine/img/logo.png", 
+    "closed_beta_date": 1352937600, 
+    "name": "ExpressionEngine&#174; Answers"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackPolitics", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/politics/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://politics.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/politics/img/favicon.ico", 
+    "audience": "people interested in governments, policies, and political processes", 
+    "api_site_parameter": "politics", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.politics", 
+        "relation": "meta", 
+        "name": "Politics Meta Stack Exchange", 
+        "site_url": "http://meta.politics.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1355788800, 
+    "logo_url": "http://cdn.sstatic.net/politics/img/logo.png", 
+    "closed_beta_date": 1354579200, 
+    "name": "Politics"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackAnime", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/anime/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://anime.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/anime/img/favicon.ico", 
+    "audience": "anime and manga fans", 
+    "api_site_parameter": "anime", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.anime", 
+        "relation": "meta", 
+        "name": "Anime &amp; Manga Meta Stack Exchange", 
+        "site_url": "http://meta.anime.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1355788800, 
+    "logo_url": "http://cdn.sstatic.net/anime/img/logo.png", 
+    "closed_beta_date": 1355184000, 
+    "name": "Anime &amp; Manga"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackMagento", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/magento/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://magento.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/magento/img/favicon.ico", 
+    "audience": "users of the Magento e-Commerce platform", 
+    "api_site_parameter": "magento", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.magento", 
+        "relation": "meta", 
+        "name": "Magento Meta Stack Exchange", 
+        "site_url": "http://meta.magento.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1359417600, 
+    "logo_url": "http://cdn.sstatic.net/magento/img/logo.png", 
+    "closed_beta_date": 1358812800, 
+    "name": "Magento"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackEnglishLL", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/ell/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://ell.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/ell/img/favicon.ico", 
+    "audience": "speakers of other languages learning English", 
+    "api_site_parameter": "ell", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.ell", 
+        "relation": "meta", 
+        "name": "English Language Learners Meta Stack Exchange", 
+        "site_url": "http://meta.ell.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1359504000, 
+    "logo_url": "http://cdn.sstatic.net/ell/img/logo.png", 
+    "closed_beta_date": 1358899200, 
+    "name": "English Language Learners"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackSustain", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/sustainability/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://sustainability.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/sustainability/img/favicon.ico", 
+    "audience": "folks dedicated to a lifestyle that can be maintained indefinitely without depleting available resources", 
+    "api_site_parameter": "sustainability", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.sustainability", 
+        "relation": "meta", 
+        "name": "Sustainable Living Meta Stack Exchange", 
+        "site_url": "http://meta.sustainability.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1360022400, 
+    "logo_url": "http://cdn.sstatic.net/sustainability/img/logo.png", 
+    "closed_beta_date": 1359417600, 
+    "name": "Sustainable Living"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackTridion", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/tridion/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://tridion.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/tridion/img/favicon.ico", 
+    "audience": "Tridion developers and administrators", 
+    "api_site_parameter": "tridion", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.tridion", 
+        "relation": "meta", 
+        "name": "Tridion Meta Stack Exchange", 
+        "site_url": "http://meta.tridion.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1363046400, 
+    "logo_url": "http://cdn.sstatic.net/tridion/img/logo.png", 
+    "closed_beta_date": 1361232000, 
+    "name": "Tridion"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackReverseEng", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/reverseengineering/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://reverseengineering.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/reverseengineering/img/favicon.ico", 
+    "audience": "researchers and developers who explore the principles of a system through analysis of its structure, function, and operation", 
+    "api_site_parameter": "reverseengineering", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.reverseengineering", 
+        "relation": "meta", 
+        "name": "Reverse Engineering Meta Stack Exchange", 
+        "site_url": "http://meta.reverseengineering.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1364774400, 
+    "logo_url": "http://cdn.sstatic.net/reverseengineering/img/logo.png", 
+    "closed_beta_date": 1363651200, 
+    "name": "Reverse Engineering"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackNetworkEng", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/networkengineering/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://networkengineering.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/networkengineering/img/favicon.ico", 
+    "audience": "network engineers", 
+    "api_site_parameter": "networkengineering", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.networkengineering", 
+        "relation": "meta", 
+        "name": "Network Engineering Meta Stack Exchange", 
+        "site_url": "http://meta.networkengineering.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1368576000, 
+    "logo_url": "http://cdn.sstatic.net/networkengineering/img/logo.png", 
+    "closed_beta_date": 1367884800, 
+    "name": "Network Engineering"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackOpenData", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/opendata/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://opendata.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/opendata/img/favicon.ico", 
+    "audience": "developers and researchers interested in open data", 
+    "api_site_parameter": "opendata", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.opendata", 
+        "relation": "meta", 
+        "name": "Open Data Meta Stack Exchange", 
+        "site_url": "http://meta.opendata.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1369094400, 
+    "logo_url": "http://cdn.sstatic.net/opendata/img/logo.png", 
+    "closed_beta_date": 1367971200, 
+    "name": "Open Data"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackFreelance", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/freelancing/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://freelancing.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/freelancing/img/favicon.ico", 
+    "audience": " self-employed and freelance workers", 
+    "api_site_parameter": "freelancing", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.freelancing", 
+        "relation": "meta", 
+        "name": "Freelancing Meta Stack Exchange", 
+        "site_url": "http://meta.freelancing.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1370304000, 
+    "logo_url": "http://cdn.sstatic.net/freelancing/img/logo.png", 
+    "closed_beta_date": 1369094400, 
+    "name": "Freelancing"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackBlender", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/blender/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "Prettify"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://blender.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/blender/img/favicon.ico", 
+    "audience": "people who use Blender to create 3D graphics, animations, or games", 
+    "api_site_parameter": "blender", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.blender", 
+        "relation": "meta", 
+        "name": "Blender Meta Stack Exchange", 
+        "site_url": "http://meta.blender.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1369785600, 
+    "logo_url": "http://cdn.sstatic.net/blender/img/logo.png", 
+    "closed_beta_date": 1369180800, 
+    "name": "Blender"
+  }, 
+  {
+    "site_state": "normal", 
+    "launch_date": 1254154260, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://mathoverflow.stackexchange.com", 
+      "http://mathoverflow.org", 
+      "http://mathoverflow.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/mathoverflow/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://mathoverflow.net", 
+    "favicon_url": "http://cdn.sstatic.net/mathoverflow/img/favicon.ico", 
+    "audience": "professional mathematicians", 
+    "api_site_parameter": "mathoverflow.net", 
+    "high_resolution_icon_url": "http://cdn.sstatic.net/mathoverflow/img/apple-touch-icon@2.png", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.mathoverflow.net", 
+        "relation": "meta", 
+        "name": "MathOverflow Meta", 
+        "site_url": "http://meta.mathoverflow.net"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "logo_url": "http://cdn.sstatic.net/mathoverflow/img/logo.png", 
+    "name": "MathOverflow"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "twitter_account": "StackSpaceExp", 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://thefinalfrontier.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/space/img/apple-touch-icon.png", 
+    "markdown_extensions": [
+      "MathJax"
+    ], 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://space.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/space/img/favicon.ico", 
+    "audience": "spacecraft operators, scientists, engineers, and enthusiasts", 
+    "api_site_parameter": "space", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.space", 
+        "relation": "meta", 
+        "name": "Space Exploration Meta Stack Exchange", 
+        "site_url": "http://meta.space.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "open_beta_date": 1374451200, 
+    "logo_url": "http://cdn.sstatic.net/space/img/logo.png", 
+    "closed_beta_date": 1373932800, 
+    "name": "Space Exploration"
+  }, 
+  {
+    "site_state": "open_beta", 
+    "launch_date": 1289347200, 
+    "site_type": "main_site", 
+    "aliases": [
+      "http://socialsounddesign.com", 
+      "http://sounddesign.stackexchange.com"
+    ], 
+    "icon_url": "http://cdn.sstatic.net/sound/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://sound.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/sound/img/favicon.ico", 
+    "audience": "sound engineers, producers, editors, and enthusiasts", 
+    "api_site_parameter": "sound", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.sound", 
+        "relation": "meta", 
+        "name": "Sound Design Meta Stack Exchange", 
+        "site_url": "http://meta.sound.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "logo_url": "http://cdn.sstatic.net/sound/img/logo.png", 
+    "name": "Sound Design"
+  }, 
+  {
+    "site_state": "closed_beta", 
+    "twitter_account": "StackAstronomy", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/astronomy/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://astronomy.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/astronomy/img/favicon.ico", 
+    "audience": "astronomers and astrophysicists", 
+    "api_site_parameter": "astronomy", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.astronomy", 
+        "relation": "meta", 
+        "name": "Astronomy Meta Stack Exchange", 
+        "site_url": "http://meta.astronomy.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "logo_url": "http://cdn.sstatic.net/astronomy/img/logo.png", 
+    "closed_beta_date": 1379980800, 
+    "name": "Astronomy"
+  }, 
+  {
+    "site_state": "closed_beta", 
+    "twitter_account": "StackTor", 
+    "site_type": "main_site", 
+    "icon_url": "http://cdn.sstatic.net/tor/img/apple-touch-icon.png", 
+    "styling": {
+      "link_color": "#0077CC", 
+      "tag_foreground_color": "#000", 
+      "tag_background_color": "#FFF"
+    }, 
+    "site_url": "http://tor.stackexchange.com", 
+    "favicon_url": "http://cdn.sstatic.net/tor/img/favicon.ico", 
+    "audience": "researchers, developers, and users of Tor", 
+    "api_site_parameter": "tor", 
+    "related_sites": [
+      {
+        "api_site_parameter": "meta.tor", 
+        "relation": "meta", 
+        "name": "Tor Meta Stack Exchange", 
+        "site_url": "http://meta.tor.stackexchange.com"
+      }, 
+      {
+        "relation": "chat", 
+        "name": "Chat Stack Exchange", 
+        "site_url": "http://chat.stackexchange.com"
+      }
+    ], 
+    "logo_url": "http://cdn.sstatic.net/tor/img/logo.png", 
+    "closed_beta_date": 1380067200, 
+    "name": "Tor"
+  }
+]

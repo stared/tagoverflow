@@ -22,7 +22,7 @@
 <div id="options">
 
   Site:<br>
-  <select id="site_name">
+  <select id="site_selector">
   </select><br><br>
 
   Number of tags:<br>
@@ -98,19 +98,19 @@ for(var i=0; i < sites.length; i++){
   sitesDict[sites[i]["api_site_parameter"]] = sites[i]
 }
 
-d3.select("select#site_name").selectAll("option")
+d3.select("select#site_selector").selectAll("option")
     .data(sites)
     .enter()
       .append("option")
         .attr("value", function(d){ return d.api_site_parameter; })
         .html(function(d){ return d.name; })
 
-$("select#site_name")[0].value = "stackoverflow";
+$("select#site_selector")[0].value = "stackoverflow";
 
 // window.onload=function(){draw_graph();};
 preGraphDrawing();
 
-d3.select("select#site_name").on("change", function(){
+d3.select("select#site_selector").on("change", function(){
   preGraphDrawing();
 });
 
@@ -120,7 +120,7 @@ d3.select("select#pageSize").on("change", function(){
 
 
 function preGraphDrawing(){
-  var siteName = $("select#site_name")[0].value;
+  var siteName = $("select#site_selector")[0].value;
   var pageSize = parseInt($("select#pageSize")[0].value);
   seSiteData = new SeDataLoaderPerSite(siteName, pageSize);
   seSiteData.run();
