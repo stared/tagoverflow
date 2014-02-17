@@ -214,7 +214,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
 
   this.run = function(){
     this.siteStats = fetchSiteStats(siteName)[0];
-    $(".site_info #title").html(this.siteData.name);
+    $(".site_info #site_name").html(this.siteData.name);
     $(".site_info #dscr").html(this.siteData.audience);
     $(".site_info a").attr("href", this.siteData.site_url);
     this.retriveTags();
