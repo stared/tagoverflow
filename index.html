@@ -252,7 +252,10 @@ var force = d3.layout.force()
   var click_node = function(z){
 
     $(".tag_info #tag_name").html(z.name);
-    $(".tag_info #tag_name").attr('href', seSiteData.siteData.site_url + "/questions/tagged/" + z.name);
+    $(".tag_info #tag_name")
+      .hide()
+      .attr('href', seSiteData.siteData.site_url + "/questions/tagged/" + z.name)
+      .show();
 
     // $(".tag_info #dscr").html("count: " + z.count);
 
@@ -279,6 +282,7 @@ var force = d3.layout.force()
           .attr("class", "username");
 
     d3asker.select("a")
+      .attr("href", null)
       .attr("href", function (d) { return d.user.link; });
 
     d3asker.select("a img")
@@ -318,6 +322,7 @@ var force = d3.layout.force()
           .attr("class", "username");
 
     d3answerer.select("a")
+      .attr("href", null)
       .attr("href", function (d) { return d.user.link; });
 
     d3answerer.select("a img")
@@ -342,6 +347,7 @@ var force = d3.layout.force()
         .append("a");
 
     d3question.select("a")
+      .attr("href", null)
       .attr("href", function (d) { return d.link; })
       .html(function (d) { return d.title; });
 
