@@ -152,9 +152,9 @@ var count_scale = d3.scale.linear()
  
 
 var force = d3.layout.force()
-    .charge( function(d) { return -70 * Math.sqrt(count_scale(d.count))} )
-    .linkDistance(50)
-    .gravity(0.4)
+    .charge( function(d) { return -50 * Math.sqrt(count_scale(d.count))} )
+    .linkDistance(40)
+    .gravity(0.45)
     .size([width - 250, height]);
     // .on("end", colorize);  // takes to long before it ends
 
@@ -164,7 +164,10 @@ var force = d3.layout.force()
   force
       .nodes(graph.nodes)
       .links(graph.links)
-      // .linkStrength(function (d) {return 1 / (d.eo_ratio); })
+      .linkStrength(function (d) {
+        return Math.min( (d['oe_ratio'] - 1)/8 , 1);
+      })
+      // 8. is an engineering constant; maybe we should relate it more to the data
       .start();
 
   var link = main.selectAll(".link")
