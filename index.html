@@ -149,6 +149,12 @@ var svg = d3.select("body").append("svg")
 var count_scale = d3.scale.linear()
   .domain([0, d3.max(graph.nodes, function (d) { return d.count; })])
   .range([0, 2500]);
+
+var eo_ratio_scale = function(oe_ratio) {
+  return  Math.min( (oe_ratio - 1)/8 , 1);
+}
+
+// 8. is an engineering constant; maybe we should relate it more to the data
  
 
 var force = d3.layout.force()
@@ -165,16 +171,21 @@ var force = d3.layout.force()
       .nodes(graph.nodes)
       .links(graph.links)
       .linkStrength(function (d) {
-        return Math.min( (d['oe_ratio'] - 1)/8 , 1);
+        return eo_ratio_scale(d['oe_ratio']);
       })
-      // 8. is an engineering constant; maybe we should relate it more to the data
+
       .start();
 
   var link = main.selectAll(".link")
       .data(graph.links)
     .enter().append("line")
       .attr("class", "link")
-      .style("stroke-width", function(d) { return 1 * (d.oe_ratio); });
+      .style("stroke-width", function(d) {
+        return 0.5 * Math.sqrt(count_scale(d.count))
+      })
+      .style("stroke-opacity", function(d) {
+        return 0.5 * eo_ratio_scale(d['oe_ratio']);
+      });
 
   var node = main.selectAll(".node_circle")
       .data(graph.nodes)
@@ -226,7 +237,9 @@ var force = d3.layout.force()
           return false
         }
       })
-        .style("stroke-opacity", 1);
+        .style("stroke-opacity", function(d) {
+          return Math.sqrt(0.5 * eo_ratio_scale(d['oe_ratio']));
+        });
 
     node.filter(function(d){ return neighbors[d.index] })
         .style("stroke-width", 3);
@@ -241,7 +254,9 @@ var force = d3.layout.force()
 
   var mouseout_node = function(z){ 
     link
-      .style("stroke-opacity", 0.2);
+      .style("stroke-opacity", function(d) {
+        return 0.5 * eo_ratio_scale(d['oe_ratio']);
+      });
 
     node
       .style("stroke-width", 1)
