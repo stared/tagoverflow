@@ -204,10 +204,9 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
 
   // age of extracted data:
   // warning: Date object count in milisceconds,SEapi count in seconds.  
-  this.monthFrame = {start:2*1000*60*60*24*30, stop:1*1000*60*60*24*30};
+  this.month = 1*1000*60*60*24*30;
   this.today = new Date().getTime(); //actual date
-  this.fromdate = Math.floor(new Date(this.today - this.monthFrame["start"]).getTime()/1000);
-  this.todate = Math.floor(new Date(this.today - this.monthFrame["stop"]).getTime()/1000);
+  this.todate = Math.floor(new Date(this.today - this.month).getTime()/1000);
   
   this.siteData = sitesDict[siteName];
   // at least to have this info here
@@ -268,7 +267,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
         setTimeout( function() {
             seQueryAsync("questions",
                          {order: "desc", sort: "creation", tagged: tagNameFixed, site: siteName,
-                         fromdate: that.fromdate, todate: that.todate},
+                         todate: that.todate}, // question age
                          100,  // 100 last questions
                          that.putLastQuestionsPerTagDict,
                          [tagName, that.lastQuestionsPerTagDict, that.tags.length, that]);

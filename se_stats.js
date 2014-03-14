@@ -19,13 +19,13 @@ function answered(questions)
 }
 
 function questionsScore(questions) {
-  return d3.mean(questions, function (q) { return q.score; });
+  return d3.median(questions, function (q) { return q.score; });
 }
 
 function questionsView(questions){
-  return d3.mean(questions, function (q) { return q.view_count; });
+  return d3.median(questions, function (q) { return q.view_count; });
 }
 
 function ownerReputation(questions){
-  return d3.mean(questions, function (q) { return q.owner.reputation; });
+  return d3.median(questions, function (q) { return q.owner.reputation; });
 }
