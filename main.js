@@ -13,7 +13,6 @@ d3.select("select#site_selector").selectAll("option")
 
 $("select#site_selector")[0].value = "stackoverflow";
 
-// window.onload=function(){draw_graph();};
 preGraphDrawing();
 
 d3.select("select#site_selector").on("change", function(){
@@ -293,53 +292,6 @@ var force = d3.layout.force()
   }
 
   setTimeout(colorizeTimeouted, 500);
-/*  
-  function answered(questions) 
-  {
-    var questionNumber=questions.length;
-    var answeredNumber=questions.filter(function(x) {return x.is_answered;}).length;
-    if (questionNumber>0) {return answeredNumber/questionNumber}
-    else {return 0};
-  }
-
-  function questionsScore(questions)
-  {
-    var questionNumber=questions.length;
-    var score = [];
-    //console.log(questions)
-    for (var q = 0; q < questionNumber; q++)
-    {
-      score.push(questions[q].score);
-    };
-    //console.log(score)
-    if (questionNumber>0) {return d3.mean(score)}
-    else {return 0};
-    }
-
-  function questionsView(questions)
-  {
-    var questionNumber=questions.length;
-    var view = [];
-    for (var q = 0; q < questionNumber; q++)
-    {
-      view.push(questions[q].view_count);
-    };
-    if (questionNumber>0) {return d3.mean(view)}
-    else {return 0};
-  }
-
-  function ownerReputation(questions)
-  {
-    var questionNumber=questions.length;
-    var rep = [];
-    for (var q = 0; q < questionNumber; q++)
-    {
-      rep.push(questions[q].owner.reputation);
-    };
-    if (questionNumber>0) {return d3.mean(rep)}
-    else {return 0};
-  }
-*/
 
   function color(lowcolor,highcolor,valuesDict){
     var values = [];
@@ -443,16 +395,10 @@ var force = d3.layout.force()
     var nodes_colors = color(data.start, data.stop, data.values);
     var valueDomain = data.range;
     var colorRange = [data.start, data.stop];
-    legend(data.start,data.stop,data.range[0],data.range[1])
+    legend(data.start, data.stop, data.range[0], data.range[1])
     
     node.style("fill", function(d){ return nodes_colors[d.name] } );
-    //console.log(data)
     
   }; 
-  
-
-  
-  //window.setTimeout(colorize(graph.nodes,colorParameter), 1500); // hack to make it after graph is rendered
-  // very likely I should do it async
 
 };
