@@ -80,7 +80,7 @@ var force = d3.layout.force()
     .charge( function(d) { return -50 * Math.sqrt(count_scale(d.count))} )
     .linkDistance(40)
     .gravity(0.45)
-    .size([width - 150, height]);
+    .size([width, height]);
     // .on("end", colorize);  // takes to long before it ends
 
   var main = svg.append("g")
