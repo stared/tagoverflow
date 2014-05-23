@@ -40,6 +40,12 @@ d3.select("select#colorParameter").on("change", function(){
 
 var graph = {nodes: seSiteData.tags, links: seSiteData.links};
 
+// community detection for graph
+communitize(graph);
+//console.log(d3.max(graph.nodes, function (d) {return d.community;}));
+
+var comm_color = d3.scale.category10();
+
 d3.select("body").select("svg#graph").remove();
 d3.select("body").select("#theBar svg").remove();
 
@@ -97,7 +103,7 @@ var force = d3.layout.force()
     .enter().append("circle")
       .attr("class", "node_circle")
       .attr("r", function(d) { return 0.5 * Math.sqrt(count_scale(d.count)); })
-      .style("fill", "#888" )
+      .style("fill", function (d) {return comm_color(d.community);})
       .on("mouseover", function(d) { mouseover_node(d); })
       .on("mouseout", function(d) { mouseout_node(d) })
       .on("click", function(d){ click_node(d) });
@@ -390,31 +396,36 @@ var force = d3.layout.force()
 
  
   function colorize (d, colorParameter) {
-    if (colorParameter == "answered")
-    {
-      var data = answeredColors(questionsDict);
-    } else if (colorParameter == "score")
-    {
-      var data = scoreColors(questionsDict);
-    } else if (colorParameter == "score_av")
-    {
-      var data = scoreColorsAv(questionsDict);
-    } else if (colorParameter == "view")
-    {
-      var data = viewColors(questionsDict);
-    } else if (colorParameter == "reputation")
-    {
-      var data = repColors(questionsDict);
-    } else
-    {
-      var nodes_colors = answeredColors(questionsDict);
+    if (colorParameter == "community") {
+      node.style("fill", function(d){ return comm_color(d.community); });
+      d3.select("#theBar svg").remove();
+    } else {
+      if (colorParameter == "answered")
+      {
+        var data = answeredColors(questionsDict);
+      } else if (colorParameter == "score")
+      {
+        var data = scoreColors(questionsDict);
+      } else if (colorParameter == "score_av")
+      {
+        var data = scoreColorsAv(questionsDict);
+      } else if (colorParameter == "view")
+      {
+        var data = viewColors(questionsDict);
+      } else if (colorParameter == "reputation")
+      {
+        var data = repColors(questionsDict);
+      } else
+      {
+        var nodes_colors = answeredColors(questionsDict);
+      }
+      var nodes_colors = color(data.start, data.stop, data.values);
+      var valueDomain = data.range;
+      var colorRange = [data.start, data.stop];
+      legend(data.start, data.stop, data.range[0], data.range[1])
+      
+      node.style("fill", function(d){ return nodes_colors[d.name] } );
     }
-    var nodes_colors = color(data.start, data.stop, data.values);
-    var valueDomain = data.range;
-    var colorRange = [data.start, data.stop];
-    legend(data.start, data.stop, data.range[0], data.range[1])
-    
-    node.style("fill", function(d){ return nodes_colors[d.name] } );
     
   }; 
 

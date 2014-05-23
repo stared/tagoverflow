@@ -50,7 +50,7 @@ text.legend {
   color: #222;
   border: solid 1px #aaa;
   border-radius: 4px;
-  z-index:10;
+  z-index:20;
 }
 
 #options {
