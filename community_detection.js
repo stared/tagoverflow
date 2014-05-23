@@ -170,8 +170,8 @@ function sparse_add_within (obj1, obj2, within) {
 }
 
 
-function communitize (graph) {
-  var u = prepare(graph.nodes, graph.links);
+function communitize (graph, weight_func) {
+  var u = prepare(graph.nodes, graph.links, weight_func);
   var res = clusterize(u.mass, u.community_degree, u.intercom_links);
   var comm = dendrogram_to_communities(res.dendrogram, res.community_degree, graph.nodes);
   for (var i=0; i < graph.nodes.length; i++) {

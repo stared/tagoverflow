@@ -65,7 +65,7 @@ var count_scale = d3.scale.linear()
 
 var eo_ratio_scale = function(oe_ratio) {
   return  Math.min( (oe_ratio - 1)/8 , 1);
-}
+};
 
 // 8. is an engineering constant; maybe we should relate it more to the data
  
