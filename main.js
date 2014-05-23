@@ -16,6 +16,7 @@ $("select#site_selector")[0].value = "stackoverflow";
 preGraphDrawing();
 
 d3.select("select#site_selector").on("change", function(){
+  $("input#central_tag").val("");
   preGraphDrawing();
 });
 

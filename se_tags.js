@@ -114,8 +114,6 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
                                    {site: siteName},
                                    1)[0].count;
     }
-
-    this.noOfQuestions = this.siteStats.total_questions;
     this.retriveTags();
     this.retriveRelatedTags();
   };
@@ -141,8 +139,8 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
       (function(){
         var tagName = that.tags[i].name;
         var tagNames = [tagName];
-        if (this.centralTag != undefined) {
-          tagNames.push(this.centralTag);
+        if (that.centralTag != undefined) {
+          tagNames.push(that.centralTag);
         }
         tagNames = tagNames.join(";");
         setTimeout( function() {
@@ -164,8 +162,8 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
       (function(){
         var tagName = that.tags[i].name;
         var tagNames = [tagName];
-        if (this.centralTag != undefined) {
-          tagNames.push(this.centralTag);
+        if (that.centralTag != undefined) {
+          tagNames.push(that.centralTag);
         }
         tagNames = tagNames.join(";");
         setTimeout( function() {
