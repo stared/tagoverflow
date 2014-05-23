@@ -41,7 +41,9 @@ d3.select("select#colorParameter").on("change", function(){
 var graph = {nodes: seSiteData.tags, links: seSiteData.links};
 
 // community detection for graph
-communitize(graph);
+communitize(graph, function (link) {
+  return link['oe_ratio'] - 1;
+});
 //console.log(d3.max(graph.nodes, function (d) {return d.community;}));
 
 var comm_color = d3.scale.category10();

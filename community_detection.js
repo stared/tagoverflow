@@ -8,8 +8,8 @@
 // ...but as now it is de facto naive modularity maximization
 
 
-function prepare (nodes, links) {
-  var i, source, target;
+function prepare (nodes, links, weight_func) {
+  var i, source, target, w;
 
   // total link weight
   var mass = 0;
@@ -28,13 +28,18 @@ function prepare (nodes, links) {
     source = links[i].source;
     target = links[i].target;
 
-    // later will be weight
-    // we asume non-directed graphs
-    mass += 1;
-    community_degree[source] += 1;
-    community_degree[target] += 1;
-    intercom_links[source][target] = 1;
-    intercom_links[target][source] = 1;
+    if (weight_func === undefined) {
+      w = 1;
+    } else {
+      w = weight_func(links[i]);
+    }
+
+    // we asume non-directed graphs and no multilinks
+    mass += w;
+    community_degree[source] += w;
+    community_degree[target] += w;
+    intercom_links[source][target] = w;
+    intercom_links[target][source] = w;
   }
 
   return {mass:             mass,
