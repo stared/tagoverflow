@@ -30,6 +30,7 @@ var seQuery = function(command, dict, noOfItems){
     queryString += k + "=" + dict[k] + "&";
   }
   var res = [];
+  queryString = queryString.replace("#", "%23");  // C# problem
   queryString += "key=" + apiKey + "&pagesize=" + pageSize;
   for (var i=0; (noOfItems === undefined) || (i * pageSize < noOfItems); i++){
     var resp = httpGetJSON(queryString + "&page=" + (i+1));
@@ -58,6 +59,7 @@ var seQueryAsync = function(command, dict, noOfItems, func, args){
     queryString += k + "=" + dict[k] + "&";
   }
   var res = [];
+  queryString = queryString.replace("#", "%23");  // C# problem
   queryString += "key=" + apiKey + "&pagesize=" + pageSize;
   httpGetJSONasync(queryString, func, args);
 };

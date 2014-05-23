@@ -60,11 +60,12 @@ var arrayOfDictToDict = function(list, field){
 // Dealing with tags from a particular StackExchange site
 //
 
-var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
+var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
   this.status = "Initializing...";
   this.siteName = siteName;
   this.tagLimit = tagLimit;
-  this.delay = delay || 50;
+  this.centralTag = centralTag || undefined;
+  this.delay = delay || 100;
   // see in SE API documentation:
   // "If a single IP is making more than 30 requests a second,
   // new requests will be dropped"
@@ -89,9 +90,15 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
       
   this.fetchPopularTags = function(siteName, tagLimit)
   {
-    return seQuery("tags",
-                   {site: siteName, sort: "popular", order: "desc"},
-                   tagLimit);
+    if (this.centralTag == undefined) {
+      return seQuery("tags",
+                       {site: siteName, sort: "popular", order: "desc"},
+                       tagLimit);
+    } else {
+      return seQuery("tags/" + this.centralTag + "/related",
+                       {site: siteName, sort: "popular", order: "desc"},
+                       tagLimit);
+    }
   };
 
   this.run = function(){
@@ -99,6 +106,16 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
     $(".site_info #site_name").html(this.siteData.name);
     $(".site_info #dscr").html(this.siteData.audience);
     $(".site_info #site_name").hide().attr("href", this.siteData.site_url).show();
+
+    if (this.centralTag == undefined) {
+      this.noOfQuestions = this.siteStats.total_questions;
+    } else {
+      this.noOfQuestions = seQuery("tags/" + this.centralTag + "/info",
+                                   {site: siteName},
+                                   1)[0].count;
+    }
+
+    this.noOfQuestions = this.siteStats.total_questions;
     this.retriveTags();
     this.retriveRelatedTags();
   };
@@ -123,9 +140,13 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
     for (var i=0; i < this.tags.length; i++){
       (function(){
         var tagName = that.tags[i].name;
-        var tagNameFixed = tagName.replace("#", "%23");  // for "C#" may be problems with other characteres
+        var tagNames = [tagName];
+        if (this.centralTag != undefined) {
+          tagNames.push(this.centralTag);
+        }
+        tagNames = tagNames.join(";");
         setTimeout( function() {
-            seQueryAsync("tags/" + tagNameFixed + "/related",
+            seQueryAsync("tags/" + tagNames + "/related",
                          {site: siteName},
                          tagLimit,
                          that.putRelatedTagInDict,
@@ -142,10 +163,14 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
     for (var i=0; i < this.tags.length; i++){
       (function(){
         var tagName = that.tags[i].name;
-        var tagNameFixed = tagName.replace("#", "%23");  // for "C#" may be problems with other characteres
+        var tagNames = [tagName];
+        if (this.centralTag != undefined) {
+          tagNames.push(this.centralTag);
+        }
+        tagNames = tagNames.join(";");
         setTimeout( function() {
             seQueryAsync("questions",
-                         {order: "desc", sort: "creation", tagged: tagNameFixed, site: siteName,
+                         {order: "desc", sort: "creation", tagged: tagNames, site: siteName,
                          todate: that.todate}, // question age
                          100,  // 100 last questions
                          that.putLastQuestionsPerTagDict,
@@ -181,7 +206,6 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
   };
 
   this.processRelatedTags = function(){
-    var noOfQuestions = this.siteStats.total_questions;
     this.links = [];
     for (var tag1 in this.relatedTagDict)
     {
@@ -200,7 +224,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, delay){
                       target: this.tagsDict[tag2].pos,
                       source_name: tag1,
                       target_name: tag2,
-                      oe_ratio: (tag2info.count * noOfQuestions) / (tag1info.count * this.tagsDict[tag2].count)
+                      oe_ratio: (tag2info.count * this.noOfQuestions) / (tag1info.count * this.tagsDict[tag2].count)
                      };
           if ((link.count > 1) && (link.oe_ratio > 1))
           {

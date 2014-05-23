@@ -23,11 +23,16 @@ d3.select("select#pageSize").on("change", function(){
   preGraphDrawing();
 });
 
+d3.select("button#go").on("click", function(){
+  preGraphDrawing();
+});
+
 
 function preGraphDrawing(){
   var siteName = $("select#site_selector")[0].value;
   var pageSize = parseInt($("select#pageSize")[0].value);
-  seSiteData = new SeDataLoaderPerSite(siteName, pageSize);
+  var centralTag = $("input#central_tag")[0].value;
+  seSiteData = new SeDataLoaderPerSite(siteName, pageSize, centralTag);
   seSiteData.run();
   // fires draw_graph() after doing necessary stuff
 }
@@ -107,8 +112,11 @@ var force = d3.layout.force()
       .attr("r", function(d) { return 0.5 * Math.sqrt(count_scale(d.count)); })
       .style("fill", function (d) {return comm_color(d.community);})
       .on("mouseover", function(d) { mouseover_node(d); })
-      .on("mouseout", function(d) { mouseout_node(d) })
-      .on("click", function(d){ click_node(d) });
+      .on("mouseout", function(d) { mouseout_node(d); })
+      .on("click", function(d){ click_node(d); })
+      .on("dblclick", function (d) {
+        $("input#central_tag").val(d.name);
+      });
 
   var label = main.selectAll(".node_label")
       .data(graph.nodes)
