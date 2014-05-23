@@ -58,7 +58,7 @@ d3.select("body").select("svg#graph").remove();
 d3.select("body").select("#theBar svg").remove();
 
 var width = 1000,
-    height = 600;
+    height = 700;
 
 var svg = d3.select("body").append("svg")
     .attr("id", "graph")
@@ -80,7 +80,7 @@ var force = d3.layout.force()
     .charge( function(d) { return -50 * Math.sqrt(count_scale(d.count))} )
     .linkDistance(40)
     .gravity(0.45)
-    .size([width - 250, height]);
+    .size([width - 150, height]);
     // .on("end", colorize);  // takes to long before it ends
 
   var main = svg.append("g")
