@@ -339,6 +339,20 @@ var force = d3.layout.force()
     return dict;
   };
 
+  function scoreColorsAv(questionsDict)
+  {
+    var valueDict = {};
+    var valueList = [];
+    for (tagName in questionsDict)
+    {
+      var value = questionsScoreAv(questionsDict[tagName]);
+      valueDict[tagName]=value;
+      valueList.push(value);
+    };
+    var dict = {start:"green", stop:"yellow", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
+    return dict;
+  };
+
   function viewColors(questionsDict)
   {
     var valueDict = {};
@@ -382,6 +396,9 @@ var force = d3.layout.force()
     } else if (colorParameter == "score")
     {
       var data = scoreColors(questionsDict);
+    } else if (colorParameter == "score_av")
+    {
+      var data = scoreColorsAv(questionsDict);
     } else if (colorParameter == "view")
     {
       var data = viewColors(questionsDict);

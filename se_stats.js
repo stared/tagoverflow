@@ -10,16 +10,20 @@ SETagStats = function (questions) {
 }
 */
 
-function answered(questions) 
+function answered(questions)
 {
   var questionNumber=questions.length;
   var answeredNumber=questions.filter(function(x) {return x.is_answered;}).length;
-  if (questionNumber>0) {return answeredNumber/questionNumber}
-  else {return 0};
+  if (questionNumber>0) {return answeredNumber/questionNumber;}
+  else {return 0;}
 }
 
 function questionsScore(questions) {
   return d3.median(questions, function (q) { return q.score; });
+}
+
+function questionsScoreAv(questions) {
+  return d3.mean(questions, function (q) { return q.score; });
 }
 
 function questionsView(questions){
