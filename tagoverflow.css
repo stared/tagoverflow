@@ -3,6 +3,11 @@
   stroke-width: 1.0px;
 }
 
+.fixed {
+  stroke: #000;
+  stroke-width: 2.0px;
+}
+
 .node_label {
   pointer-events: none;
 }

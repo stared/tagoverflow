@@ -77,7 +77,7 @@ var eo_ratio_scale = function(oe_ratio) {
  
 
 var force = d3.layout.force()
-    .charge( function(d) { return -50 * Math.sqrt(count_scale(d.count))} )
+    .charge( function(d) { return -50 * Math.sqrt(count_scale(d.count)); })
     .linkDistance(40)
     .gravity(0.45)
     .size([width, height]);
@@ -92,8 +92,18 @@ var force = d3.layout.force()
       .linkStrength(function (d) {
         return eo_ratio_scale(d['oe_ratio']);
       })
-
       .start();
+
+  var drag = force.drag()
+    .on("dragend", function (d) {
+      if (d.fixed2 === true) {
+        d3.select(this).classed("fixed", d.fixed = false);
+        d.fixed2 = false;
+      } else {
+        d3.select(this).classed("fixed", d.fixed = true);
+        d.fixed2 = true;
+      }
+    });
 
   var link = main.selectAll(".link")
       .data(graph.links)
@@ -116,8 +126,9 @@ var force = d3.layout.force()
       .on("mouseout", function(d) { mouseout_node(d); })
       .on("click", function(d){ click_node(d); })
       .on("dblclick", function (d) {
-        $("input#central_tag").val(d.name);
-      });
+        d3.select(this).classed("fixed", d.fixed = false);
+      })
+      .call(drag);
 
   var label = main.selectAll(".node_label")
       .data(graph.nodes)
@@ -170,7 +181,7 @@ var force = d3.layout.force()
         .style("fill-opacity", 0.2);
 
     label.filter(function(d){ return neighbors[d.index] })
-        .attr("font-size", 16)
+        .attr("font-size", 16);
 
   };
 
@@ -181,11 +192,11 @@ var force = d3.layout.force()
       });
 
     node
-      .style("stroke-width", 1)
+      .style("stroke-width", null);
 
     label
       .attr("font-size", 10)
-      .style("fill-opacity", 1)
+      .style("fill-opacity", 1);
 
   };
 
