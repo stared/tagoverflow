@@ -183,6 +183,9 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
     var progress = Object.keys(targetDict).length;
     if (progress === tagsLength) {
       $(".site_info #loading_status").html("<br>Loading tag neighbors: DONE!");
+      setTimeout(function(){
+        $(".site_info #loading_status").html("");
+      }, 1000);
       that.processRelatedTags();
     } else {
       $(".site_info #loading_status").html("<br>Loading tag neighbors: " + (progress) + "/" + tagsLength + "...");

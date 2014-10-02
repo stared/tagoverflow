@@ -41,7 +41,11 @@ function preGraphDrawing(){
 function draw_graph(seSiteData){
 
 d3.select("select#colorParameter").on("change", function(){
-  colorize(graph.nodes, this.value);
+  if (seSiteData.status === "Done!") {
+    colorize(graph.nodes, this.value);
+  } else {
+    retriveLastQuestions();
+  }
 });
 
 var graph = {nodes: seSiteData.tags, links: seSiteData.links};
@@ -201,6 +205,11 @@ var force = d3.layout.force()
   };
 
   var click_node = function(z){
+    //
+    // Things that need to be fixed:
+    // - working for conditional tags
+    // - as asynchronous call
+    //
 
     $(".tag_info #tag_name").html(z.name);
     $(".tag_info #tag_name")
@@ -308,8 +317,13 @@ var force = d3.layout.force()
   };
 
   // Below is asynch.
-  seSiteData.retriveLastQuestionsPerTag();
-  var questionsDict = seSiteData.lastQuestionsPerTagDict;
+  var questionsDict;
+
+  function retriveLastQuestions() {
+    seSiteData.retriveLastQuestionsPerTag();
+    questionsDict = seSiteData.lastQuestionsPerTagDict;
+    setTimeout(colorizeTimeouted, 500);
+  }
 
   function colorizeTimeouted(){
     if (seSiteData.status === "Done!") {
@@ -318,8 +332,6 @@ var force = d3.layout.force()
       setTimeout(colorizeTimeouted, 500);
     }
   }
-
-  setTimeout(colorizeTimeouted, 500);
 
   function color(lowcolor,highcolor,valuesDict){
     var values = [];
