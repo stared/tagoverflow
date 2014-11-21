@@ -1,3 +1,10 @@
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 var sites = fetchSites();
 sitesDict = {};
 for(var i=0; i < sites.length; i++){
@@ -11,13 +18,24 @@ d3.select("select#site_selector").selectAll("option")
         .attr("value", function(d){ return d.api_site_parameter; })
         .html(function(d){ return d.name; })
 
-$("select#site_selector")[0].value = "stackoverflow";
+var initialSite = getParameterByName("site").replace("/", "") || "stackoverflow";
+if (!(initialSite in sitesDict)) {
+  initialSite = "stackoverflow";
+}
+
+$("select#site_selector")[0].value = initialSite;
+
 
 preGraphDrawing();
 
 d3.select("select#site_selector").on("change", function(){
+  var queryString = "?site=" + d3.select("#site_selector").property("value");
+  if (history.pushState) {
+    var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + queryString;
+    window.history.pushState({path:newurl}, '', newurl);
+  }
   $("input#central_tag").val("");
-  preGraphDrawing();
+  preGraphDrawing();  // now it may be even not needed
 });
 
 d3.select("select#pageSize").on("change", function(){
