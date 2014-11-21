@@ -117,13 +117,24 @@ var force = d3.layout.force()
       .start();
 
   var drag = force.drag()
+    .on("dragstart", function (d) {
+      d3.event.sourceEvent.stopPropagation(); // silence other listeners
+      d.moved = false;
+    })
+    .on("drag", function (d) {
+      if (Math.pow(d3.event.dx, 2) + Math.pow(d3.event.dy, 2) > 25) {
+        d.moved = true;
+      }
+    })
     .on("dragend", function (d) {
-      if (d.fixed2 === true) {
-        d3.select(this).classed("fixed", d.fixed = false);
-        d.fixed2 = false;
-      } else {
-        d3.select(this).classed("fixed", d.fixed = true);
-        d.fixed2 = true;
+      if (d.moved === true) {
+        if (d.fixed2 === true) {
+          d3.select(this).classed("fixed", d.fixed = false);
+          d.fixed2 = false;
+        } else {
+          d3.select(this).classed("fixed", d.fixed = true);
+          d.fixed2 = true;
+        }
       }
     });
 
@@ -146,7 +157,10 @@ var force = d3.layout.force()
       .style("fill", function (d) {return comm_color(d.community);})
       .on("mouseover", function(d) { mouseover_node(d); })
       .on("mouseout", function(d) { mouseout_node(d); })
-      .on("click", function(d){ click_node(d); })
+      .on("click", function(d){
+        if (d3.event.defaultPrevented) return;
+        click_node(d);
+      })
       .on("dblclick", function (d) {
         d3.select(this).classed("fixed", d.fixed = false);
       })
