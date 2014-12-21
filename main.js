@@ -372,119 +372,68 @@ var force = d3.layout.force()
     };
     var minvalue = d3.min(values);
     var maxvalue = d3.max(values);
-    var color = d3.scale.linear()
+    var colorScale = d3.scale.linear()
       .domain([minvalue, maxvalue])
       .range([lowcolor, highcolor])
     colors = {};
     for (key in valuesDict){
-      colors[key]=color(valuesDict[key]);
+      colors[key]=colorScale(valuesDict[key]);
     };  
     return colors;
   };
-
-  function answeredColors(questionsDict)
-  {
-    valueDict = {};
-    valueList = [];
-    for (tagName in questionsDict)
-    {
-      var value = answered(questionsDict[tagName])*100;
-      valueDict[tagName]=value;
-      valueList.push(value);
-    };
-    //console.log(d3.min(valueList))
-    var dict = {start:"sienna", stop:"wheat", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
-    return dict;
+  
+  function asinh(x){
+    return Math.log(x + Math.sqrt(x*x + 1))
   };
-
-  function scoreColors(questionsDict)
-  {
+  
+  function statsColors(questionsDict, func, startColor, stopColor){
     var valueDict = {};
     var valueList = [];
     for (tagName in questionsDict)
     {
-      var value = questionsScore(questionsDict[tagName]);
+      var value = func(questionsDict[tagName]);
       valueDict[tagName]=value;
       valueList.push(value);
     };
-    var dict = {start:"green", stop:"yellow", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
-    return dict;
+    var dict = {start:startColor, stop:stopColor, values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
+    return dict
   };
 
-  function scoreColorsAv(questionsDict)
-  {
-    var valueDict = {};
-    var valueList = [];
-    for (tagName in questionsDict)
-    {
-      var value = questionsScoreAv(questionsDict[tagName]);
-      valueDict[tagName]=value;
-      valueList.push(value);
-    };
-    var dict = {start:"green", stop:"yellow", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
-    return dict;
-  };
+var statsList = ["community","answered","score","score_av","view","reputation"];  // not used by now
+var statsDict = {
+	answered: {
+	  func: answered,
+	  startColor: "sienna",
+	  stopColor: "wheat"},
+	score: {
+	  func: questionsScore,
+	  startColor:"green",
+	  stopColor:"yellow"},
+	score_av: {
+	  func: questionsScoreAv,
+	  startColor: "green", 
+	  stopColor: "yellow"},
+	view: {
+	  func: questionsView, 
+	  startColor: "blue", 
+	  stopColor: "cyan"},
+	reputation: {
+	  func: ownerReputation,
+	  startColor: "red",
+	  stopColor: "yellow"}
+	};
 
-  function viewColors(questionsDict)
-  {
-    var valueDict = {};
-    var valueList = [];
-    for (tagName in questionsDict)
-    {
-      var value = questionsView(questionsDict[tagName]);
-      valueDict[tagName]=value;
-      valueList.push(value);
-    };
-    var dict = {start:"blue", stop:"cyan", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
-    return dict;
-  };
-
-  function repColors(questionsDict)
-  {
-    var valueDict = {};
-    var valueList = [];
-    var rep =[]; //spr
-    for (tagName in questionsDict)
-    {
-      var value = ownerReputation(questionsDict[tagName]);
-      valueDict[tagName]=value;
-      valueList.push(value);
-      rep[tagName]=questionsDict[tagName].map(function (q) { return q.owner.reputation; }); //spr
-    };
-    
-    //spr
-    // console.log(rep);
-    //
-    
-    var dict = {start:"red", stop:"yellow", values:valueDict, range:[d3.min(valueList),d3.max(valueList)]};
-    return dict;
-  };
-
- 
   function colorize (d, colorParameter) {
     if (colorParameter == "community") {
       node.style("fill", function(d){ return comm_color(d.community); });
       d3.select("#theBar svg").remove();
     } else {
-      if (colorParameter == "answered")
-      {
-        var data = answeredColors(questionsDict);
-      } else if (colorParameter == "score")
-      {
-        var data = scoreColors(questionsDict);
-      } else if (colorParameter == "score_av")
-      {
-        var data = scoreColorsAv(questionsDict);
-      } else if (colorParameter == "view")
-      {
-        var data = viewColors(questionsDict);
-      } else if (colorParameter == "reputation")
-      {
-        var data = repColors(questionsDict);
-      } else
-      {
-        var nodes_colors = answeredColors(questionsDict);
-      }
+      var statInfo = statsDict[colorParameter]
+      var func = statInfo.func
+      var start = statInfo.startColor
+      var stop = statInfo.stopColor
+      var data = statsColors(questionsDict,func,start,stop)
+
       var nodes_colors = color(data.start, data.stop, data.values);
       var valueDomain = data.range;
       var colorRange = [data.start, data.stop];
@@ -493,6 +442,6 @@ var force = d3.layout.force()
       node.style("fill", function(d){ return nodes_colors[d.name] } );
     }
     
-  }; 
+  };
 
 };
