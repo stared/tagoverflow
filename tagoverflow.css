@@ -176,3 +176,17 @@ a:hover { color:#aaa; text-decoration: none; }
     overflow: hidden;
     text-overflow: ellipsis; 
 }
+
+div.tooltip
+{
+    position: absolute;
+    text-align: left;
+    padding: 8px;
+    font: 12px sans-serif;
+    background: #000;
+    color: #ddd;
+    border: solid 1px #aaa;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 50;
+}

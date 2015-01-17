@@ -25,6 +25,10 @@ if (!(initialSite in sitesDict)) {
 
 $("select#site_selector")[0].value = initialSite;
 
+var body = d3.select("body");
+var tooltip = new Tooltip("body");
+
+var si_number = d3.format("s");
 
 preGraphDrawing();
 
@@ -76,13 +80,13 @@ communitize(graph, function (link) {
 
 var comm_color = d3.scale.category10();
 
-d3.select("body").select("svg#graph").remove();
-d3.select("body").select("#theBar svg").remove();
+body.select("svg#graph").remove();
+body.select("#theBar svg").remove();
 
 var width = 1000,
     height = 700;
 
-var svg = d3.select("body").append("svg")
+var svg = body.append("svg")
     .attr("id", "graph")
     .attr("width", width)
     .attr("height", height);
@@ -147,7 +151,24 @@ var force = d3.layout.force()
       })
       .style("stroke-opacity", function(d) {
         return 0.5 * eo_ratio_scale(d['oe_ratio']);
-      });
+      })
+      .on("mouseover", function (d) {
+
+        d3.select(this).style("stroke-opacity", 0.75);
+
+        // for a sec without conditionals
+        var text = si_number(d.count) + " questions with both [" + d.source_name + "] and [" + d.target_name + "] tags<br><br>" +
+                   "Ratio occurrences to expected by chance:<br>" +
+                   "P([" + d.source_name  + "] and [" + d.target_name + "]) / P([" + d.source_name  + "]) / P([" + d.target_name + "]) = " + d.oe_ratio.toFixed(2);
+        tooltip.show(text);
+
+      })
+      .on("mouseout", function (d) {
+        d3.select(this).style("stroke-opacity", function(d) {
+          return 0.5 * eo_ratio_scale(d['oe_ratio']);
+        });
+        tooltip.out();
+      }); 
 
   var node = main.selectAll(".node_circle")
       .data(graph.nodes)
@@ -445,3 +466,28 @@ var statsDict = {
   };
 
 };
+
+function Tooltip(parentDom) {
+
+  var tooltip = d3.select(parentDom)
+    .append('div')
+      .attr('class', 'tooltip')
+      .style('opacity', 1e-6);
+
+  this.show = function (html) {
+    tooltip.style('opacity', 0.8)
+      .style('left', (d3.event.pageX + 15) + 'px')
+      .style('top', (d3.event.pageY + 8) + 'px')
+      .html(html);
+  };
+
+  this.out = function () {
+    tooltip
+      .style('opacity', 1e-6);
+  };
+
+  this.destory = function () {
+    tooltip.remove();
+  };
+
+}
