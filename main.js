@@ -28,8 +28,6 @@ $("select#site_selector")[0].value = initialSite;
 var body = d3.select("body");
 var tooltip = new Tooltip("body");
 
-var si_number = d3.format("s");
-
 preGraphDrawing();
 
 d3.select("select#site_selector").on("change", function(){
@@ -157,7 +155,7 @@ var force = d3.layout.force()
         d3.select(this).style("stroke-opacity", 0.75);
 
         // for a sec without conditionals
-        var text = si_number(d.count) + " questions with both " + d.source_name + " and " + d.target_name + "<br><br>" +
+        var text = siNumberApprox(d.count) + " questions with both " + d.source_name + " and " + d.target_name + "<br><br>" +
                    "Ratio occurrences to expected by chance:<br>" +
                    "P(" + d.source_name  + " AND " + d.target_name + ") / P(" + d.source_name  + ") / P(" + d.target_name + ") = " + d.oe_ratio.toFixed(2);
         tooltip.show(text);
@@ -490,4 +488,10 @@ function Tooltip(parentDom) {
     tooltip.remove();
   };
 
+}
+
+function siNumberApprox (x) {
+  var prefix = d3.formatPrefix(x);
+  var scaled = prefix.scale(x);
+  return scaled.toFixed(scaled < 10 ? 1 : 0) + prefix.symbol;
 }
