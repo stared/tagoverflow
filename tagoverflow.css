@@ -45,6 +45,10 @@ text.legend {
     font-size: 11px;
 }
 
+body {
+  font-size: 14px;
+}
+
 #footnote {
   position: fixed;
   bottom: 20px;
@@ -87,7 +91,7 @@ div.site_info {
 
 div.tag_info {
 	position: fixed;
-	top: 170px;
+	top: 130px;
 	right: 20px;
   padding: 12px;
   width: 300px;
@@ -189,4 +193,20 @@ div.tooltip
     border-radius: 4px;
     pointer-events: none;
     z-index: 50;
+}
+
+#loading_status
+{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 12px;
+    width: 300px;
+    background: #000;
+    color: #aaa;
+    border: solid 1px #aaa;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.8;
 }

@@ -182,13 +182,13 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
     targetDict[tagName] = x.items;
     var progress = Object.keys(targetDict).length;
     if (progress === tagsLength) {
-      $(".site_info #loading_status").html("<br>Loading tag neighbors: DONE!");
+      $("#loading_status").show().html("Loading tag neighbors: DONE!");
       setTimeout(function(){
-        $(".site_info #loading_status").html("");
+        $("#loading_status").html("").hide();
       }, 1000);
       that.processRelatedTags();
     } else {
-      $(".site_info #loading_status").html("<br>Loading tag neighbors: " + (progress) + "/" + tagsLength + "...");
+      $("#loading_status").show().html("Loading tag neighbors: " + (progress) + "/" + tagsLength + "...");
     }
   };
 
@@ -196,13 +196,13 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
     targetDict[tagName] = x.items;
     var progress = Object.keys(targetDict).length;
     if (progress === tagsLength) {
-      $(".site_info #loading_status").html("<br>Loading additional tag info: DONE!");
+      $("#loading_status").show().html("Loading additional tag info: DONE!");
       that.status = "Done!";
       setTimeout(function(){
-        $(".site_info #loading_status").html("");
+        $("#loading_status").html("").hide();
       }, 1000);
     } else {
-      $(".site_info #loading_status").html("<br>Loading additional tag info: " + (progress) + "/" + tagsLength + "...");
+      $("#loading_status").show().html("Loading additional tag info: " + (progress) + "/" + tagsLength + "...");
     }
   };
 
