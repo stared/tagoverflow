@@ -18,48 +18,66 @@ d3.select("select#site_selector").selectAll("option")
         .attr("value", function(d){ return d.api_site_parameter; })
         .html(function(d){ return d.name; })
 
-var initialSite = getParameterByName("site").replace("/", "") || "stackoverflow";
-if (!(initialSite in sitesDict)) {
-  initialSite = "stackoverflow";
-}
+var toOptions = {
+  siteName:   getParameterByName("site").replace("/", "") || "stackoverflow",
+  pageSize:   parseInt(getParameterByName("size").replace("/", "")) || 16,
+  centralTag: getParameterByName("tag").replace("/", "") || "",
+};
 
-$("select#site_selector")[0].value = initialSite;
+$("select#site_selector").val(toOptions.siteName);
+$("select#pageSize").val("" + toOptions.pageSize);
+$("input#central_tag").val(toOptions.centralTag);
 
-var body = d3.select("body");
 var tooltip = new Tooltip("body");
 
-preGraphDrawing();
+preGraphDrawing(toOptions);
 
 d3.select("select#site_selector").on("change", function(){
-  var queryString = "?site=" + d3.select("#site_selector").property("value");
+  toOptions.siteName = $("select#site_selector").val();
+  toOptions.centralTag = "";
+  $("input#central_tag").val("");
+  preGraphDrawing(toOptions);
+});
+
+d3.select("select#pageSize").on("change", function(){
+  toOptions.pageSize = parseInt($("select#pageSize").val());
+  preGraphDrawing(toOptions);
+});
+
+d3.select("button#go").on("click", function(){
+  preGraphDrawing(toOptions);
+});
+
+
+function preGraphDrawing(toOptions){
+
+  var centralTagNew = $("input#central_tag").val() || "";
+
+  if ((toOptions.centralTag === "") && centralTagNew !== "") {
+    toOptions.centralTag = centralTagNew;
+    toOptions.pageSize = Math.min(toOptions.pageSize, 16);
+    $("select#pageSize").val("" +  toOptions.pageSize);
+  }
+  
+  // changing url query papameters
+  var queryString = "?site=" + toOptions.siteName + "&size=" + toOptions.pageSize;
+  if (toOptions.centralTag !== "") {
+    queryString += "&tag=" + toOptions.centralTag;
+  }
+
   if (history.pushState) {
     var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + queryString;
     window.history.pushState({path:newurl}, '', newurl);
   }
-  $("input#central_tag").val("");
-  preGraphDrawing();  // now it may be even not needed
-});
 
-d3.select("select#pageSize").on("change", function(){
-  preGraphDrawing();
-});
-
-d3.select("button#go").on("click", function(){
-  preGraphDrawing();
-});
-
-
-function preGraphDrawing(){
-  var siteName = $("select#site_selector")[0].value;
-  var pageSize = parseInt($("select#pageSize")[0].value);
-  var centralTag = $("input#central_tag")[0].value;
-  seSiteData = new SeDataLoaderPerSite(siteName, pageSize, centralTag);
+  seSiteData = new SeDataLoaderPerSite(toOptions.siteName, toOptions.pageSize, toOptions.centralTag);
   seSiteData.run();
   // fires draw_graph() after doing necessary stuff
 }
 
 function draw_graph(seSiteData){
 
+var body = d3.select("body");
 d3.select("select#colorParameter").on("change", function(){
   if (seSiteData.status === "Done!") {
     colorize(graph.nodes, this.value);
