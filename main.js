@@ -155,9 +155,13 @@ var force = d3.layout.force()
         d3.select(this).style("stroke-opacity", 0.75);
 
         // for a sec without conditionals
+        var ratioLaTeX = katex.renderToString(("\\frac{P(\\text{" + d.source_name  + " } \\cap \\text{ " + d.target_name + "})}{P(\\text{" +
+                                              d.source_name  + "}) P(\\text{" + d.target_name + "})} = " + d.oe_ratio.toFixed(2)).replace(/#/g, "\\#"));
+
         var text = siNumberApprox(d.count) + " questions with both " + d.source_name + " and " + d.target_name + "<br><br>" +
                    "Ratio occurrences to expected by chance:<br>" +
-                   "P(" + d.source_name  + " AND " + d.target_name + ") / P(" + d.source_name  + ") / P(" + d.target_name + ") = " + d.oe_ratio.toFixed(2);
+                   "P(" + d.source_name  + " AND " + d.target_name + ") / P(" + d.source_name  + ") / P(" + d.target_name + ") = " + d.oe_ratio.toFixed(2) +
+                   "<br><br>" + ratioLaTeX;
         tooltip.show(text);
 
       })
