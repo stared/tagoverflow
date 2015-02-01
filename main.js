@@ -283,11 +283,18 @@ var force = d3.layout.force()
     // - as asynchronous call
     //
 
-    $(".tag_info #tag_name").html(z.name);
+    var tagQuery = z.name;
+    if (centralTag) {
+      tagQuery += (";" + centralTag);
+    }
+
+    $(".tag_info #tag_name").html(tagQuery);
     $(".tag_info #tag_name")
       .hide()
-      .attr('href', seSiteData.siteData.site_url + "/questions/tagged/" + z.name)
+      .attr('href', seSiteData.siteData.site_url + "/questions/tagged/" + tagQuery)
       .show();
+
+    $(".tag_info #tag_count").html(siNumberApprox(z.count));
 
     // $(".tag_info #dscr").html("count: " + z.count);
 
@@ -369,7 +376,7 @@ var force = d3.layout.force()
       .remove();
 
 
-    var questions = fetchTopQuestions(seSiteData.siteName, z.name);
+    var questions = fetchTopQuestions(seSiteData.siteName, tagQuery);
 
     var d3question = d3.select(".tag_info #questions ul").selectAll("li")
       .data(questions);

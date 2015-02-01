@@ -216,7 +216,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
     }
   };
 
-  this.processRelatedTags = function(){
+  this.processRelatedTags = function (includeCentralTag) {
     this.links = [];
     for (var tag1 in this.relatedTagDict)
     {
@@ -244,6 +244,11 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
         }
       }
     }
+
+    // if (includeCentralTag) {
+
+    // }
+
     draw_graph(this);
   };
 
