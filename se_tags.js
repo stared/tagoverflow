@@ -87,7 +87,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
   {
     return seQuery("info", {site: siteName}, 1);
   };
-      
+
   this.fetchPopularTags = function(siteName, tagLimit)
   {
     if (this.centralTag == undefined) {
@@ -103,6 +103,12 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
 
   this.run = function(){
     this.siteStats = this.fetchSiteStats(siteName)[0];
+
+    if (this.centralTag) {
+      this.centralTagCount = seQuery("tags/" + this.centralTag + "/info", {site: siteName}, 1)[0]['count'];
+      this.centralTagText = seQuery("tags/" + this.centralTag + "/wikis", {site: siteName}, 1)[0]['excerpt'];
+    } 
+
     $(".site_info #site_name").html(this.siteData.name);
     $(".site_info #dscr").html(this.siteData.audience);
     $(".site_info #site_name").hide().attr("href", this.siteData.site_url).show();
@@ -110,9 +116,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
     if (!this.centralTag) {
       this.noOfQuestions = this.siteStats.total_questions;
     } else {
-      this.noOfQuestions = seQuery("tags/" + this.centralTag + "/info",
-                                   {site: siteName},
-                                   1)[0].count;
+      this.noOfQuestions = this.centralTagCount;
     }
     this.retriveTags();
     this.retriveRelatedTags();
