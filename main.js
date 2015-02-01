@@ -54,10 +54,10 @@ function preGraphDrawing(toOptions){
   var centralTagNew = $("input#central_tag").val() || "";
 
   if ((toOptions.centralTag === "") && centralTagNew !== "") {
-    toOptions.centralTag = centralTagNew;
     toOptions.pageSize = Math.min(toOptions.pageSize, 16);
     $("select#pageSize").val("" +  toOptions.pageSize);
   }
+  toOptions.centralTag = centralTagNew;
   
   // changing url query papameters
   var queryString = "?site=" + toOptions.siteName + "&size=" + toOptions.pageSize;
