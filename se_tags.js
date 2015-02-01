@@ -109,9 +109,15 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
       this.centralTagText = seQuery("tags/" + this.centralTag + "/wikis", {site: siteName}, 1)[0]['excerpt'];
     } 
 
-    $(".site_info #site_name").html(this.siteData.name);
-    $(".site_info #dscr").html(this.siteData.audience);
-    $(".site_info #site_name").hide().attr("href", this.siteData.site_url).show();
+    if (!this.centralTag) {
+      $(".site_info #site_name").html(this.siteData.name);
+      $(".site_info #dscr").html(this.siteData.audience);
+      $(".site_info #site_name").hide().attr("href", this.siteData.site_url).show();
+    } else {
+      $(".site_info #site_name").html(this.siteData.name + ": " + this.centralTag);
+      $(".site_info #dscr").html(this.centralTagText);
+      $(".site_info #site_name").hide().attr("href", this.siteData.site_url + "/tagged/" + this.centralTag).show();
+    }
 
     if (!this.centralTag) {
       this.noOfQuestions = this.siteStats.total_questions;
