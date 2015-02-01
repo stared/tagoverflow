@@ -5,11 +5,11 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-var sites = fetchSites();
-sitesDict = {};
-for(var i=0; i < sites.length; i++){
-  sitesDict[sites[i]["api_site_parameter"]] = sites[i]
-}
+    var sites = fetchSites();
+    sitesDict = {};
+    for(var i=0; i < sites.length; i++){
+      sitesDict[sites[i]["api_site_parameter"]] = sites[i]
+    }
 
 d3.select("select#site_selector").selectAll("option")
     .data(sites)
@@ -76,6 +76,8 @@ function preGraphDrawing(toOptions){
 }
 
 function draw_graph(seSiteData){
+
+var centralTag = seSiteData.centralTag;
 
 var body = d3.select("body");
 d3.select("select#colorParameter").on("change", function(){
@@ -172,9 +174,11 @@ var force = d3.layout.force()
 
         d3.select(this).style("stroke-opacity", 0.75);
 
-        var text = "with " + d.source_name + " and " + d.target_name + " tags:<br><br>" +
+        var centralText = !!centralTag ? (" (and " + centralTag + ") ") : "";
+
+        var text = "with " + d.source_name + " and " + d.target_name + centralText + " tags:<br><br>" +
                    siNumberApprox(d.count) + " questions<br>" +
-                   d.oe_ratio.toFixed(2) + "x more likely than by chance";
+                   d.oe_ratio.toFixed(2) + "x more likely to have this pair than by chance";
         tooltip.show(text);
 
       })

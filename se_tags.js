@@ -107,7 +107,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
     $(".site_info #dscr").html(this.siteData.audience);
     $(".site_info #site_name").hide().attr("href", this.siteData.site_url).show();
 
-    if (this.centralTag == undefined) {
+    if (!this.centralTag) {
       this.noOfQuestions = this.siteStats.total_questions;
     } else {
       this.noOfQuestions = seQuery("tags/" + this.centralTag + "/info",
