@@ -422,16 +422,16 @@ var force = d3.layout.force()
     return colors;
   };
   
-  function asinh(x){
-    return Math.log(x + Math.sqrt(x*x + 1))
-  };
+  //function asinh(x){
+  //  return Math.log(x + Math.sqrt(x*x + 1))
+  //};
   
-  function statsColors(questionsDict, func, startColor, stopColor){
+  function statsForColors(questionsDict, func, startColor, stopColor, transform){
     var valueDict = {};
     var valueList = [];
     for (tagName in questionsDict)
     {
-      var value = func(questionsDict[tagName]);
+      var value = transform(func(questionsDict[tagName]));
       valueDict[tagName]=value;
       valueList.push(value);
     };
@@ -443,22 +443,27 @@ var statsList = ["community","answered","score","score_av","view","reputation"];
 var statsDict = {
 	answered: {
 	  func: answered,
+	  transform: function(x){return 100*x}, // percents
 	  startColor: "sienna",
 	  stopColor: "wheat"},
 	score: {
 	  func: questionsScore,
+	  transform: asinh, // asinh form asinhLegend.js
 	  startColor:"green",
 	  stopColor:"yellow"},
 	score_av: {
 	  func: questionsScoreAv,
+	  transform: asinh,
 	  startColor: "green", 
 	  stopColor: "yellow"},
 	view: {
-	  func: questionsView, 
+	  func: questionsView,
+	  transform: asinh, 
 	  startColor: "blue", 
 	  stopColor: "cyan"},
 	reputation: {
 	  func: ownerReputation,
+	  transform: asinh,
 	  startColor: "red",
 	  stopColor: "yellow"}
 	};
@@ -468,16 +473,23 @@ var statsDict = {
       node.style("fill", function(d){ return comm_color(d.community); });
       d3.select("#theBar svg").remove();
     } else {
-      var statInfo = statsDict[colorParameter]
-      var func = statInfo.func
-      var start = statInfo.startColor
-      var stop = statInfo.stopColor
-      var data = statsColors(questionsDict,func,start,stop)
+      var statInfo = statsDict[colorParameter];
+      var func = statInfo.func;
+      var start = statInfo.startColor;
+      var stop = statInfo.stopColor;
+      var transform = statInfo.transform;
+      var data = statsForColors(questionsDict,func,start,stop,transform);
 
       var nodes_colors = color(data.start, data.stop, data.values);
       var valueDomain = data.range;
       var colorRange = [data.start, data.stop];
-      legend(data.start, data.stop, data.range[0], data.range[1])
+      if (transform == asinh) {
+      	asinhLegend(data.start, data.stop, data.range[0], data.range[1])
+      	
+      }
+      else {
+      	linLegend(data.start, data.stop, data.range[0], data.range[1])
+      }
       
       node.style("fill", function(d){ return nodes_colors[d.name] } );
     }
