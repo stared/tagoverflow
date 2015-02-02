@@ -200,7 +200,7 @@ var force = d3.layout.force()
       .on("mouseout", function(d) { mouseout_node(d); })
       .on("click", function(d){
         if (d3.event.defaultPrevented) return;
-        click_node(d);
+        setTimeout(click_node, 1, d);  // not sure if it helps
       })
       .on("dblclick", function (d) {
         d3.select(this).classed("fixed", d.fixed = false);
