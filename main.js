@@ -36,6 +36,7 @@ d3.select("select#site_selector").on("change", function(){
   toOptions.siteName = $("select#site_selector").val();
   toOptions.centralTag = "";
   $("input#central_tag").val("");
+  $(".tag_info").hide();
   preGraphDrawing(toOptions);
 });
 
@@ -277,11 +278,9 @@ var force = d3.layout.force()
   };
 
   var click_node = function(z){
-    //
-    // Things that need to be fixed:
-    // - working for conditional tags
+
     // - as asynchronous call
-    //
+    $(".tag_info").show();
 
     var tagQuery = z.name;
     if (centralTag) {
