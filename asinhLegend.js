@@ -1,4 +1,4 @@
-function asinhLegend(startVal, stopVal, startColor, stopColor){
+function asinhLegend(asinhStartVal, asinhStopVal, startColor, stopColor){
 	var svgWidth = 100,
     	svgHeight = 300,
     	x1 = 5,
@@ -14,17 +14,13 @@ function asinhLegend(startVal, stopVal, startColor, stopColor){
     
     var tileHeight = barHeight/numberTiles;
     
-    function sinh(x){
-    	return (Math.exp(x) - Math.exp(-x))/2;
-    } 
+    var startVal = sinh(asinhStartVal);
+    var stopVal = sinh(asinhStopVal);
     
-    function arcsinh(x){
-    	return (Math.log(x + Math.sqrt(x*x + 1)));
-    }
-    
+    d3.select("#theBar svg").remove();
     
 	// append empty svg container
-	var container = d3.select("body").append("svg")
+	var container = d3.select("#theBar").append("svg")
 		.attr("class", "legend")
 		.attr("width", svgWidth)
 		.attr("height", svgHeight);
@@ -41,28 +37,28 @@ function asinhLegend(startVal, stopVal, startColor, stopColor){
       .domain([0, 1])
       .range([startVal, stopVal]);
       
-    var arcsinhlinPosition = d3.scale.linear()  
-      .domain([arcsinh(startVal), arcsinh(stopVal)])
+    var asinhlinPosition = d3.scale.linear()  
+      .domain([asinhStartVal, asinhStopVal])
       .range([y1 + barHeight, y1]);
 			    
-    function minRound(asinhStart,asinhStop){
-    	var start = sinh(asinhStart);
+    function minRound(asinhStartSep,asinhStopSep){
+    	var start = sinh(asinhStartSep);
     	console.log("start", start);
-    	var stop = sinh(asinhStop);
+    	var stop = sinh(asinhStopSep);
     	if (stop < start) {
-    		stop = sinh(asinhStart);
-    		start = sinh(asinhStop);
+    		stop = sinh(asinhStartSep);
+    		start = sinh(asinhStopSep);
     	}
     	var scale = Math.floor(Math.log10(Math.abs(start - stop)));
     	console.log("scale", scale);
     	var rounded = Math.round((start+stop)/2 / Math.pow(10,scale))*Math.pow(10,scale);
     	console.log("rounded",rounded);
     	return rounded;
-    	}
+    	} // TODO: precyzja liczb!!!
     
     var sepSeq = []; // sequence of separators (uniformly in asinh scale)
     for (var i=0; i<numberTicks + 1; i++){
-    	sepSeq.push(arcsinh(startVal) + arcsinh(stopVal)*i/(numberTicks));
+    	sepSeq.push(asinhStartVal + asinhStopVal*i/(numberTicks));
     };
     
     var tickSeq = [];
@@ -82,7 +78,7 @@ function asinhLegend(startVal, stopVal, startColor, stopColor){
     		})
     		.attr("x", x1 + barWidth + 10)
     		.attr("y", function(d){
-    			return arcsinhlinPosition(arcsinh(d)) + tickFontSize/2;
+    			return asinhlinPosition(asinh(d)) + tickFontSize/2;
     		})
     		.attr("font-family", "sans-serif")
     		.attr("font-size", tickFontSize + "px");
@@ -97,10 +93,10 @@ function asinhLegend(startVal, stopVal, startColor, stopColor){
     		.attr("x1", x1 + barWidth)
     		.attr("x2", x1 + barWidth + tickLength)
     		.attr("y1", function(d){
-    			return arcsinhlinPosition(arcsinh(d));
+    			return asinhlinPosition(asinh(d));
     		})
     		.attr("y2", function(d){
-    			return arcsinhlinPosition(arcsinh(d));
+    			return asinhlinPosition(asinh(d));
     		});
 			 
 
@@ -115,4 +111,12 @@ function asinhLegend(startVal, stopVal, startColor, stopColor){
 			.attr("fill", color(y));
 	}
 			
+}
+
+function sinh(x){
+  return (Math.exp(x) - Math.exp(-x))/2;
+} 
+    
+function asinh(x){
+  return (Math.log(x + Math.sqrt(x*x + 1)));
 }
