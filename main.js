@@ -293,7 +293,7 @@ var force = d3.layout.force()
       .attr('href', seSiteData.siteData.site_url + "/questions/tagged/" + tagQuery)
       .show();
 
-    $(".tag_info #tag_count").html(siNumberApprox(z.count));
+    $(".tag_info #tag_count").html("(" + siNumberApprox(z.count) + ")");
 
     // $(".tag_info #dscr").html("count: " + z.count);
 

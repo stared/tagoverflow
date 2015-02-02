@@ -124,6 +124,9 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
     } else {
       this.noOfQuestions = this.centralTagCount;
     }
+
+    $(".site_info #count").html("(" + siNumberApprox(this.noOfQuestions) + ")");
+      
     this.retriveTags();
     this.retriveRelatedTags();
   };
