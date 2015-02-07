@@ -236,3 +236,12 @@ div.tooltip
 .aa {
   margin-top: 10px;
 }
+
+#site_selector, #colorParameter, #pageSize {
+  width: 100%;
+}
+
+#central_tag {
+  width: 60%;
+  margin-right: 10px;
+}
