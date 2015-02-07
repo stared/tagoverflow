@@ -89,6 +89,10 @@ d3.select("select#colorParameter").on("change", function(){
   }
 });
 
+if ($("select#colorParameter").val() !== "community") {
+  retriveLastQuestions();
+}
+
 var graph = {nodes: seSiteData.tags, links: seSiteData.links};
 
 // community detection for graph
@@ -479,6 +483,7 @@ var statsDict = {
 
   function colorize (d, colorParameter) {
   	d3.select("#theBar svg").remove();
+    console.log('colorParameter', colorParameter);
     if (colorParameter == "community") {
       node.style("fill", function(d){ return comm_color(d.community); });
     } else {
