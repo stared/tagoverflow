@@ -283,14 +283,16 @@ var force = d3.layout.force()
     $(".tag_info").show();
 
     var tagQuery = z.name;
+    var tagName = z.name;
     if (centralTag) {
       tagQuery += (";" + centralTag);
+      tagName += ("+" + centralTag);
     }
 
-    $(".tag_info #tag_name").html(tagQuery);
+    $(".tag_info #tag_name").html(tagName);
     $(".tag_info #tag_name")
       .hide()
-      .attr('href', seSiteData.siteData.site_url + "/questions/tagged/" + tagQuery)
+      .attr('href', seSiteData.siteData.site_url + "/questions/tagged/" + tagName)
       .show();
 
     $(".tag_info #tag_count").html("(" + siNumberApprox(z.count) + ")");
