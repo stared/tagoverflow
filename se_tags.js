@@ -87,7 +87,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
   {
     return seQuery("info", {site: siteName}, 1);
   };
-      
+
   this.fetchPopularTags = function(siteName, tagLimit)
   {
     if (this.centralTag == undefined) {
@@ -103,17 +103,30 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
 
   this.run = function(){
     this.siteStats = this.fetchSiteStats(siteName)[0];
-    $(".site_info #site_name").html(this.siteData.name);
-    $(".site_info #dscr").html(this.siteData.audience);
-    $(".site_info #site_name").hide().attr("href", this.siteData.site_url).show();
+
+    if (this.centralTag) {
+      this.centralTagCount = seQuery("tags/" + this.centralTag + "/info", {site: siteName}, 1)[0]['count'];
+      this.centralTagText = seQuery("tags/" + this.centralTag + "/wikis", {site: siteName}, 1)[0]['excerpt'];
+    } 
+
+    if (!this.centralTag) {
+      $(".site_info #site_name").html(this.siteData.name);
+      $(".site_info #dscr").html(this.siteData.audience);
+      $(".site_info #site_name").hide().attr("href", this.siteData.site_url).show();
+    } else {
+      $(".site_info #site_name").html(this.siteData.name + ": " + this.centralTag);
+      $(".site_info #dscr").html(this.centralTagText);
+      $(".site_info #site_name").hide().attr("href", this.siteData.site_url + "/tagged/" + this.centralTag).show();
+    }
 
     if (!this.centralTag) {
       this.noOfQuestions = this.siteStats.total_questions;
     } else {
-      this.noOfQuestions = seQuery("tags/" + this.centralTag + "/info",
-                                   {site: siteName},
-                                   1)[0].count;
+      this.noOfQuestions = this.centralTagCount;
     }
+
+    $(".site_info #count").html("(" + siNumberApprox(this.noOfQuestions) + ")");
+      
     this.retriveTags();
     this.retriveRelatedTags();
   };
@@ -206,7 +219,7 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
     }
   };
 
-  this.processRelatedTags = function(){
+  this.processRelatedTags = function (includeCentralTag) {
     this.links = [];
     for (var tag1 in this.relatedTagDict)
     {
@@ -234,6 +247,11 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
         }
       }
     }
+
+    // if (includeCentralTag) {
+
+    // }
+
     draw_graph(this);
   };
 
