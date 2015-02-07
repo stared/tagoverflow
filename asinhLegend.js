@@ -1,4 +1,18 @@
-function asinhLegend(asinhStartVal, asinhStopVal, startColor, stopColor){
+// TODO
+// precyzja liczb
+// wygląd legendy: lin i asinh takie same
+// usuwanie starej legendy przy zmianie kolorowania
+
+function sinh(x){
+  return (Math.exp(x) - Math.exp(-x))/2;
+} 
+    
+function asinh(x){
+  var num = +x;
+  return (Math.log(num + Math.sqrt(num*num + 1)));
+}
+
+function asinhLegend(startColor, stopColor, asinhStartVal, asinhStopVal){
 	var svgWidth = 100,
     	svgHeight = 300,
     	x1 = 5,
@@ -7,17 +21,19 @@ function asinhLegend(asinhStartVal, asinhStopVal, startColor, stopColor){
     	barHeight = 200,
     	numberTiles = 100,
     	//numberScaleLines = 5,
-    	numberTicks = 7,
+    	numberTicks = 5,
     	tickLength = 5,
-    	tickWidth = 1,
-    	tickFontSize = 12;
+    	tickWidth = 1;
+    	//tickFontSize = 12;
     
     var tileHeight = barHeight/numberTiles;
     
     var startVal = sinh(asinhStartVal);
     var stopVal = sinh(asinhStopVal);
     
-    d3.select("#theBar svg").remove();
+    console.log("asinhStartVal", asinhStartVal);
+    console.log("startVal", startVal);
+    console.log("stopVal", stopVal);
     
 	// append empty svg container
 	var container = d3.select("#theBar").append("svg")
@@ -50,23 +66,34 @@ function asinhLegend(asinhStartVal, asinhStopVal, startColor, stopColor){
     		start = sinh(asinhStopSep);
     	}
     	var scale = Math.floor(Math.log10(Math.abs(start - stop)));
-    	console.log("scale", scale);
-    	var rounded = Math.round((start+stop)/2 / Math.pow(10,scale))*Math.pow(10,scale);
+    	var digits = Math.max(-1*scale,0) // digits after comma
+    	//console.log("scale", scale);
+    	//console.log("precision", digits);
+    	
+    	var rounded = Math.floor(stop / Math.pow(10,scale))*Math.pow(10,scale);
     	console.log("rounded",rounded);
-    	return rounded;
-    	} // TODO: precyzja liczb!!!
+    	console.log("corrected rounded",d3.format("." + digits +"f")(rounded));
+    	//return rounded;
+    	return d3.format("." + digits +"f")(rounded);
+    }; // TODO: precyzja liczb!!!
+    
+    console.log();
     
     var sepSeq = []; // sequence of separators (uniformly in asinh scale)
     for (var i=0; i<numberTicks + 1; i++){
-    	sepSeq.push(asinhStartVal + asinhStopVal*i/(numberTicks));
+    	sepSeq.push(asinhStartVal + (asinhStopVal - asinhStartVal)*i/(numberTicks));
     };
+    console.log("asinhStartVal", asinhStartVal);
+    console.log("asinhStopVal", asinhStopVal);
+    console.log("sepSeq", sepSeq);
     
     var tickSeq = [];
     for (var i=0; i<numberTicks; i++){
     	tickSeq.push(minRound(sepSeq[i],sepSeq[i+1]))
 	};    
     
-    var ticks = container.append("g");
+    var ticks = container.append("g")
+   		.attr("class", "axis");
     
 	// add scale labels		
 	ticks.selectAll("text") 
@@ -78,10 +105,9 @@ function asinhLegend(asinhStartVal, asinhStopVal, startColor, stopColor){
     		})
     		.attr("x", x1 + barWidth + 10)
     		.attr("y", function(d){
-    			return asinhlinPosition(asinh(d)) + tickFontSize/2;
-    		})
-    		.attr("font-family", "sans-serif")
-    		.attr("font-size", tickFontSize + "px");
+    			return asinhlinPosition(asinh(d)) + 5;
+    		});
+
     
     // add scale lines		
     ticks.selectAll("line") 
@@ -113,10 +139,4 @@ function asinhLegend(asinhStartVal, asinhStopVal, startColor, stopColor){
 			
 }
 
-function sinh(x){
-  return (Math.exp(x) - Math.exp(-x))/2;
-} 
-    
-function asinh(x){
-  return (Math.log(x + Math.sqrt(x*x + 1)));
-}
+

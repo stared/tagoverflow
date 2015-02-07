@@ -469,9 +469,9 @@ var statsDict = {
 	};
 
   function colorize (d, colorParameter) {
+  	d3.select("#theBar svg").remove();
     if (colorParameter == "community") {
       node.style("fill", function(d){ return comm_color(d.community); });
-      d3.select("#theBar svg").remove();
     } else {
       var statInfo = statsDict[colorParameter];
       var func = statInfo.func;
