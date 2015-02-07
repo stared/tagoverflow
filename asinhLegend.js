@@ -1,6 +1,3 @@
-// TODO
-// first tick (min)
-
 function sinh(x){
   return (Math.exp(x) - Math.exp(-x))/2;
 } 
@@ -25,6 +22,13 @@ function asinhLegend(startColor, stopColor, asinhStartVal, asinhStopVal){
     	//tickFontSize = 12;
     
     var tileHeight = barHeight/numberTiles;
+    
+    // bigger value alvays at the top of the legend
+    if (asinhStartVal > asinhStopVal){
+    	var smaller = asinhStopVal;
+    	var asinhStopVal = asinhStartVal;
+    	var asinhStartVal = smaller;
+    };
     
     var startVal = sinh(asinhStartVal);
     var stopVal = sinh(asinhStopVal);
@@ -51,27 +55,32 @@ function asinhLegend(startColor, stopColor, asinhStartVal, asinhStopVal){
       .domain([asinhStartVal, asinhStopVal])
       .range([y1 + barHeight, y1]);
 			    
-    function minRound(asinhStartSep,asinhStopSep){
+    function maxRound(asinhStartSep,asinhStopSep){
     	var start = sinh(asinhStartSep);
     	var stop = sinh(asinhStopSep);
-    	if (stop < start) {
-    		stop = sinh(asinhStartSep);
-    		start = sinh(asinhStopSep);
-    	}
     	var scale = Math.floor(Math.log10(Math.abs(start - stop)));
     	var digits = Math.max(-1*scale,0) // digits after comma;
     	var rounded = Math.floor(stop / Math.pow(10,scale))*Math.pow(10,scale);
     	return d3.format("." + digits +"f")(rounded);
     };
     
-    var sepSeq = []; // sequence of separators (uniformly in asinh scale)
-    for (var i=0; i<numberTicks + 1; i++){
-    	sepSeq.push(asinhStartVal + (asinhStopVal - asinhStartVal)*i/(numberTicks));
+    function minRound(asinhStartSep,asinhStopSep){
+    	var start = sinh(asinhStartSep);
+    	var stop = sinh(asinhStopSep);
+    	var scale = Math.floor(Math.log10(Math.abs(start - stop)));
+    	var digits = Math.max(-1*scale,0) // digits after comma;
+    	var rounded = Math.ceil(start / Math.pow(10,scale))*Math.pow(10,scale);
+    	return d3.format("." + digits +"f")(rounded);
     };
     
-    var tickSeq = [];
+    var sepSeq = []; // sequence of separators (uniformly in asinh scale)
     for (var i=0; i<numberTicks; i++){
-    	tickSeq.push(minRound(sepSeq[i],sepSeq[i+1]))
+    	sepSeq.push(asinhStartVal + (asinhStopVal - asinhStartVal)*i/(numberTicks - 1));
+    };
+    
+    var tickSeq = [minRound(sepSeq[0],sepSeq[1])];   
+    for (var i=0; i<numberTicks; i++){
+    	tickSeq.push(maxRound(sepSeq[i],sepSeq[i+1]))
 	};    
     
     var ticks = container.append("g")
