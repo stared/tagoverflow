@@ -1,7 +1,5 @@
 // TODO
-// precyzja liczb
-// wygląd legendy: lin i asinh takie same
-// usuwanie starej legendy przy zmianie kolorowania
+// first tick (min)
 
 function sinh(x){
   return (Math.exp(x) - Math.exp(-x))/2;
@@ -31,10 +29,6 @@ function asinhLegend(startColor, stopColor, asinhStartVal, asinhStopVal){
     var startVal = sinh(asinhStartVal);
     var stopVal = sinh(asinhStopVal);
     
-    console.log("asinhStartVal", asinhStartVal);
-    console.log("startVal", startVal);
-    console.log("stopVal", stopVal);
-    
 	// append empty svg container
 	var container = d3.select("#theBar").append("svg")
 		.attr("class", "legend")
@@ -59,33 +53,21 @@ function asinhLegend(startColor, stopColor, asinhStartVal, asinhStopVal){
 			    
     function minRound(asinhStartSep,asinhStopSep){
     	var start = sinh(asinhStartSep);
-    	console.log("start", start);
     	var stop = sinh(asinhStopSep);
     	if (stop < start) {
     		stop = sinh(asinhStartSep);
     		start = sinh(asinhStopSep);
     	}
     	var scale = Math.floor(Math.log10(Math.abs(start - stop)));
-    	var digits = Math.max(-1*scale,0) // digits after comma
-    	//console.log("scale", scale);
-    	//console.log("precision", digits);
-    	
+    	var digits = Math.max(-1*scale,0) // digits after comma;
     	var rounded = Math.floor(stop / Math.pow(10,scale))*Math.pow(10,scale);
-    	console.log("rounded",rounded);
-    	console.log("corrected rounded",d3.format("." + digits +"f")(rounded));
-    	//return rounded;
     	return d3.format("." + digits +"f")(rounded);
-    }; // TODO: precyzja liczb!!!
-    
-    console.log();
+    };
     
     var sepSeq = []; // sequence of separators (uniformly in asinh scale)
     for (var i=0; i<numberTicks + 1; i++){
     	sepSeq.push(asinhStartVal + (asinhStopVal - asinhStartVal)*i/(numberTicks));
     };
-    console.log("asinhStartVal", asinhStartVal);
-    console.log("asinhStopVal", asinhStopVal);
-    console.log("sepSeq", sepSeq);
     
     var tickSeq = [];
     for (var i=0; i<numberTicks; i++){
