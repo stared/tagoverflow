@@ -377,11 +377,12 @@ var force = d3.layout.force()
 
     var questions = fetchTopQuestions(seSiteData.siteName, tagQuery);
 
-    var d3question = d3.select(".tag_info #questions ul").selectAll("li")
+    var d3question = d3.select(".tag_info #questions").selectAll(".question")
       .data(questions);
 
     d3question.enter()
-      .append("li")
+      .append("div")
+        .attr("class", "question")
         .append("a");
 
     d3question.select("a")

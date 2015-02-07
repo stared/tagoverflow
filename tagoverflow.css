@@ -112,14 +112,18 @@ div.tag_info {
   /*overflow-y: auto;*/
 }
 
-div.questions {
-/*  position: absolute;*/
-  top: 300px;
+#questions {
   width: 100%;
-  /*height: 400px;*/
-  float: left;
+  margin-top: 10px;
+  display: block;
+}
+
+div.question {
+  width: 100%;
+  display: block;
   overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis; 
 }
 
 div.subtitle {
