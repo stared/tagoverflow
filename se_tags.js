@@ -107,7 +107,10 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
     if (this.centralTag) {
       try {
         this.centralTagCount = seQuery("tags/" + this.centralTag + "/info", {site: siteName}, 1)[0]['count'];
-        this.centralTagText = seQuery("tags/" + this.centralTag + "/wikis", {site: siteName}, 1)[0]['excerpt'];
+        // this.centralTagText = seQuery("tags/" + this.centralTag + "/wikis", {site: siteName}, 1)[0]['excerpt'];
+        // if (this.centralTagText.length > 140) {
+        //   this.centralTagText = this.centralTagText.slice(137) + "...";
+        // }
       } catch (e) {
         $("#loading_status").html("No such tag.");
         alert("No such tag!");
@@ -122,7 +125,8 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
       $(".site_info #site_name").hide().attr("href", this.siteData.site_url).show();
     } else {
       $(".site_info #site_name").html(this.siteData.name + ": " + this.centralTag);
-      $(".site_info #dscr").html(this.centralTagText);
+      // $(".site_info #dscr").html(this.centralTagText);
+      $(".site_info #dscr").html("");
       $(".site_info #site_name").hide().attr("href", this.siteData.site_url + "/tagged/" + this.centralTag).show();
     }
 
