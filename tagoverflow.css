@@ -225,3 +225,14 @@ div.tooltip
     z-index: 50;
     opacity: 0.8;
 }
+
+#show_conditional_subgraph {
+  text-align: center;
+  color: #33a;
+  display: none;
+  cursor: pointer;
+}
+
+.aa {
+  margin-top: 10px;
+}

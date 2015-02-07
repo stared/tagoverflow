@@ -299,6 +299,18 @@ var force = d3.layout.force()
       .attr('href', seSiteData.siteData.site_url + "/questions/tagged/" + tagName)
       .show();
 
+    if (centralTag) {
+      $(".tag_info #show_conditional_subgraph").hide();
+    } else {
+      $(".tag_info #show_conditional_subgraph")
+        .show()
+        .on("click", function () {
+          $("input#central_tag").val(tagQuery);
+          preGraphDrawing(toOptions);
+        });
+    }
+    
+
     $(".tag_info #tag_count").html("(" + siNumberApprox(z.count) + ")");
 
     // $(".tag_info #dscr").html("count: " + z.count);
