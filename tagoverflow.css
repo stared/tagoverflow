@@ -75,10 +75,16 @@ body {
   z-index:10;
 }
 
+#right_bar {
+  position: fixed;
+  top: 20px;
+  right: 20px;  
+}
+
 div.site_info {
-	position: fixed;
+/*	position: fixed;
 	top: 20px;
-	right: 20px;
+	right: 20px;*/
   padding: 12px;
   width: 300px;
   background: rgba(230, 230, 230, 0.85);
@@ -90,9 +96,11 @@ div.site_info {
 }
 
 div.tag_info {
-	position: fixed;
+/*	position: fixed;
 	top: 130px;
-	right: 20px;
+	right: 20px;*/
+  margin-top: 20px;
+  display: block;
   padding: 12px;
   width: 300px;
   background: rgba(230, 230, 230, 0.85);
@@ -100,6 +108,7 @@ div.tag_info {
   border: solid 1px #aaa;
   border-radius: 4px;
   z-index:10;
+  overflow: hidden;
   /*overflow-y: auto;*/
 }
 
@@ -138,13 +147,15 @@ a:hover { color:#aaa; text-decoration: none; }
 /*a:active { color:#aaa; text-decoration: underline; }*/
 
 #askers {
-  width: 45%;
-  float:left;
+  padding-left: 10px;
+  width: 130px;
+  display: inline-block;
 }
 
 #answerers {
-  width: 45%;
-  float: right;
+  padding-left: 10px;
+  width: 130px;
+  display: inline-block;
 }
 
 .user_row
