@@ -105,8 +105,15 @@ var SeDataLoaderPerSite = function(siteName, tagLimit, centralTag, delay){
     this.siteStats = this.fetchSiteStats(siteName)[0];
 
     if (this.centralTag) {
-      this.centralTagCount = seQuery("tags/" + this.centralTag + "/info", {site: siteName}, 1)[0]['count'];
-      this.centralTagText = seQuery("tags/" + this.centralTag + "/wikis", {site: siteName}, 1)[0]['excerpt'];
+      try {
+        this.centralTagCount = seQuery("tags/" + this.centralTag + "/info", {site: siteName}, 1)[0]['count'];
+        this.centralTagText = seQuery("tags/" + this.centralTag + "/wikis", {site: siteName}, 1)[0]['excerpt'];
+      } catch (e) {
+        $("#loading_status").html("No such tag.");
+        alert("No such tag!");
+        return;
+      }
+
     } 
 
     if (!this.centralTag) {
