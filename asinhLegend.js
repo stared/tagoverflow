@@ -74,13 +74,14 @@ function asinhLegend(startColor, stopColor, asinhStartVal, asinhStopVal){
     };
     
     var sepSeq = []; // sequence of separators (uniformly in asinh scale)
-    for (var i=0; i<numberTicks; i++){
+    for (var i = 0; i < numberTicks; i++){
     	sepSeq.push(asinhStartVal + (asinhStopVal - asinhStartVal)*i/(numberTicks - 1));
     };
     
-    var tickSeq = [minRound(sepSeq[0],sepSeq[1])];   
-    for (var i=0; i<numberTicks; i++){
-    	tickSeq.push(maxRound(sepSeq[i],sepSeq[i+1]))
+    var tickSeq = [minRound(sepSeq[0], sepSeq[1])];  
+     
+    for (var i = 0; i < (numberTicks - 1); i++){
+    	tickSeq.push(maxRound(sepSeq[i], sepSeq[i+1]))
 	};    
     
     var ticks = container.append("g")
