@@ -30,30 +30,11 @@ function asinhLegend(startColor, stopColor, asinhStartVal, asinhStopVal){
     	var asinhStartVal = smaller;
     };
     
-    var startVal = sinh(asinhStartVal);
-    var stopVal = sinh(asinhStopVal);
-    
 	// append empty svg container
 	var container = d3.select("#theBar").append("svg")
 		.attr("class", "legend")
 		.attr("width", svgWidth)
 		.attr("height", svgHeight);
-	
-	var color = d3.scale.linear()  
-      .domain([y1 + barHeight, y1])
-      .range([startColor, stopColor]);
-      
-	var linPosition = d3.scale.linear()  
-      .domain([startVal, stopVal])
-      .range([y1 + barHeight, y1]);
-      
-    var linBase = d3.scale.linear()  
-      .domain([0, 1])
-      .range([startVal, stopVal]);
-      
-    var asinhlinPosition = d3.scale.linear()  
-      .domain([asinhStartVal, asinhStopVal])
-      .range([y1 + barHeight, y1]);
 			    
     function maxRound(asinhStartSep,asinhStopSep){
     	var start = sinh(asinhStartSep);
@@ -73,16 +54,56 @@ function asinhLegend(startColor, stopColor, asinhStartVal, asinhStopVal){
     	return d3.format("." + digits +"f")(rounded);
     };
     
-    var sepSeq = []; // sequence of separators (uniformly in asinh scale)
-    for (var i = 0; i < numberTicks; i++){
-    	sepSeq.push(asinhStartVal + (asinhStopVal - asinhStartVal)*i/(numberTicks - 1));
+    // check if there is variance in values
+    if (asinhStartVal == asinhStopVal){
+    	console.log("start == stop!!!");
+    	console.log("asinhStartVal = ", asinhStartVal);
+    	console.log("asinhStopVal = ", asinhStopVal);
+    	
+    	// change scale min/max values
+    	var val = asinhStartVal;
+    	asinhStartVal = val - 1;
+    	asinhStopVal = val + 1;
+    	
+    	// monochromatic legend
+    	startColor = stopColor;
+    	
+    	var tickSeq = [sinh(val)];
+    	
+
+    }
+    else{
+        var sepSeq = []; // sequence of separators (uniformly in asinh scale)
+    	for (var i = 0; i < numberTicks; i++){
+    		sepSeq.push(asinhStartVal + (asinhStopVal - asinhStartVal)*i/(numberTicks - 1));
+   		};
+    
+    	var tickSeq = [minRound(sepSeq[0], sepSeq[1])];  
+     
+    	for (var i = 0; i < (numberTicks - 1); i++){
+    		tickSeq.push(maxRound(sepSeq[i], sepSeq[i+1]))
+		};    
     };
     
-    var tickSeq = [minRound(sepSeq[0], sepSeq[1])];  
-     
-    for (var i = 0; i < (numberTicks - 1); i++){
-    	tickSeq.push(maxRound(sepSeq[i], sepSeq[i+1]))
-	};    
+    // counting back original values
+    var startVal = sinh(asinhStartVal);
+    var stopVal = sinh(asinhStopVal);
+    
+    var color = d3.scale.linear()  
+      .domain([y1 + barHeight, y1])
+      .range([startColor, stopColor]);
+      
+	var linPosition = d3.scale.linear()  
+      .domain([startVal, stopVal])
+      .range([y1 + barHeight, y1]);
+      
+    var linBase = d3.scale.linear()  
+      .domain([0, 1])
+      .range([startVal, stopVal]);
+      
+    var asinhlinPosition = d3.scale.linear()  
+      .domain([asinhStartVal, asinhStopVal])
+      .range([y1 + barHeight, y1]);
     
     var ticks = container.append("g")
    		.attr("class", "axis");

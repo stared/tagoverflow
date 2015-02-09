@@ -437,21 +437,30 @@ var force = d3.layout.force()
     };
     var minvalue = d3.min(values);
     var maxvalue = d3.max(values);
-    var colorScale = d3.scale.linear()
-      .domain([minvalue, maxvalue])
-      .range([lowcolor, highcolor])
-    colors = {};
-    for (key in valuesDict){
-      colors[key]=colorScale(valuesDict[key]);
-    };  
+    var colors = {};
+    
+    if (minvalue == maxvalue) {
+      for (key in valuesDict){
+        colors[key] = highcolor;
+      };
+    }
+    else{
+      var colorScale = d3.scale.linear()
+        .domain([minvalue, maxvalue])
+        .range([lowcolor, highcolor]);
+      for (key in valuesDict){
+        colors[key] = colorScale(valuesDict[key]);
+      }; 
+    }; 
     return colors;
   };
   
   //function asinh(x){
   //  return Math.log(x + Math.sqrt(x*x + 1))
   //};
-  
+
   function statsForColors(questionsDict, func, startColor, stopColor, transform){
+    console.log(questionsDict);
     var valueDict = {};
     var valueList = [];
     for (tagName in questionsDict)
@@ -469,28 +478,53 @@ var statsDict = {
 	answered: {
 	  func: answered,
 	  transform: function(x){return 100*x}, // percents
-	  startColor: "sienna",
-	  stopColor: "wheat"},
-	score: {
-	  func: questionsScore,
+	  startColor: "#ffd5d5", //red
+	  stopColor: "#ff0000"},
+	  
+	answersMd: {
+	  func: answersMd,
+	  transform: asinh,
+	  startColor:"#ffe6d5", //orange
+	  stopColor:"#ff6600"},
+	answersAv: {
+	  func: answersAv,
+	  transform: asinh,
+	  startColor:"#fff6d5", //yellow
+	  stopColor:"#ffcc00"},
+	  
+	scoreMd: {
+	  func: questionsScoreMd,
 	  transform: asinh, // asinh form asinhLegend.js
-	  startColor:"green",
-	  stopColor:"yellow"},
-	score_av: {
+	  startColor:"d5fff6", //teal
+	  stopColor:"#2ca089"},
+	scoreAv: {
 	  func: questionsScoreAv,
 	  transform: asinh,
-	  startColor: "green", 
-	  stopColor: "yellow"},
-	view: {
-	  func: questionsView,
+	  startColor: "#D5FFD5", //green
+	  stopColor: "#00AA00"},
+
+	viewMd: {
+	  func: questionsViewMd,
 	  transform: asinh, 
-	  startColor: "blue", 
-	  stopColor: "cyan"},
-	reputation: {
-	  func: ownerReputation,
+	  startColor: "#D5E5FF", //blue
+	  stopColor: "#0044AA"},
+	 viewAv: {
+	  func: questionsViewAv,
+	  transform: asinh, 
+	  startColor: "#d5f6ff", //blue-green
+	  stopColor: "#0088aa"},
+
+	reputationMd: {
+	  func: ownerReputationMd,
 	  transform: asinh,
-	  startColor: "red",
-	  stopColor: "yellow"}
+	  startColor: "#F6D5FF", //violet
+	  stopColor: "#660080"}, 
+	reputationAv: {
+	  func: ownerReputationAv,
+	  transform: asinh,
+	  startColor: "#ffd5f6", //purple
+	  stopColor: "#d400aa"}
+
 	};
 
   function colorize (d, colorParameter) {
@@ -523,6 +557,7 @@ var statsDict = {
   };
 
 };
+
 
 function Tooltip(parentDom) {
 

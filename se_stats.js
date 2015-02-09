@@ -18,7 +18,16 @@ function answered(questions)
   else {return 0;}
 }
 
-function questionsScore(questions) {
+function answersMd(questions) {
+  return d3.median(questions, function (q) { return q.answer_count; });
+}
+
+function answersAv(questions) {
+  return d3.mean(questions, function (q) { return q.answer_count; });
+}
+
+
+function questionsScoreMd(questions) {
   return d3.median(questions, function (q) { return q.score; });
 }
 
@@ -26,10 +35,30 @@ function questionsScoreAv(questions) {
   return d3.mean(questions, function (q) { return q.score; });
 }
 
-function questionsView(questions){
+function questionsScoreMax(questions) {
+  return d3.max(questions, function (q) { return q.score; });
+}
+
+function questionsViewMd(questions){
   return d3.median(questions, function (q) { return q.view_count; });
 }
 
-function ownerReputation(questions){
+function questionsViewAv(questions){
+  return d3.mean(questions, function (q) { return q.view_count; });
+}
+
+function questionsViewMax(questions){
+  return d3.mean(questions, function (q) { return q.view_count; });
+}
+
+function ownerReputationMd(questions){
+  return d3.median(questions, function (q) { return q.owner.reputation; });
+}
+
+function ownerReputationAv(questions){
+  return d3.mean(questions, function (q) { return q.owner.reputation; });
+}
+
+function ownerReputationMax(questions){
   return d3.median(questions, function (q) { return q.owner.reputation; });
 }
