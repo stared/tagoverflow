@@ -510,7 +510,7 @@ var statsDict = {
 	scoreMd: {
 	  func: questionsScoreMd,
 	  transform: asinh, // asinh form asinhLegend.js
-	  startColor:"d5fff6", //teal
+	  startColor:"#d5fff6", //teal
 	  stopColor:"#2ca089"},
 	scoreAv: {
 	  func: questionsScoreAv,

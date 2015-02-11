@@ -23,7 +23,8 @@
 }
 
 div#theBar {
- 	position: fixed;
+ 	/*position: fixed;*/
+ 	margin-top: 0px;
 	top: 250px;
 	left: 20px; 
 }
@@ -34,7 +35,7 @@ text.legend {
   fill: #000;
 }
 
-.axis path,
+.axis path, not overlap?
 .axis line {
     fill: none;
     stroke: gray;
@@ -63,7 +64,7 @@ body {
 }
 
 #options {
-  position: fixed;
+  /*position: fixed; */
   top: 20px;
   left: 20px;
   padding: 12px;
@@ -80,6 +81,12 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;  
+}
+
+#left_bar {
+  position: fixed;
+  top: 20px;
+  left: 20px;  
 }
 
 div.site_info {

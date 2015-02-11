@@ -40,6 +40,16 @@ function asinhLegend(startColor, stopColor, asinhStartVal, asinhStopVal){
     	var start = sinh(asinhStartSep);
     	var stop = sinh(asinhStopSep);
     	var scale = Math.floor(Math.log10(Math.abs(start - stop)));
+    	
+    	var uniDiff = (stop - start) / Math.pow(10,scale); // unified distance value in [1, 10)
+    	// floor(unidiff) == how many possible ticks between start and stop in current scale
+    	// if uniDiff < 2, there is a space for only one tick and it may overlap with previous or next one
+    	// so it need to be fixed: scale should be smaller
+    	
+    	if (uniDiff < 2){
+    		scale = scale - 1;
+    	};
+    	
     	var digits = Math.max(-1*scale,0) // digits after comma;
     	var rounded = Math.floor(stop / Math.pow(10,scale))*Math.pow(10,scale);
     	return d3.format("." + digits +"f")(rounded);
@@ -49,6 +59,16 @@ function asinhLegend(startColor, stopColor, asinhStartVal, asinhStopVal){
     	var start = sinh(asinhStartSep);
     	var stop = sinh(asinhStopSep);
     	var scale = Math.floor(Math.log10(Math.abs(start - stop)));
+    	
+    	var uniDiff = (stop - start) / Math.pow(10,scale); // unified distance value in [1, 10)
+    	// floor(unidiff) == how many possible ticks between start and stop in current scale
+    	// if uniDiff < 2, there is a space for only one tick and it may overlap with previous or next one
+    	// so it need to be fixed: scale should be smaller
+    	
+    	if (uniDiff < 2){
+    		scale = scale - 1;
+    	};
+    	
     	var digits = Math.max(-1*scale,0) // digits after comma;
     	var rounded = Math.ceil(start / Math.pow(10,scale))*Math.pow(10,scale);
     	return d3.format("." + digits +"f")(rounded);
@@ -84,6 +104,7 @@ function asinhLegend(startColor, stopColor, asinhStartVal, asinhStopVal){
     		tickSeq.push(maxRound(sepSeq[i], sepSeq[i+1]))
 		};    
     };
+    
     
     // counting back original values
     var startVal = sinh(asinhStartVal);
