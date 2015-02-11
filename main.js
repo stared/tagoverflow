@@ -49,6 +49,23 @@ d3.select("button#go").on("click", function(){
   preGraphDrawing(toOptions);
 });
 
+$(".tag_info #hide_tag_info").on("click", function () {
+  $(".tag_info").hide();
+});
+
+var optionBarVisible = true;
+
+$("#options #hide_options").on("click", function () {
+  if (optionBarVisible) {
+    $("#options #hideable").hide();
+    $("#options #hide_options").html("(show graph options)");
+  } else {
+    $("#options #hideable").show();
+    $("#options #hide_options").html("(hide)");
+  }
+  optionBarVisible = !optionBarVisible;
+});
+
 
 function preGraphDrawing(toOptions){
 

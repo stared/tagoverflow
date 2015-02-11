@@ -67,6 +67,7 @@ body {
   top: 20px;
   left: 20px;
   padding: 12px;
+  padding-top: 4px;
 /*  width: 300px;*/
   background: rgba(230, 230, 230, 0.85);
   color: #222;
@@ -102,6 +103,7 @@ div.tag_info {
   margin-top: 20px;
   display: block;
   padding: 12px;
+  padding-top: 4px;
   width: 300px;
   background: rgba(230, 230, 230, 0.85);
   color: #222;
@@ -226,11 +228,14 @@ div.tooltip
     opacity: 0.8;
 }
 
-#show_conditional_subgraph {
+#show_conditional_subgraph, #hide_tag_info, #hide_options {
   text-align: center;
   color: #33a;
-  display: none;
   cursor: pointer;
+}
+
+#show_conditional_subgraph {
+  display: none;
 }
 
 .aa {
