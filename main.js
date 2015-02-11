@@ -116,7 +116,6 @@ var graph = {nodes: seSiteData.tags, links: seSiteData.links};
 communitize(graph, function (link) {
   return link['oe_ratio'] - 1;
 });
-//console.log(d3.max(graph.nodes, function (d) {return d.community;}));
 
 var comm_color = d3.scale.category10();
 
@@ -477,7 +476,6 @@ var force = d3.layout.force()
   //};
 
   function statsForColors(questionsDict, func, startColor, stopColor, transform){
-    console.log(questionsDict);
     var valueDict = {};
     var valueList = [];
     for (tagName in questionsDict)
@@ -546,7 +544,6 @@ var statsDict = {
 
   function colorize (d, colorParameter) {
   	d3.select("#theBar svg").remove();
-    console.log('colorParameter', colorParameter);
     if (colorParameter == "community") {
       node.style("fill", function(d){ return comm_color(d.community); });
     } else {
