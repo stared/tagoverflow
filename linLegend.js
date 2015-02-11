@@ -1,5 +1,4 @@
-//TODO:
-// what if minvalue == maxvalue
+//Stolen from https://gist.github.com/nowherenearithaca/4449376
 
 function linLegend(startcolor,stopcolor,minvalue,maxvalue) {
   var svgWidth = 100,
