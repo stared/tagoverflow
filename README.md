@@ -45,8 +45,10 @@ The limit of 100 questions is because of the API limit. However, for dynamic gra
 
 In any case, it does a lot of queries and (from time to time) Stack Exchange may block you. Don't worry, it lasts only for a few minutes.
 
+Positions of the nodes is due to [D3.js force layout](https://github.com/mbostock/d3/wiki/Force-Layout). That is, nodes connected via an edge attract each other. The strength of such attraction depends on the strength f an edge. Plus, all nodes repeal each other at a short distance to prevent overlaps.
+
 For [community detection](http://digitalinterface.blogspot.it/2013/05/community-detection-in-graphs.html) I wrote a greedy hierarchical modularity maximization (as in [arXiv:cond-mat/0408187](http://arxiv.org/abs/cond-mat/0408187)). 
-(AFAIK there is no other JavaScript implementation of community detection; if there is a need, I would be happy to implement something more serious like [Louvain](https://sites.google.com/site/findcommunities/) or [Infomap](http://www.mapequation.org/code.html). If you want it to happen, a few encouraging e-mails will work. :) EDIT: [there is for Louvain](https://github.com/upphiminn/jLouvain)) 
+(AFAIK there is no other JavaScript implementation of community detection; if there is a need, I would be happy to implement something more serious like [Louvain](https://sites.google.com/site/findcommunities/) or [Infomap](http://www.mapequation.org/code.html). If you want it to happen, a few encouraging e-mails will work. :) EDIT: [there is a good implementation of Louvain in JS](https://github.com/upphiminn/jLouvain).) 
 
 There are some tricks. For example, to calculate tag statistics (e.g. average number of answer per tag) it is unfeasible to probe all questions, and there is no REST API to get these numbers directly. So, it takes 100 newest questions with a given tag, which are at least a month old (so their scores stabilize a bit).
 
