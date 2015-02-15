@@ -257,3 +257,8 @@ div.tooltip
   width: 60%;
   margin-right: 10px;
 }
+
+div.fb-like
+{
+    top:-3px;
+}
