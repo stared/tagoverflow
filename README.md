@@ -73,3 +73,6 @@ Feel free to use it for anything. Just please to refer to it as:
 And for any academic papers, please cite:
 
 * Piotr Migdał, Symmetries and self-similarity of many-body wavefunctions, PhD Thesis (ICFO), [arXiv:1412.6796](http://arxiv.org/abs/1412.6796)
+
+(If you are wondering about the relation of my PhD thesis to this project - well, one of main topics is community detection. While introducing basic methods, I use TagOverflow as an example.)
+
