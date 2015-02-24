@@ -14,7 +14,7 @@ It is a continuation of my older project [Tag Graph Map of Stack Exchange](https
 ## Main ingredients
 
 * [Stack Exchange](http://stackexchange.com/sites) (though [their wonderful API](https://api.stackexchange.com/docs))
-* [D3.js](https://api.stackexchange.com/docs) with force layout
+* [D3.js](http://d3js.org/) with force layout
 * A bit of stats
 * Some [jQuery](http://jquery.com/), a [gist for gradients](https://gist.github.com/nowherenearithaca/4449376)
 * A lot of procrastination on other projects ([which is a good thing](http://crastina.se/theres-no-projects-like-side-projects/))
