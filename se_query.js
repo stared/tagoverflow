@@ -1,4 +1,4 @@
-var apiName = "http://api.stackexchange.com/2.1/";
+var apiName = "https://api.stackexchange.com/2.1/";
 var apiKey = "of3hmyFapahonChi8EED6g((";
 
 function httpGetJSON(theUrl)
